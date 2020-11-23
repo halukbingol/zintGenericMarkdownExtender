@@ -1,2 +1,26 @@
+# zintMarkdownExtender/.gitignore
+
+# all tmp  files
 _*
+tmp/*
+
+# static
+static/tcBundle/*
+!static/zintBundle/flexbox
+!static/zintBundle/prism
+!static/zintBundle/zintContent
+!static/zintBundle/version.txt
+
+# tmp
+tmp/*
+
+# zz_testing_content
+zz_testing_content/contentA/WebContent/tcBundle
+zz_testing_content/contentA/WebContent/zintBundle/*
+!zz_testing_content/contentA/WebContent/zintBundle/flexbox
+!zz_testing_content/contentA/WebContent/zintBundle/prism
+!zz_testing_content/contentA/WebContent/zintBundle/zintContent
+
+
+# IDE
 .idea/
