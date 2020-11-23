@@ -20,17 +20,18 @@ def gui_process_update_zint_bundle(path_to_md, option):
 
 
 def gui_process_md(path_to_md):
+    print('...processing file: %s' % str(path_to_md))
+
     path_to_html = get_corresponding_path_in_destination_to_html(path_to_md)
     convert(path_to_md, path_to_html)
 
 
 def gui_process_sec(path_via_source_to_md):
-    # TODO check if it is a path to `.md` file
     # get to_sec from to_md
     p_path_via_source_to_md = Path(path_via_source_to_md)
     suffix = p_path_via_source_to_md.suffix
     if suffix != '.md':
-        # TODO warning to user interface
+        # TODO warning in the user interface
         # alarm
         print(
             '**ERROR** gui_process_sec:path_via_source_to_md should be path to `.md` file \n%s'
@@ -39,6 +40,7 @@ def gui_process_sec(path_via_source_to_md):
         return
 
     p_path_via_source_to_sec = p_path_via_source_to_md.parent
+    print('...processing section: %s' % str(p_path_via_source_to_sec))
 
     for p_directory, subdirList, fileList in os.walk(p_path_via_source_to_sec):
         p_path_via_source_to_dir = Path(p_directory)
@@ -67,3 +69,14 @@ def gui_process_sec(path_via_source_to_md):
             else:
                 continue
 
+
+def gui_process_ch(path_via_source_to_md):
+    # process the chapter containing `.md` file
+    # TODO process chapter
+    return
+
+
+def gui_process_course(path_via_source_to_md):
+    # process the course containing `.md` file
+    # TODO process course
+    return

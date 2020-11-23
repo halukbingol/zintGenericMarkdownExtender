@@ -1,0 +1,34 @@
+{
+  "Definition": {
+    "comment": [
+      "Anything to describe its function. System do not use this."
+    ],
+    "rule": {
+      "^#DV.*$": "\n<div class=\"my-definition\">",
+      "^#DA.*$": "</div>\n"
+    }
+  },
+
+  "Inline Citation": {
+    "comment": [
+      "Anything to describe its function. System do not use this."
+    ],
+    "rule": {
+      "^#RV.*$": "\n<div class=\"my-remark\">",
+      "^#RA.*$": "</div>\n"
+    }
+  },
+  "prism": {
+    "comment": [
+      "keep this"
+    ],
+    "rule": {
+      "<pre class=\"bash\"><code>": "<pre><code class=\"language-bash line-numbers\">",
+      "<pre class=\"css\"><code>": "<pre><code class=\"language-css line-numbers\">",
+      "<pre class=\"html\"><code>": "<pre><code class=\"language-html line-numbers\">",
+      "<pre class=\"javascript\"><code>": "<pre><code class=\"language-javascript line-numbers\">",
+      "<pre class=\"latex\"><code>": "<pre><code class=\"language-latex line-numbers\">",
+      "<pre class=\"markdown\"><code>": "<pre><code class=\"language-markdown line-numbers\">"
+    }
+  }
+}

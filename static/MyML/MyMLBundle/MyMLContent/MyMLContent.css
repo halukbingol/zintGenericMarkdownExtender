@@ -1,0 +1,32 @@
+/* *************************************
+ *	MyMLContent.css
+ * *************************************/
+
+/* *************************************
+ * version history
+ * when who what
+ *
+ * 2020-11-23 hb
+ * init
+ *
+ * *************************************/
+
+.my-page {
+
+}
+
+.my-definition {
+    background-color: #e6e6e6;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    margin: 10px;
+    border-style: solid;
+}
+
+.my-remark {
+    background-color: peachpuff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 20px;
+    border-style: solid;
+}

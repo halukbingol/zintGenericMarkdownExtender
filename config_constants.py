@@ -1,27 +1,37 @@
 # config_constants.py
 
-from pathlib import Path
-
+# *************************************
+# general
 DESTINATION = "WebContent"
 SOURCE = "source"
-
-# md to html processing
-PATH_FIXED_F1 = "static/ch/sec/flexbox-f1.html"
-PATH_FIXED_F2 = "static/ch/sec/flexbox-f2.html"
-PATH_INIT_FOLDER = "/Users/bingol/Documents/"
 FILE_TMP = 'tmp/_tmp.html'
-
-# zintBundle
-PATH_ZINT_HOME = '/Users/bingol/Documents/workspace-WebStorm/01pi-ZintLib/ZintLib-snap'
-PATH_ZINT_BUNDLE = Path(PATH_ZINT_HOME).joinpath('zintBundle')
-PATH_TO_ZINT_NAVIGATION = PATH_ZINT_BUNDLE.joinpath('zintNavigation')
-PATH_TO_INDEX_HTML = PATH_ZINT_BUNDLE.joinpath('zintNavigation', 'index.html')
+# path of pandoc
+PANDOC = "/usr/local/bin/pandoc"
 # processing path_to_sec
 DIRECTORIES_TO_COPY = ['images']
 FILES_TO_SKIP = ['.DS_Store', ',gitignore']
 
 # *************************************
-# path of pandoc
-PANDOC = "/usr/local/bin/pandoc"
+# zintBundle
+PATH_ZINT_HOME = '/Users/bingol/Documents/workspace-WebStorm/01pi-ZintLib/ZintLib-snap'
+PATH_ZINT_BUNDLE = PATH_ZINT_HOME + '/zintBundle'
+PATH_TO_ZINT_NAVIGATION = PATH_ZINT_BUNDLE + '/zintNavigation'
+PATH_TO_INDEX_HTML = PATH_ZINT_BUNDLE + '/zintNavigation/index.html'
+
+# *************************************
+# TODO move to save status(?) file
+# PATH_INIT_FOLDER = "/Users/bingol/Documents/"
+PATH_INIT_FOLDER = '/Users/bingol/Documents/tmp/course-zintML/source/chA/secA'
+
+# *************************************
+# ExML language related
+# TODO support multiple ExML
+# LANGUAGE = "static/zintML"
+LANGUAGE = "zintML"
+LANGUAGE = "MyML"
+#
 # app configuration
-CONFIG_CONVERSION = "config_extension_definitions.json"
+PATH_LANGUAGE = "static/" + LANGUAGE
+CONFIG_CONVERSION = PATH_LANGUAGE + "/config_extension_definitions.json"
+PATH_FIXED_F1 = PATH_LANGUAGE + "/ch/sec/template-f1.html"
+PATH_FIXED_F2 = PATH_LANGUAGE + "/ch/sec/template-f2.html"

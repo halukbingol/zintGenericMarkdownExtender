@@ -178,7 +178,9 @@
     }
   },
   "prism": {
-    "explanation": [],
+    "comment": [
+      "keep this"
+    ],
     "rule": {
       "<pre class=\"bash\"><code>": "<pre><code class=\"language-bash line-numbers\">",
       "<pre class=\"css\"><code>": "<pre><code class=\"language-css line-numbers\">",

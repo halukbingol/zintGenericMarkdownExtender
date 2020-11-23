@@ -1,5 +1,7 @@
 # process_convert.py
 
+# process single file
+
 import re
 import json
 import subprocess
@@ -10,11 +12,8 @@ from process_file import write_text_file
 
 
 def convert(path_to_md, path_to_html):
-    # print('hbConvert/path_to_md:', path_to_md, ' path_to_html:', path_to_html)
 
     content = read_text_file(path_to_md)
-    # print('content:')
-    # print(content)
 
     # apply tc => md on `content`
     content = process_tc_to_md(content)
@@ -71,7 +70,6 @@ def process_tc_to_md(text):
                             n = int(found_group.group(1))
                             line = p.sub(match.group(n), line)
                         lines[i] = exp.sub(value, line)
-                        print(lines[i])
                     else:
                         lines[i] = exp.sub(value, line)
 
@@ -139,5 +137,4 @@ def read_text_file(path_to_file):
     f = open(path_to_file, "r", encoding="utf-8")
     content = f.read()
     f.close()
-    print('path_to_txt:', content)
     return content
