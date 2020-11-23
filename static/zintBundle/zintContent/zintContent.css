@@ -1,0 +1,558 @@
+/* *************************************
+ *	tcContent.css
+ * *************************************/
+
+/* *************************************
+ * version history
+ * when who what
+ *
+ * 20150305 hb
+ * init
+ *
+ * 20150504 hb
+ * dense structures
+ *
+ * 20171231 hb
+ * major revisions in all
+ *
+ * 20180106 hb
+ * - shadow around java code only (highlight-source-java)
+ * - shadow around computer output (tcDivComputerOutput pre)
+ *
+ * 20201103 hb
+ * - tcTitle font size is increased
+ *
+ * *************************************/
+
+.zint-page {
+
+}
+
+.zint-title {
+    margin: 10px;
+    padding: 20px;
+    background-color: cornsilk;
+    border-style: solid;
+    border-color: #2a6496;
+    border-radius: 10px;
+}
+
+.zint-title p {
+    margin: 0px;
+    padding: 0px;
+    /*background-color: palevioletred;*/
+}
+
+.zint-title-running {
+    font-size: 150%;
+    text-align: right;
+    color: darkgray;
+}
+
+.zint-title-slide {
+    font-size: 200%;
+    text-align: left;
+    color: chocolate;
+}
+
+.zint-1V {
+
+}
+
+/*.zint-1 ::before {*/
+/*    content: "zint-1BBB";*/
+/*}*/
+
+.zint-2-left {
+
+}
+
+/*.zint-2-left::before {*/
+/*    content: "zint-2-leftLL";*/
+/*}*/
+
+.zint-2-right {
+
+}
+
+/*.zint-2-right::before {*/
+/*    content: "zint-2-rightRR";*/
+/*}*/
+
+/* ************************************
+ * Old below
+ * ************************************ */
+
+
+/* Shadow around code */
+.highlight-source-java {
+    background-color: #f5f5f5;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.5);
+    width: 95%;
+    margin: 5px;
+    /*padding: 50px;*/
+    border-style: solid;
+    border-color: #f5f5f5;
+}
+
+.highlight-source-java pre {
+    border-color: #f5f5f5;
+    padding: 0px;
+}
+
+
+/* Use smaller fonts as you go in the list structures */
+ul {
+    font-size: 100%;
+}
+
+ol {
+    font-size: 100%;
+}
+
+ul ul {
+    font-size: 80%;
+}
+
+ul ol {
+    font-size: 80%;
+}
+
+ol ul {
+    font-size: 80%;
+}
+
+ol ol {
+    font-size: 80%;
+}
+
+ul ul ul {
+    font-size: 80%;
+}
+
+ul ol ul {
+    font-size: 80%;
+}
+
+ol ul ul {
+    font-size: 80%;
+}
+
+ol ol ul {
+    font-size: 80%;
+}
+
+ul ul ol {
+    font-size: 80%;
+}
+
+ul ol ol {
+    font-size: 80%;
+}
+
+ol ul ol {
+    font-size: 80%;
+}
+
+ol ol ol {
+    font-size: 80%;
+}
+
+.dense {
+    font-size: 80%;
+}
+
+.dense-table {
+    width: 100%;
+    padding: 0;
+    border: 1px solid black;
+}
+
+.tcTable {
+    width: 100%;
+    padding: 10;
+    border: 1px solid black;
+}
+
+.tcTable tr {
+    border: 1px solid black;
+}
+
+.tcTable td {
+    border: 1px solid black;
+}
+
+.tcTable th {
+    border: 1px solid black;
+}
+
+/* *************************************
+ *	Block markups
+ *	- definition, remark
+ * *************************************/
+
+
+.tcShowHide {
+    background-color: gainsboro;
+    font-size: 80%;
+    text-align: left;
+    color: chocolate;
+}
+
+.tcShowHide::before {
+    content: "SH.";
+    /*    background-color: yellow;
+    */
+    color: red;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 80%;
+    text-shadow: 2px 2px darkgray;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.tcShowImplementation {
+    background-color: gainsboro;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 95%;
+    margin: 5px;
+    border-style: solid;
+
+    font-size: 70%;
+    text-align: left;
+    color: royalblue;
+}
+
+.tcShowImplementation::before {
+    /* content: "SI."; */
+    /*    background-color: yellow;
+    */
+    color: red;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 80%;
+    text-shadow: 2px 2px darkgray;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.tcShowAnswer {
+    background-color: gainsboro;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 95%;
+    margin: 5px;
+    border-style: solid;
+
+    font-size: 70%;
+    text-align: left;
+    color: seagreen;
+}
+
+.tcShowAnswer::before {
+    /* content: "SA."; */
+    /*    background-color: yellow;
+    */
+    color: red;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 80%;
+    text-shadow: 2px 2px darkgray;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+/* @HB need to be checked */
+.tcDoYouKnow {
+    background-color: gainsboro;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 20px;
+    border-style: solid;
+    font-size: 60%;
+    text-align: left;
+    color: chocolate;
+}
+
+.tcDoYouKnow::before {
+    content: "Do you know?";
+    /*    background-color: yellow;
+    */
+    color: red;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 80%;
+    text-shadow: 2px 2px darkgray;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+
+.tcDivCode {
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 20px;
+    border-style: solid;
+}
+
+.tcDivQuestion {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 20px;
+    border-style: solid;
+    /*font-size: 70%;*/
+    color: chocolate;
+}
+
+.tcDivQuestion::before {
+    content: "Q.";
+    /*    background-color: yellow;
+    */
+    color: red;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 80%;
+    text-shadow: 2px 2px darkgray;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.tcDivExample {
+    background-color: burlywood;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 20px;
+    border-style: solid;
+    font-size: 70%;
+}
+
+.tcDivExample::before {
+    content: "Ex.";
+    /*    background-color: yellow;
+    */
+    color: red;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 80%;
+    text-shadow: 2px 2px darkgray;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.tcDivDefinition {
+    background-color: #e6e6e6;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    margin: 10px;
+    border-style: solid;
+}
+
+.tcDivDefinition::before {
+    content: "Def.";
+    /*    background-color: yellow;
+    */
+    color: red;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 80%;
+    text-shadow: 2px 2px darkgray;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.tcDivTheorem {
+
+}
+
+/*
+.tcDivRemark {
+	background-color: #ffcc66;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+	width: 70%;
+	margin: 30px;
+	border-style: solid;
+}
+*/
+
+.tcDivRemark {
+    background-color: peachpuff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 20px;
+    border-style: solid;
+}
+
+.tcDivRemark::before {
+    content: "Rem.";
+    /*    background-color: yellow;
+    */
+    color: red;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 80%;
+    text-shadow: 2px 2px darkgray;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.tcDivAlgorithm {
+    background-color: #cornflowerblue;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    margin: 10px;
+    border-style: solid;
+    font-size: 80%;
+}
+
+.tcDivAlgorithm::before {
+    content: "Alg.";
+    /*    background-color: yellow;
+    */
+    color: red;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 80%;
+    text-shadow: 2px 2px darkgray;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.tcDivComputerOutput {
+    background-color: lightgrey;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.5);
+    width: 95%;
+    margin: 5px;
+    /*padding: 50px;*/
+    border-style: solid;
+    border-color: lightgrey;
+}
+
+.tcDivComputerOutput::before {
+    content: "CO.";
+    /*    background-color: yellow;
+    */
+    color: red;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 80%;
+    text-shadow: 2px 2px darkgray;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.tcDivComputerOutput pre {
+    background-color: lightgrey;
+    padding: 0px;
+}
+
+.tcDivCitation {
+    color: dodgerblue;
+    /*font-style: italic;*/
+    font-size: 60%;
+    text-align: right;
+}
+
+.tcDivCitation::before {
+    content: "tcDivCitation.";
+    /*    background-color: yellow;
+    */
+    color: red;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 80%;
+    text-shadow: 2px 2px darkgray;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+/* *************************************
+ *	indent code in div structure
+ * *************************************/
+
+div > pre {
+    margin: 5px;
+}
+
+/* *************************************
+ *	Inline markups
+ * *************************************/
+
+.tcEmp {
+    color: green;
+    font-style: italic;
+}
+
+.tcDefined {
+    color: #b3b3b3;
+    font-style: italic;
+}
+
+.tcCite {
+    color: dodgerblue;
+    /*font-style: italic;*/
+    font-size: 60%;
+    text-align: right;
+}
+
+
+/* *************************************
+ *	Outside links
+ * *************************************/
+
+.tcLinkedIcon {
+    height: 1em;
+    /*	height: 50px;
+        width: 50px;
+        max-width:40;
+    */
+}
+
+
+/* *************************************
+ *	testing
+ * *************************************/
+/*
+.table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table td, .table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+
+.table tr:hover {background-color: #ddd;}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+
+/* *************************************
+ *	sources
+ * *************************************/
+/*
+
+/*img{height: 1em;}
+https://stackoverflow.com/questions/15940338/is-there-a-way-via-css-to-set-the-image-height-to-the-line-height*/

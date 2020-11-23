@@ -1,0 +1,191 @@
+{
+  "Title Slide": {
+    "explanation": [
+      "[T: Slide Title]",
+      "markup:",
+      "#TV",
+      "running title",
+      "#TM",
+      "slide title",
+      "#TA",
+      "out:",
+      "<div class='tcDivTitle'>",
+      "  <p class='tcTitleRunning'>",
+      "    Running Title",
+      "  </p>",
+      "  <p class='tcTitleSlide'",
+      "    Slide Title",
+      "  </p>",
+      "</div>"
+    ],
+    "rule": {
+      "^#TV.*$": "\n<div class='zint-title'>\n<div class='zint-title-running'>\n",
+      "^#TM.*$": "\n</div>\n<div class='zint-title-slide'>\n",
+      "^#TA.*$": "\n</div>\n</div>\n"
+    }
+  },
+  "EditorSeparator": {
+    "explanation": [
+      "separator"
+    ],
+    "rule": {
+      "^#ES.*$": ""
+    }
+  },
+  "One Column": {
+    "explanation": [],
+    "rule": {
+      "^#1V$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-1'>",
+      "^#1A$": "</div>\n</div>\n"
+    }
+  },
+  "Two Columns": {
+    "explanation": [],
+    "rule": {
+      "^#2V$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-2-left'>",
+      "^#2M$": "\n</div>\n<div markdown='1' class='zint-2-right'>\n",
+      "^#2A$": "\n</div>\n</div>\n"
+    }
+  },
+  "Show / Hide": {
+    "explanation": [],
+    "rule": {
+      "^#SHV$": "\n<div class='softdev4u-answer tcShowHide'>",
+      "^#SHA$": "\n</div>"
+    }
+  },
+  "Show Answer": {
+    "explanation": [],
+    "rule": {
+      "^#SAV$": "\n<div class='softdev4u-answer tcShowAnswer'>",
+      "^#SAA$": "\n</div>"
+    }
+  },
+  "Show Implementation": {
+    "explanation": [],
+    "rule": {
+      "^#SIV$": "\n<div class='softdev4u-answer tcShowImplementation'>",
+      "^#SIA$": "\n</div>"
+    }
+  },
+  "Example": {
+    "explanation": [],
+    "rule": {
+      "^#EXV$": "<div class='tcDivExample'>",
+      "^#EXA$": "</div>"
+    }
+  },
+  "Separator": {
+    "rule": {
+      "^#SPV$": "<div class='softdev4u-mainTitle'>",
+      "^#SPA$": "</div>"
+    }
+  },
+  "Open Project": {
+    "enable-groups": true,
+    "rule": {
+      "^#OPV$": "<div class='softdev4u-openExampleDiv'",
+      "^#OP-language=([\\w\\d]+)$": "data-softdev4u-language='\\1'",
+      "^#OP-project=([\\w\\d-]+)$": "data-softdev4u-exampleName='\\1'",
+      "^#OP-filePath=([\\w\\d_/]+.[a-z]+)$": "data-softdev4u-filePath='\\1'",
+      "^#OP-lineNumber=([\\d]+)$": "data-softdev4u-lineNumber=\\1",
+      "^#OP-linkTitle=([\\w\\d\\s()-]+)$": "data-softdev4u-linkTitle='\\1'>",
+      "^#OPA$": "</div>"
+    }
+  },
+  "Do You Know": {
+    "rule": {
+      "^#DYKV$": "<div class='softdev4u-answer tcDoYouKnow'>",
+      "^#DYKA$": "</div>"
+    }
+  },
+  "Remark": {
+    "rule": {
+      "^#RV$": "<div class='tcDivRemark'>",
+      "^#RA$": "</div>"
+    }
+  },
+  "Question": {
+    "rule": {
+      "^#QV$": "<div class='tcDivQuestion'>",
+      "^#QA$": "</div>"
+    }
+  },
+  "Algorithm": {
+    "rule": {
+      "^#ALV$": "<div class='tcDivAlgorithm'>",
+      "^#ALA$": "</div>"
+    }
+  },
+  "Computer Output": {
+    "rule": {
+      "^#COV$": "<div class='tcDivComputerOutput'>",
+      "^#COA$": "</div>"
+    }
+  },
+  "Citation": {
+    "rule": {
+      "^#CIV$": "<div class='tcDivCitation'>",
+      "^#CIA$": "</div>"
+    }
+  },
+  "See": {
+    "rule": {
+      "^#SEV$": "<div class='tcDivSee'>",
+      "^#SEA$": "</div>"
+    }
+  },
+  "Definition": {
+    "rule": {
+      "^#DV$": "<div class='tcDivDefinition'>",
+      "^#DA$": "</div>"
+    }
+  },
+  "Syntax": {
+    "rule": {
+      "^#SYV$": "<div class='tcDivSyntax'>",
+      "^#SYA$": "</div>"
+    }
+  },
+  "Inline Defined": {
+    "rule": {
+      "dd{": "<span class='tcDefined'>",
+      "}dd": "</span>"
+    }
+  },
+  "Inline Syntax": {
+    "rule": {
+      "sy{": "<span class='tcSyntax'>",
+      "}sy": "</span>"
+    }
+  },
+  "Inline Emphasis": {
+    "rule": {
+      "ee{": "<span class='tcEmp'>",
+      "}ee": "</span>"
+    }
+  },
+  "Inline Keyword": {
+    "rule": {
+      "kw{": "<span class='tcKeyw' markdown='1'>",
+      "}kw": "</span>"
+    }
+  },
+  "Inline Citation": {
+    "rule": {
+      "cc{": "<span class='tcCite'>",
+      "}cc": "</span>"
+    }
+  },
+  "prism": {
+    "explanation": [],
+    "rule": {
+      "<pre class=\"bash\"><code>": "<pre><code class=\"language-bash line-numbers\">",
+      "<pre class=\"css\"><code>": "<pre><code class=\"language-css line-numbers\">",
+      "<pre class=\"html\"><code>": "<pre><code class=\"language-html line-numbers\">",
+      "<pre class=\"javascript\"><code>": "<pre><code class=\"language-javascript line-numbers\">",
+      "<pre class=\"latex\"><code>": "<pre><code class=\"language-latex line-numbers\">",
+      "<pre class=\"markdown\"><code>": "<pre><code class=\"language-markdown line-numbers\">"
+    }
+  }
+}

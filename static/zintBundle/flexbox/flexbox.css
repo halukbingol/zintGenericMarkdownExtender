@@ -1,0 +1,41 @@
+/*.very-bottom {*/
+/*    position: fixed;*/
+/*    bottom: 0;*/
+/*    width: 100vw;*/
+/*    height: 30px;*/
+/*    min-height: 30px;*/
+/*    background-color: #149494;*/
+/*}*/
+
+/*.very-top {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    width: 100vw;*/
+/*    height: 30px;*/
+/*    min-height: 30px;*/
+/*    background-color: #149494;*/
+/*}*/
+
+/*body {*/
+/*    margin: 0px;*/
+/*}*/
+
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    /*min-height: calc(100vh - 60px);*/
+}
+
+.flex-row > * {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: lightgray;
+    border-radius: 10px;
+    min-width: 200px;
+}
+
+/*.fc header,*/
+/*.fc footer {*/
+/*    flex: 0 1 100vw;*/
+/*}*/

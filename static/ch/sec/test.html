@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zint flexbox</title>
+    <link rel="stylesheet" href="../../zintBundle/flexbox/flexbox.css">
+
+    <link rel="stylesheet" href="../../zintBundle/prism/prism.css">
+    <script src="../../zintBundle/prism/prism.js"></script>
+
+    <script src="../../zintBundle/SnapSvg/snap.svg-min.js"></script>
+
+    <script src="../../zintBundle/zintContent/zintContent.js"></script>
+    <link rel="stylesheet" href="../../zintBundle/zintContent/zintContent.css">
+</head>
+<body>
+<div class="zint-page">
+<div class='zint-title'>
+<div class='zint-title-running'>
+
+<p>running</p>
+</div>
+<div class='zint-title-slide'>
+
+<p>slide</p>
+</div>
+</div>
+
+<div class="flex-row">
+<div markdown='1' class='zint-1'>
+Aaaa BBB
+</div>
+</div>
+
+<div class="flex-row">
+<div markdown='1' class='zint-2-left'>
+col L
+
+</div>
+<div markdown='1' class='zint-2-right'>
+
+<p>col R</p>
+</div>
+</div>
+
+<div class="flex-row">
+<div markdown='1' class='zint-1'>
+
+<ul>
+<li>aaa</li>
+<li>bbb</li>
+</ul>
+<ol>
+<li>aaa</li>
+<li>bbb</li>
+<li>ccc</li>
+</ol>
+<pre><code class="language-javascript line-numbers">let i = 3;
+let i = 3;
+</code></pre>
+<p>bbb dd{www</span> bbb</p>
+<p>aaa sy{eee</span> aaa</p>
+<p>aaa ee{eee</span> aaa</p>
+<p>aaa kw{eee</span> aaa</p>
+<p>aaa cc{eee</span> aaa</p>
+</div>
+</div>
+</div>
+</body>
+<script>
+    "use strict";
+
+    function init() {
+        // prettyPrint();
+        // softdev4uContent_init();
+        // softdev4u_init();
+        Prism.highlightAll();
+    }
+
+    init();
+</script>
+</html>
