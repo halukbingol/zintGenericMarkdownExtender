@@ -12,6 +12,7 @@ def update_directory(path_directory_source, path_directory_destination):
     # remove and copy destination
     p_path_destination = Path(path_directory_destination)
     subprocess.run(["rm", "-R", p_path_destination, "/dev/null"], capture_output=True)
+    subprocess.run(["mkdir", "-p", p_path_destination], capture_output=True)
     subprocess.run(["cp", "-r", path_directory_source, p_path_destination.parent], capture_output=True)
     return
 

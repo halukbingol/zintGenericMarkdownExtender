@@ -77,7 +77,7 @@
   },
   "Separator": {
     "rule": {
-      "^#SPV$": "<div class='softdev4u-mainTitle'>",
+      "^#SPV$": "<div class='zint-separator-page'>",
       "^#SPA$": "</div>"
     }
   },

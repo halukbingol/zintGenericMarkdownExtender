@@ -21,6 +21,24 @@ column_left = [
     ],
     [
         sg.Button(
+            button_text='zint_content',
+            key='update_zint_content'
+        )
+    ],
+    [
+        sg.Button(
+            button_text='zint_lib',
+            key='update_zint_lib'
+        )
+    ],
+    [
+        sg.Button(
+            button_text='zint_navigation',
+            key='update_zint_navigation'
+        )
+    ],
+    [
+        sg.Button(
             button_text='flexbox',
             key='update_flexbox'
         )
@@ -110,6 +128,27 @@ while True:
     if event == "Exit" or event == sg.WIN_CLOSED:
         break
 
+
+    # *********************************
+    # zint libraries
+    if event == 'update_zint_content':
+        path_to_md = values['path_to_md']
+        gui_process_update_lib_used(path_to_md, 'zintContent')
+        continue
+
+    if event == 'update_zint_lib':
+        path_to_md = values['path_to_md']
+        gui_process_update_lib_used(path_to_md, 'zintLib')
+        continue
+
+    if event == 'update_zint_navigation':
+        path_to_md = values['path_to_md']
+        gui_process_update_lib_used(path_to_md, 'zintNavigation')
+        # TODO copy index.html
+        continue
+
+    # *********************************
+    # external libraries
     if event == 'update_flexbox':
         path_to_md = values['path_to_md']
         gui_process_update_lib_used(path_to_md, 'flexbox')
