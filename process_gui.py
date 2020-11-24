@@ -3,20 +3,56 @@
 import os
 from pathlib import Path
 
-from config_constants import DIRECTORIES_TO_COPY, FILES_TO_SKIP
+from config_constants import DIRECTORIES_TO_COPY, FILES_TO_SKIP, HOME_FLEXBOX, HOME_MATH_JAX, HOME_PRISM, HOME_SNAP_SVG, \
+    ZINT_BUNDLE, LIB_FLEXBOX, LIB_SNAP_SVG, LIB_PRISM, LIB_MATH_JAX
 from process_convert import convert
 from process_path import get_corresponding_path_in_destination, \
-    get_corresponding_path_in_destination_to_html
-from process_file import update_zint_bundle, copy_file
+    get_corresponding_path_in_destination_to_html, get_path_to_source
+from process_file import update_zint_bundle, copy_file, update_directory
+
+
+def gui_process_update_lib_used(path_to_md, lib):
+    #  path to zintBundle
+    p_path_destination = get_path_to_source(path_to_md)
+    p_path_destination = get_corresponding_path_in_destination(p_path_destination)
+    p_path_destination = p_path_destination.joinpath(ZINT_BUNDLE)
+    # path to directory of the library
+    if lib == 'flexbox':
+        path_source = HOME_FLEXBOX
+        p_path_destination = p_path_destination.joinpath(LIB_FLEXBOX)
+    elif lib == 'math_jax':
+        path_source = HOME_MATH_JAX
+        p_path_destination = p_path_destination.joinpath(LIB_MATH_JAX)
+    elif lib == 'prism':
+        path_source = HOME_PRISM
+        p_path_destination = p_path_destination.joinpath(LIB_PRISM)
+    elif lib == 'snap_svg':
+        path_source = HOME_SNAP_SVG
+        p_path_destination = p_path_destination.joinpath(LIB_SNAP_SVG)
+
+    update_directory(path_source, p_path_destination)
+
+
+def gui_process_update_course_structure_js(path_to_md):
+    if path_to_md != "":
+        p_path_to_source = get_path_to_source(path_to_md)
+        p_path_via_source_to_course_structure_js = p_path_to_source.joinpath('courseStructure.js')
+        p_path_via_destination_to_course_structure_js \
+            = get_corresponding_path_in_destination(p_path_via_source_to_course_structure_js)
+        copy_file(p_path_via_source_to_course_structure_js, p_path_via_destination_to_course_structure_js.parent)
+        print("...courseStructure.js is updated")
 
 
 def gui_process_update_zint_bundle(path_to_md, option):
     if path_to_md != "":
-        path_to_destination = get_corresponding_path_in_destination(path_to_md)
+        path_to_destination = get_path_to_source(path_to_md)
+        path_to_destination = get_corresponding_path_in_destination(path_to_destination)
         if option != "":
             update_zint_bundle(path_to_destination)
+            print("...zintBundle is updated")
         else:
             update_zint_bundle(path_to_destination, option)
+            print("...zintBundle is updated with %s" % option)
 
 
 def gui_process_md(path_to_md):
@@ -53,9 +89,10 @@ def gui_process_sec(path_via_source_to_md):
                 # process md => html
                 # get file stem
                 p_tmp = Path(file)
-                file_name = p_tmp.stem
+                # file_name = p_tmp.stem
+                file_name = p_tmp.name
                 # convert
-                p_path_via_source_to_md = p_path_via_source_to_sec.joinpath(file_name + '.md')
+                p_path_via_source_to_md = p_path_via_source_to_sec.joinpath(file_name)
                 p_path_via_destination_to_html = get_corresponding_path_in_destination_to_html(p_path_via_source_to_md)
                 convert(p_path_via_source_to_md, p_path_via_destination_to_html)
 

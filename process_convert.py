@@ -47,6 +47,8 @@ def process_tc_to_md(text):
     f = open(CONFIG_CONVERSION)
     patterns = json.load(f)
 
+    # TODO inline markup such as `dd{aaa}dd` not working
+
     lines = text.splitlines()
     for i in range(len(lines)):
         # process each line

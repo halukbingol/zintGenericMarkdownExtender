@@ -19,16 +19,38 @@ PATH_TO_ZINT_NAVIGATION = PATH_ZINT_BUNDLE + '/zintNavigation'
 PATH_TO_INDEX_HTML = PATH_ZINT_BUNDLE + '/zintNavigation/index.html'
 
 # *************************************
+# homes
+# TODO remove zintBundle from gui
+ZINT_BUNDLE = 'zintBundle'
+HOME_ZINT_CONTENT = '/Users/bingol/Documents/workspace-WebStorm/zintContent/content/WebContent/zintBundle'
+HOME_ZINT_NAVIGATION = ''
+HOME_ZINT_LIB = ''
+# used libraries
+HOME_LIB_USED = '/Users/bingol/Documents/workspace-WebStorm/zintZzLibUsed/zintBundle'
+#
+LIB_FLEXBOX = 'flexbox'
+HOME_FLEXBOX = HOME_LIB_USED + '/' + LIB_FLEXBOX
+#
+LIB_MATH_JAX = 'MathJax'
+HOME_MATH_JAX = HOME_LIB_USED + '/' + LIB_MATH_JAX
+#
+LIB_PRISM = 'prism'
+HOME_PRISM = HOME_LIB_USED + '/' + LIB_PRISM
+#
+LIB_SNAP_SVG = 'SnapSvg'
+HOME_SNAP_SVG = HOME_LIB_USED + '/' + LIB_SNAP_SVG
+
+# *************************************
 # TODO move to save status(?) file
 # PATH_INIT_FOLDER = "/Users/bingol/Documents/"
-PATH_INIT_FOLDER = '/Users/bingol/Documents/tmp/course-zintML/source/chA/secA'
-
+# PATH_INIT_FOLDER = '/Users/bingol/Documents/tmp/course-zintML/source/chA/secA'
+# PATH_INIT_FOLDER = '/Users/bingol/Documents/workspace-WebStorm/course-swe596/source'
+PATH_INIT_FOLDER = '/Users/bingol/Documents/workspace-WebStorm/course-swe596'
 # *************************************
 # ExML language related
 # TODO support multiple ExML
-# LANGUAGE = "static/zintML"
+# LANGUAGE = "MyML"
 LANGUAGE = "zintML"
-LANGUAGE = "MyML"
 #
 # app configuration
 PATH_LANGUAGE = "static/" + LANGUAGE
