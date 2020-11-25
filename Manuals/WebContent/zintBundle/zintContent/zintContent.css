@@ -55,8 +55,12 @@
     color: chocolate;
 }
 
-.zint-1V {
+.zint-1 {
+/* 1-column ha no effect */
+}
 
+.zint-1V {
+/* TODO check if it is used. Then remove*/
 }
 
 /*.zint-1 ::before {*/
@@ -102,61 +106,61 @@
 
 
 /* Use smaller fonts as you go in the list structures */
-ul {
-    font-size: 100%;
-}
+/*ul {*/
+/*    font-size: 100%;*/
+/*}*/
 
-ol {
-    font-size: 100%;
-}
+/*ol {*/
+/*    font-size: 100%;*/
+/*}*/
 
-ul ul {
-    font-size: 80%;
-}
+/*ul ul {*/
+/*    font-size: 80%;*/
+/*}*/
 
-ul ol {
-    font-size: 80%;
-}
+/*ul ol {*/
+/*    font-size: 80%;*/
+/*}*/
 
-ol ul {
-    font-size: 80%;
-}
+/*ol ul {*/
+/*    font-size: 80%;*/
+/*}*/
 
-ol ol {
-    font-size: 80%;
-}
+/*ol ol {*/
+/*    font-size: 80%;*/
+/*}*/
 
-ul ul ul {
-    font-size: 80%;
-}
+/*ul ul ul {*/
+/*    font-size: 80%;*/
+/*}*/
 
-ul ol ul {
-    font-size: 80%;
-}
+/*ul ol ul {*/
+/*    font-size: 80%;*/
+/*}*/
 
-ol ul ul {
-    font-size: 80%;
-}
+/*ol ul ul {*/
+/*    font-size: 80%;*/
+/*}*/
 
-ol ol ul {
-    font-size: 80%;
-}
+/*ol ol ul {*/
+/*    font-size: 80%;*/
+/*}*/
 
-ul ul ol {
-    font-size: 80%;
-}
+/*ul ul ol {*/
+/*    font-size: 80%;*/
+/*}*/
 
-ul ol ol {
-    font-size: 80%;
-}
+/*ul ol ol {*/
+/*    font-size: 80%;*/
+/*}*/
 
-ol ul ol {
-    font-size: 80%;
-}
+/*ol ul ol {*/
+/*    font-size: 80%;*/
+/*}*/
 
-ol ol ol {
-    font-size: 80%;
-}
+/*ol ol ol {*/
+/*    font-size: 80%;*/
+/*}*/
 
 .dense {
     font-size: 80%;

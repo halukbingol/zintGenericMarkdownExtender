@@ -1,22 +1,7 @@
 {
   "Title Slide": {
-    "explanation": [
-      "[T: Slide Title]",
-      "markup:",
-      "#TV",
-      "running title",
-      "#TM",
-      "slide title",
-      "#TA",
-      "out:",
-      "<div class='tcDivTitle'>",
-      "  <p class='tcTitleRunning'>",
-      "    Running Title",
-      "  </p>",
-      "  <p class='tcTitleSlide'",
-      "    Slide Title",
-      "  </p>",
-      "</div>"
+    "comment": [
+      "T: Title of the slide"
     ],
     "rule": {
       "^#TV.*$": "\n<div class='zint-title'>\n<div class='zint-title-running'>\n",
@@ -25,63 +10,88 @@
     }
   },
   "EditorSeparator": {
-    "explanation": [
-      "separator"
+    "comment": [
+      "ES: Editor Separator.",
+      "Separator for content developer. It has no effect."
     ],
     "rule": {
       "^#ES.*$": ""
     }
   },
+  "Comment": {
+    "comment": [
+      "//: Comment",
+      "Comment for content developer. It has no effect."
+    ],
+    "rule": {
+      "^#//.*$": ""
+    }
+  },
   "One Column": {
-    "explanation": [],
+    "comment": [
+      "1: 1-column"
+    ],
     "rule": {
       "^#1V$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-1'>",
       "^#1A$": "</div>\n</div>\n"
     }
   },
   "Two Columns": {
-    "explanation": [],
+    "comment": [
+      "2: 2-column"
+    ],
     "rule": {
-      "^#2V$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-2-left'>",
-      "^#2M$": "\n</div>\n<div markdown='1' class='zint-2-right'>\n",
-      "^#2A$": "\n</div>\n</div>\n"
+      "^#2V.*$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-2-left'>",
+      "^#2M.*$": "\n</div>\n<div markdown='1' class='zint-2-right'>\n",
+      "^#2A.*$": "\n</div>\n</div>\n"
+    }
+  },
+  "Two Columns code visualization": {
+    "comment": [
+      "C&V: Code & Visualization",
+      "Derived from 2-column"
+    ],
+    "rule": {
+      "^#2C&V.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-2-left'>\n<h3 style='text-align:center'>code</h3>\n</div>\n<div markdown='1' class='zint-2-right'>\n<h3 style='text-align:center'>visualization</h3>\n</div>\n</div>"
     }
   },
   "Show / Hide": {
-    "explanation": [],
+    "comment": [],
     "rule": {
       "^#SHV$": "\n<div class='softdev4u-answer tcShowHide'>",
       "^#SHA$": "\n</div>"
     }
   },
   "Show Answer": {
-    "explanation": [],
+    "comment": [],
     "rule": {
       "^#SAV$": "\n<div class='softdev4u-answer tcShowAnswer'>",
       "^#SAA$": "\n</div>"
     }
   },
   "Show Implementation": {
-    "explanation": [],
+    "comment": [],
     "rule": {
       "^#SIV$": "\n<div class='softdev4u-answer tcShowImplementation'>",
       "^#SIA$": "\n</div>"
     }
   },
   "Example": {
-    "explanation": [],
+    "comment": [],
     "rule": {
       "^#EXV$": "<div class='tcDivExample'>",
       "^#EXA$": "</div>"
     }
   },
-  "Separator": {
+  "Separator Page": {
+    "comment": [],
     "rule": {
       "^#SPV$": "<div class='zint-separator-page'>",
       "^#SPA$": "</div>"
     }
   },
   "Open Project": {
+    "comment": [],
     "enable-groups": true,
     "rule": {
       "^#OPV$": "<div class='softdev4u-openExampleDiv'",
@@ -94,84 +104,98 @@
     }
   },
   "Do You Know": {
+    "comment": [],
     "rule": {
       "^#DYKV$": "<div class='softdev4u-answer tcDoYouKnow'>",
       "^#DYKA$": "</div>"
     }
   },
   "Remark": {
+    "comment": [],
     "rule": {
       "^#RV$": "<div class='tcDivRemark'>",
       "^#RA$": "</div>"
     }
   },
   "Question": {
+    "comment": [],
     "rule": {
       "^#QV$": "<div class='tcDivQuestion'>",
       "^#QA$": "</div>"
     }
   },
   "Algorithm": {
+    "comment": [],
     "rule": {
       "^#ALV$": "<div class='tcDivAlgorithm'>",
       "^#ALA$": "</div>"
     }
   },
   "Computer Output": {
+    "comment": [],
     "rule": {
       "^#COV$": "<div class='tcDivComputerOutput'>",
       "^#COA$": "</div>"
     }
   },
   "Citation": {
+    "comment": [],
     "rule": {
       "^#CIV$": "<div class='tcDivCitation'>",
       "^#CIA$": "</div>"
     }
   },
   "See": {
+    "comment": [],
     "rule": {
       "^#SEV$": "<div class='tcDivSee'>",
       "^#SEA$": "</div>"
     }
   },
   "Definition": {
+    "comment": [],
     "rule": {
       "^#DV$": "<div class='tcDivDefinition'>",
       "^#DA$": "</div>"
     }
   },
   "Syntax": {
+    "comment": [],
     "rule": {
       "^#SYV$": "<div class='tcDivSyntax'>",
       "^#SYA$": "</div>"
     }
   },
   "Inline Defined": {
+    "comment": [],
     "rule": {
       "dd{": "<span class='tcDefined'>",
       "}dd": "</span>"
     }
   },
   "Inline Syntax": {
+    "comment": [],
     "rule": {
       "sy{": "<span class='tcSyntax'>",
       "}sy": "</span>"
     }
   },
   "Inline Emphasis": {
+    "comment": [],
     "rule": {
       "ee{": "<span class='tcEmp'>",
       "}ee": "</span>"
     }
   },
   "Inline Keyword": {
+    "comment": [],
     "rule": {
       "kw{": "<span class='tcKeyw' markdown='1'>",
       "}kw": "</span>"
     }
   },
   "Inline Citation": {
+    "comment": [],
     "rule": {
       "cc{": "<span class='tcCite'>",
       "}cc": "</span>"
@@ -179,7 +203,9 @@
   },
   "prism": {
     "comment": [
-      "keep this"
+      "keep this",
+      "Library `pandoc` transfers md to html but it is not compatible with syntax highlighting library `prism`.",
+      "This makes the correction."
     ],
     "rule": {
       "<pre class=\"bash\"><code>": "<pre><code class=\"language-bash line-numbers\">",

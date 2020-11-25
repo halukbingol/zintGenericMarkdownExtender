@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zint content</title>
+    <link rel="stylesheet" href="../../zintBundle/flexbox/flexbox.css">
+
+    <link rel="stylesheet" href="../../zintBundle/prism/prism.css">
+    <script src="../../zintBundle/prism/prism.js"></script>
+
+    <script src="../../zintBundle/SnapSvg/snap.svg-min.js"></script>
+
+    <script src="../../zintBundle/zintContent/zintContent.js"></script>
+    <link rel="stylesheet" href="../../zintBundle/zintContent/zintContent.css">
+</head>
+<body>
+<div class="zint-page">
+
+<div class='zint-title'>
+<div class='zint-title-running'>
+
+<p>zint Markup Language (zintML)</p>
+</div>
+<div class='zint-title-slide'>
+
+<p>index page</p>
+</div>
+</div>
+
+<div class="flex-row">
+<div markdown='1' class='zint-1'>
+
+<h1>Introduction</h1>
+<p>There are three types of zintML commands.</p>
+<ul>
+<li>single line such as <code>//</code></li>
+<li>2-line such as <code>R</code></li>
+<li>3-line such as <code>2</code></li>
+</ul>
+<h1>Syntax</h1>
+<p>A zintML markup starts a</p>
+<ol>
+<li><code>#</code> at column 1</li>
+<li>one or more command codes starting column 2</li>
+<li>if it is 2-line
+<ol>
+<li><code>V</code> indicating the beginning a block (as if an arrow downwards)</li>
+<li><code>A</code> indicating the end of the block (as if an arrow upwards)</li>
+</ol></li>
+<li>if it is 3-line
+<ol>
+<li><code>V</code> indicating the beginning the first block (as if an arrow downwards)</li>
+<li><code>M</code> indicating the beginning the second block (comes from "Middle")</li>
+<li><code>A</code> indicating the end of the block (as if an arrow upwards)</li>
+</ol></li>
+</ol>
+<h2>Examples</h2>
+<h4>1-line</h4>
+<pre><code class="language-markdown line-numbers">    #// comment is 1-line
+</code></pre>
+<h4>2-line</h4>
+<pre><code class="language-markdown line-numbers">    #RV Remark is 2-line
+    aaa
+    #RA Remark is 2-line
+</code></pre>
+<h4>3-line</h4>
+<pre><code class="language-markdown line-numbers">    #2V 2-column is 3-line
+    aaa
+    #2M 2-column is 3-line
+    bbb
+    #2A 2-column is 3-line
+</code></pre>
+<pre><code class="language-markdown line-numbers">
+</code></pre>
+<h1>zintML tag list</h1>
+<ul>
+<li><a href="tag_comment.html">//</a></li>
+<li><a href="tag_2.html">2</a>
+<ul>
+<li><a href="tag_2_nested.html">2 nested</a></li>
+</ul></li>
+<li><a href="tag_ES.html">ES</a></li>
+<li><a href="tag_T.html">T</a></li>
+<li><a href="tag_R.html">R</a></li>
+</ul>
+</div>
+</div>
+</div>
+</body>
+<script>
+    "use strict";
+
+    function init() {
+        Prism.highlightAll();
+    }
+
+    init();
+</script>
+</html>

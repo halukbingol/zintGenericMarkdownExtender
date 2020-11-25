@@ -64,7 +64,7 @@ PATH_INIT_FOLDER = '/Users/bingol/Documents/workspace-WebStorm/course-swe596'
 LANGUAGE = "zintML"
 #
 # app configuration
-PATH_LANGUAGE = "static/" + LANGUAGE
+PATH_LANGUAGE = "static/" + LANGUAGE + '/' + SOURCE
 CONFIG_CONVERSION = PATH_LANGUAGE + "/config_extension_definitions.json"
 PATH_FIXED_F1 = PATH_LANGUAGE + "/ch/sec/template-f1.html"
 PATH_FIXED_F2 = PATH_LANGUAGE + "/ch/sec/template-f2.html"

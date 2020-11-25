@@ -7,11 +7,11 @@ tmp/*
 # static
 static/tcML/*
 # static/zintML
-static/zintML/zintBundle/*
-!static/zintML/zintBundle/flexbox
-!static/zintML/zintBundle/prism
-!static/zintML/zintBundle/zintContent
-!static/zintML/zintBundle/version.txt
+static/zintML/WebContent/zintBundle/*
+!static/zintML/WebContent/zintBundle/flexbox
+!static/zintML/WebContent/zintBundle/prism
+!static/zintML/WebContent/zintBundle/zintContent
+!static/zintML/WebContent/zintBundle/version.txt
 
 # tmp
 tmp/*
