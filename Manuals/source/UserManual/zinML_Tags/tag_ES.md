@@ -11,7 +11,7 @@ ES: Editor Separator
 
 #2V
 
-```html
+```markdown
     aaa
     #ES ~~~anything
     bbb

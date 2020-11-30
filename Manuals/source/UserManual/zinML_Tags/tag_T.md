@@ -11,7 +11,7 @@ zint Markup Language (zintML)
 
 #2V
 
-```html
+```markdown
     #TV
     Running heading
     #TM

@@ -1,4 +1,15 @@
 {
+  "zintML Definition": {
+    "comment": [
+      "Defines zintML extension of markdown",
+      "author: haluk bingol",
+      "email: bingol@boun.edu.tr",
+      "v2020-11-26"
+    ],
+    "rule": {
+      "^nop$": "nop"
+    }
+  },
   "Title Slide": {
     "comment": [
       "T: Title of the slide"
@@ -52,7 +63,7 @@
       "Derived from 2-column"
     ],
     "rule": {
-      "^#2C&V.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-2-left'>\n<h3 style='text-align:center'>code</h3>\n</div>\n<div markdown='1' class='zint-2-right'>\n<h3 style='text-align:center'>visualization</h3>\n</div>\n</div>"
+      "^#C&V.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-2-left'>\n<h3 style='text-align:center'>code</h3>\n</div>\n<div markdown='1' class='zint-2-right'>\n<h3 style='text-align:center'>visualization</h3>\n</div>\n</div>"
     }
   },
   "Show / Hide": {
@@ -104,7 +115,9 @@
     }
   },
   "Do You Know": {
-    "comment": [],
+    "comment": [
+      "Use for additional information."
+    ],
     "rule": {
       "^#DYKV$": "<div class='softdev4u-answer tcDoYouKnow'>",
       "^#DYKA$": "</div>"
@@ -118,10 +131,23 @@
     }
   },
   "Question": {
-    "comment": [],
+    "comment": [
+      "Question only"
+    ],
     "rule": {
       "^#QV$": "<div class='tcDivQuestion'>",
       "^#QA$": "</div>"
+    }
+  },
+  "Question and Answer": {
+    "comment": [
+      "Question with hidden Answer",
+      "Answer become visible by click"
+    ],
+    "rule": {
+      "^#Q&AV$": "<div class='tcDivQuestion'>",
+      "^#Q&AM$": "<div class='softdev4u-answer tcShowAnswer'>",
+      "^#Q&AA$": "</div></div>"
     }
   },
   "Algorithm": {
@@ -134,8 +160,8 @@
   "Computer Output": {
     "comment": [],
     "rule": {
-      "^#COV$": "<div class='tcDivComputerOutput'>",
-      "^#COA$": "</div>"
+      "^#COV$": "<div class='tcDivComputerOutput'><pre>",
+      "^#COA$": "</pre></div>"
     }
   },
   "Citation": {

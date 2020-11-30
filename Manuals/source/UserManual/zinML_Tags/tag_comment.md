@@ -16,7 +16,7 @@ bbb
 
 #2V
 
-```html
+```markdown
     aaa
     #// a comment by the content editor
     bbb

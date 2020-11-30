@@ -19,11 +19,11 @@
 <div class='zint-title'>
 <div class='zint-title-running'>
 
-<p>zint Markup Language (zintML)</p>
+<p>zint Markup Language (<code>zintML</code>)</p>
 </div>
 <div class='zint-title-slide'>
 
-<p>index page</p>
+<p>zintML Home Page</p>
 </div>
 </div>
 
@@ -38,10 +38,14 @@
 <li>3-line such as <code>2</code></li>
 </ul>
 <h1>Syntax</h1>
-<p>A zintML markup starts a</p>
+<p>A <code>zintML</code> markup composed of a number of charters starting at column one without any space.</p>
 <ol>
-<li><code>#</code> at column 1</li>
-<li>one or more command codes starting column 2</li>
+<li><code>#</code> at column 1 (as any MarkupML command)</li>
+<li>one or more op codes starting column 2</li>
+<li>if it is 1-line
+<ol>
+<li>nothing</li>
+</ol></li>
 <li>if it is 2-line
 <ol>
 <li><code>V</code> indicating the beginning a block (as if an arrow downwards)</li>
@@ -53,6 +57,7 @@
 <li><code>M</code> indicating the beginning the second block (comes from "Middle")</li>
 <li><code>A</code> indicating the end of the block (as if an arrow upwards)</li>
 </ol></li>
+<li>at least one space</li>
 </ol>
 <h2>Examples</h2>
 <h4>1-line</h4>
@@ -72,14 +77,22 @@
 </code></pre>
 <pre><code class="language-markdown line-numbers">
 </code></pre>
-<h1>zintML tag list</h1>
+<h1>List of <code>zintML</code> commands</h1>
+<h2>1-line commands</h2>
 <ul>
 <li><a href="tag_comment.html">//</a></li>
+<li><a href="tag_ES.html">ES</a></li>
+</ul>
+<h2>2-line commands</h2>
+<ul>
+<li><a href="tag_1.html">1</a></li>
+</ul>
+<h2>3-line commands</h2>
+<ul>
 <li><a href="tag_2.html">2</a>
 <ul>
 <li><a href="tag_2_nested.html">2 nested</a></li>
 </ul></li>
-<li><a href="tag_ES.html">ES</a></li>
 <li><a href="tag_T.html">T</a></li>
 <li><a href="tag_R.html">R</a></li>
 </ul>

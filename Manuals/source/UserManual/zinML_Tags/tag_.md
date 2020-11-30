@@ -3,16 +3,16 @@ zint Markup Language (zintML)
 #TM
 aaa
 #TA
-#ES~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#ES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
-#ES~~~~ code and visualization
-#2C&V
+#ES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#2C&V ~~~~ code and visualization
 
 #2V
 
-```html
+```markdown
 aaa
 ```
 

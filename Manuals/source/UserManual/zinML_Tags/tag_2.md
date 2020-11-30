@@ -15,7 +15,7 @@ zint Markup Language (zintML)
 
 #2V
 
-```html
+```markdown
     #2V
     Left column
     #2M

@@ -14,7 +14,7 @@ Nested 2-column
 
 #2V
 
-```html
+```markdown
     #2V
     Left column
     #2M
