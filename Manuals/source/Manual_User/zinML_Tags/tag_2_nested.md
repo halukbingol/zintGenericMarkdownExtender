@@ -10,7 +10,7 @@ Nested 2-column
 
 
 #ES~~~~ code and visualization
-#2C&V ~~~~~~ 2-column starts here
+#C&V ~~~~~~ 2-column starts here
 
 #2V
 

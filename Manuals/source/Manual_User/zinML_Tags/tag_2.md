@@ -11,7 +11,7 @@ zint Markup Language (zintML)
 
 
 #ES~~~~ code and visualization
-#2C&V
+#C&V
 
 #2V
 

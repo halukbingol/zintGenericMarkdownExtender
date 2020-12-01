@@ -327,23 +327,23 @@
     text-transform: uppercase;
 }
 
-.tcDivExample {
+.zint-content-example {
     background-color: burlywood;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 80%;
     margin: 20px;
     border-style: solid;
-    font-size: 70%;
+    /*font-size: 70%;*/
 }
 
-.tcDivExample::before {
+.zint-content-example::before {
     content: "Ex.";
     /*    background-color: yellow;
     */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-shadow: 2px 2px darkgray;
     text-align: right;
     text-decoration: underline;

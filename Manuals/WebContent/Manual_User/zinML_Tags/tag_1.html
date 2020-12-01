@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zint content</title>
+    <link rel="stylesheet" href="../../zintBundle/flexbox/flexbox.css">
+
+    <link rel="stylesheet" href="../../zintBundle/prism/prism.css">
+    <script src="../../zintBundle/prism/prism.js"></script>
+
+    <script src="../../zintBundle/SnapSvg/snap.svg-min.js"></script>
+
+    <script src="../../zintBundle/zintContent/zintContent.js"></script>
+    <link rel="stylesheet" href="../../zintBundle/zintContent/zintContent.css">
+</head>
+<body>
+<div class="zint-page">
+
+<div class='zint-content-title'>
+<div class='zint-content-title-running'>
+
+<p>zint Markup Language (zintML)</p>
+</div>
+<div class='zint-content-title-slide'>
+
+<p>Slide heading</p>
+</div>
+</div>
+
+<div class='flex-row'>
+<div markdown='1' class='zint-content-2-left'>
+<h3 style='text-align:center'>code</h3>
+</div>
+<div markdown='1' class='zint-content-2-right'>
+<h3 style='text-align:center'>visualization</h3>
+</div>
+</div>
+
+<div class="flex-row">
+<div markdown='1' class='zint-content-2-left'>
+
+<pre><code class="language-markdown line-numbers">    #1V
+    aaa
+    #1A
+</code></pre>
+</div>
+<div markdown='1' class='zint-content-2-right'>
+
+<div class="flex-row">
+<div markdown='1' class='zint-content-1'>
+aaa
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</body>
+<script>
+    "use strict";
+
+    function init() {
+        Prism.highlightAll();
+    }
+
+    init();
+</script>
+</html>

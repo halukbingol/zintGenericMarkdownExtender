@@ -1,7 +1,7 @@
 #TV
 zint Markup Language (zintML)
 #TM
-Comment
+EX Example
 #TA
 #ES~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -9,23 +9,21 @@ Comment
 #ES~~~~ code and visualization
 #C&V
 
+
 #2V
 
 ```markdown
+    #EXV
     aaa
-    #// a comment by the content editor
-    bbb
+    #EXA
 ```
 
 #2M
 
+#EXV
 aaa
-#// a comment by the content editor
-bbb
+#EXA
 
 #2A
 
-#RV
-Note that `#//` may cause a new `&lt;p&gt;`.
-#RA
 

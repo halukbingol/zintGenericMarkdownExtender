@@ -15,8 +15,8 @@
       "T: Title of the slide"
     ],
     "rule": {
-      "^#TV.*$": "\n<div class='zint-title'>\n<div class='zint-title-running'>\n",
-      "^#TM.*$": "\n</div>\n<div class='zint-title-slide'>\n",
+      "^#TV.*$": "\n<div class='zint-content-title'>\n<div class='zint-content-title-running'>\n",
+      "^#TM.*$": "\n</div>\n<div class='zint-content-title-slide'>\n",
       "^#TA.*$": "\n</div>\n</div>\n"
     }
   },
@@ -43,7 +43,7 @@
       "1: 1-column"
     ],
     "rule": {
-      "^#1V$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-1'>",
+      "^#1V$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-content-1'>",
       "^#1A$": "</div>\n</div>\n"
     }
   },
@@ -52,8 +52,8 @@
       "2: 2-column"
     ],
     "rule": {
-      "^#2V.*$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-2-left'>",
-      "^#2M.*$": "\n</div>\n<div markdown='1' class='zint-2-right'>\n",
+      "^#2V.*$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-content-2-left'>",
+      "^#2M.*$": "\n</div>\n<div markdown='1' class='zint-content-2-right'>\n",
       "^#2A.*$": "\n</div>\n</div>\n"
     }
   },
@@ -63,7 +63,7 @@
       "Derived from 2-column"
     ],
     "rule": {
-      "^#C&V.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-2-left'>\n<h3 style='text-align:center'>code</h3>\n</div>\n<div markdown='1' class='zint-2-right'>\n<h3 style='text-align:center'>visualization</h3>\n</div>\n</div>"
+      "^#C&V.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-content-2-left'>\n<h3 style='text-align:center'>code</h3>\n</div>\n<div markdown='1' class='zint-content-2-right'>\n<h3 style='text-align:center'>visualization</h3>\n</div>\n</div>"
     }
   },
   "Show / Hide": {
@@ -90,14 +90,14 @@
   "Example": {
     "comment": [],
     "rule": {
-      "^#EXV$": "<div class='tcDivExample'>",
+      "^#EXV$": "<div class='zint-content-example'>",
       "^#EXA$": "</div>"
     }
   },
   "Separator Page": {
     "comment": [],
     "rule": {
-      "^#SPV$": "<div class='zint-separator-page'>",
+      "^#SPV$": "<div class='zint-content-separator-page'>",
       "^#SPA$": "</div>"
     }
   },

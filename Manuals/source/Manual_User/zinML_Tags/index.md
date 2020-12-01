@@ -68,6 +68,8 @@ A `zintML` markup composed of a number of charters starting at column one withou
 ## 1-line commands
 - [//](tag_comment.html)
 - [ES](tag_ES.html)
+- [C&V](tag_CandV.html)
+- [R](tag_R.html)
 
 ## 2-line commands
 - [1](tag_1.html)
