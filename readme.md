@@ -1,5 +1,5 @@
 ---
-zintMarkdownExtender
+A Generic Markdown Extender zintMarkdownExtender
 ---
 
 # Goal
