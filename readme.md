@@ -1,13 +1,13 @@
 ---
-A Generic Markdown Extender zintMarkdownExtender
+A Generic Markdown Extender: zintGenericMarkdownExtender (zGME)
 ---
 
 # Goal
 Markdown is great.
 But wouldn't be nice to be able to extent it?
 
-This app provides an easy way to extend Markdown Markup Language (MarkdownML).
-The goal of this app is to be able to extend MarkdownML 
+This app provides an easy way to extend Markdown Markup Language (MarkdownML) in any way you desire.
+You can extend MarkdownML 
 by means of defining your own Extending Markup Language (ExML),
 which fits your requirements.
 It is relatively easy to define your own extension.
