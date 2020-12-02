@@ -43,8 +43,8 @@
       "1: 1-column"
     ],
     "rule": {
-      "^#1V$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-content-1'>",
-      "^#1A$": "</div>\n</div>\n"
+      "^#1V.*$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-content-1'>",
+      "^#1A.*$": "</div>\n</div>\n"
     }
   },
   "Two Columns": {
@@ -69,36 +69,36 @@
   "Show / Hide": {
     "comment": [],
     "rule": {
-      "^#SHV$": "\n<div class='zint-content-hide zint-content-show-hide'>",
-      "^#SHA$": "\n</div>"
+      "^#SHV.*$": "\n<div class='zint-content-hide zint-content-show-hide'>",
+      "^#SHA.*$": "\n</div>"
     }
   },
   "Show Answer": {
     "comment": [],
     "rule": {
-      "^#SAV$": "\n<div class='zint-content-hide zint-content-show-answer'>",
-      "^#SAA$": "\n</div>"
+      "^#SAV.*$": "\n<div class='zint-content-hide zint-content-show-answer'>",
+      "^#SAA.*$": "\n</div>"
     }
   },
   "Show Implementation": {
     "comment": [],
     "rule": {
-      "^#SIV$": "\n<div class='zint-content-hide zint-content-show-implementation'>",
-      "^#SIA$": "\n</div>"
+      "^#SIV.*$": "\n<div class='zint-content-hide zint-content-show-implementation'>",
+      "^#SIA.*$": "\n</div>"
     }
   },
   "Example": {
     "comment": [],
     "rule": {
-      "^#EXV$": "<div class='zint-content-example'>",
-      "^#EXA$": "</div>"
+      "^#EXV.*$": "<div class='zint-content-example'>",
+      "^#EXA.*$": "</div>"
     }
   },
   "Separator Page": {
     "comment": [],
     "rule": {
-      "^#SPV$": "<div class='zint-content-separator-page'>",
-      "^#SPA$": "</div>"
+      "^#SPV.*$": "<div class='zint-content-separator-page'>",
+      "^#SPA.*$": "</div>"
     }
   },
   "Open Project": {
@@ -119,15 +119,15 @@
       "Use for additional information."
     ],
     "rule": {
-      "^#DYKV$": "<div class='zint-content-hide zint-content-doyouknow'>",
-      "^#DYKA$": "</div>"
+      "^#DYKV.*$": "<div class='zint-content-hide zint-content-doyouknow'>",
+      "^#DYKA.*$": "</div>"
     }
   },
   "Remark": {
     "comment": [],
     "rule": {
-      "^#RV$": "<div class='zint-content-remark'>",
-      "^#RA$": "</div>"
+      "^#RV.*$": "<div class='zint-content-remark'>",
+      "^#RA.*$": "</div>"
     }
   },
   "Question": {
@@ -135,8 +135,8 @@
       "Question only"
     ],
     "rule": {
-      "^#QV$": "<div class='zint-content-computer-question'>",
-      "^#QA$": "</div>"
+      "^#QV.*$": "<div class='zint-content-computer-question'>",
+      "^#QA.*$": "</div>"
     }
   },
   "Question and Answer": {
@@ -145,51 +145,51 @@
       "Answer become visible by click"
     ],
     "rule": {
-      "^#Q&AV$": "<div class='zint-content-computer-question'>",
-      "^#Q&AM$": "<div class='zint-content-hide zint-content-show-answer'>",
-      "^#Q&AA$": "</div></div>"
+      "^#Q&AV.*$": "<div class='zint-content-computer-question'>",
+      "^#Q&AM.*$": "<div class='zint-content-hide zint-content-show-answer'>",
+      "^#Q&AA.*$": "</div></div>"
     }
   },
   "Algorithm": {
     "comment": [],
     "rule": {
-      "^#ALV$": "<div class='zint-content-algorithm'>",
-      "^#ALA$": "</div>"
+      "^#ALV.*$": "<div class='zint-content-algorithm'>",
+      "^#ALA.*$": "</div>"
     }
   },
   "Computer Output": {
     "comment": [],
     "rule": {
-      "^#COV$": "<div class='zint-content-computer-output'><pre>",
-      "^#COA$": "</pre></div>"
+      "^#COV.*$": "<div class='zint-content-computer-output'><pre>",
+      "^#COA.*$": "</pre></div>"
     }
   },
   "Citation": {
     "comment": [],
     "rule": {
-      "^#CIV$": "<div class='zint-content-citation'>",
-      "^#CIA$": "</div>"
+      "^#CIV.*$": "<div class='zint-content-citation'>",
+      "^#CIA.*$": "</div>"
     }
   },
   "See": {
     "comment": [],
     "rule": {
-      "^#SEV$": "<div class='zint-content-see'>",
-      "^#SEA$": "</div>"
+      "^#SEV.*$": "<div class='zint-content-see'>",
+      "^#SEA.*$": "</div>"
     }
   },
   "Definition": {
     "comment": [],
     "rule": {
-      "^#DV$": "<div class='zint-content-definition'>",
-      "^#DA$": "</div>"
+      "^#DV.*$": "<div class='zint-content-definition'>",
+      "^#DA.*$": "</div>"
     }
   },
   "Syntax": {
     "comment": [],
     "rule": {
-      "^#SYV$": "<div class='zint-content-syntax'>",
-      "^#SYA$": "</div>"
+      "^#SYV.*$": "<div class='zint-content-syntax'>",
+      "^#SYA.*$": "</div>"
     }
   },
   "Inline Defined": {

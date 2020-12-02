@@ -26,3 +26,4 @@ zz_testing_content/zintML/contentA/WebContent/zintBundle/*
 
 # IDE
 .idea/
+/venv/
