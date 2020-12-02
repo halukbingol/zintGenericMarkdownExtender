@@ -7,13 +7,13 @@
  * when who what
  *
  * 2015-03-05 hb
- * init
+ * - init
  *
  * 2015-05-04 hb
- * dense structures
+ * - dense structures
  *
  * 2017-12-31 hb
- * major revisions in all
+ * - major revisions in all
  *
  * 2018-01-06 hb
  * - shadow around java code only (highlight-source-java)
@@ -26,10 +26,18 @@
  * f- ont size adjustment in lists is removed.
  *
  * 2020-12-01 hb
- * - All font-size reduction are removed
- * - Naming convention zint-content-?
+ * - All font-size reduction are removed.
+ * - Naming convention zint-content-*.
+ * - All tc* are removed.
  *
  * *************************************/
+
+
+/*	indent code in div structure */
+/*div > pre {*/
+/*    margin: 5px;*/
+/*}*/
+
 
 .zint-page {
     /*nop*/
@@ -74,15 +82,15 @@
 }
 
 .zint-content-1 {
-
+    /*nop*/
 }
 
 .zint-content-2-left {
-
+    /*nop*/
 }
 
 .zint-content-2-right {
-
+    /*nop*/
 }
 
 
@@ -139,16 +147,18 @@
  *	Block markups
  *	- definition, remark
  * *************************************/
+.zint-content-hide {
+    /*nop*/
+}
 
-
-.tcShowHide {
+.zint-content-show-hide {
     background-color: gainsboro;
     /*font-size: 80%;*/
     text-align: left;
     color: chocolate;
 }
 
-.tcShowHide::before {
+.zint-content-show-hide::before {
     content: "SH.";
     /*    background-color: yellow;
     */
@@ -162,19 +172,18 @@
     text-transform: uppercase;
 }
 
-.tcShowImplementation {
+.zint-content-show-implementation {
     background-color: gainsboro;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 95%;
     margin: 5px;
     border-style: solid;
-
     /*font-size: 70%;*/
     text-align: left;
     color: royalblue;
 }
 
-.tcShowImplementation::before {
+.zint-content-show-implementation::before {
     /* content: "SI."; */
     /*    background-color: yellow;
     */
@@ -188,19 +197,18 @@
     text-transform: uppercase;
 }
 
-.tcShowAnswer {
+.zint-content-show-answer {
     background-color: gainsboro;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 95%;
     margin: 5px;
     border-style: solid;
-
     /*font-size: 70%;*/
     text-align: left;
     color: seagreen;
 }
 
-.tcShowAnswer::before {
+.zint-content-show-answer::before {
     /* content: "SA."; */
     /*    background-color: yellow;
     */
@@ -215,7 +223,7 @@
 }
 
 /* @HB need to be checked */
-.tcDoYouKnow {
+.zint-content-doyouknow {
     background-color: gainsboro;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 80%;
@@ -226,7 +234,7 @@
     color: chocolate;
 }
 
-.tcDoYouKnow::before {
+.zint-content-doyouknow::before {
     content: "Do you know?";
     /*    background-color: yellow;
     */
@@ -241,15 +249,15 @@
 }
 
 
-.tcDivCode {
-    background-color: white;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    width: 80%;
-    margin: 20px;
-    border-style: solid;
-}
+/*.tcDivCode {*/
+/*    background-color: white;*/
+/*    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);*/
+/*    width: 80%;*/
+/*    margin: 20px;*/
+/*    border-style: solid;*/
+/*}*/
 
-.tcDivQuestion {
+.zint-content-computer-output {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 80%;
     margin: 20px;
@@ -258,7 +266,7 @@
     color: chocolate;
 }
 
-.tcDivQuestion::before {
+.zint-content-computer-output::before {
     content: "Q.";
     /*    background-color: yellow;
     */
@@ -295,7 +303,7 @@
     text-transform: uppercase;
 }
 
-.tcDivDefinition {
+.zint-content-definition {
     background-color: #e6e6e6;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 90%;
@@ -303,7 +311,7 @@
     border-style: solid;
 }
 
-.tcDivDefinition::before {
+.zint-content-definition::before {
     content: "Def.";
     /*    background-color: yellow;
     */
@@ -317,21 +325,11 @@
     text-transform: uppercase;
 }
 
-.tcDivTheorem {
-
+.zint-content-theorem {
+    /*nop*/
 }
 
-/*
-.tcDivRemark {
-	background-color: #ffcc66;
-	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-	width: 70%;
-	margin: 30px;
-	border-style: solid;
-}
-*/
-
-.tcDivRemark {
+.zint-content-remark {
     background-color: peachpuff;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 80%;
@@ -339,7 +337,7 @@
     border-style: solid;
 }
 
-.tcDivRemark::before {
+.zint-content-remark::before {
     content: "Rem.";
     /*    background-color: yellow;
     */
@@ -353,7 +351,7 @@
     text-transform: uppercase;
 }
 
-.tcDivAlgorithm {
+.zint-content-algorithm {
     background-color: cornflowerblue;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 90%;
@@ -362,7 +360,7 @@
     /*font-size: 80%;*/
 }
 
-.tcDivAlgorithm::before {
+.zint-content-algorithm::before {
     content: "Alg.";
     /*    background-color: yellow;
     */
@@ -376,7 +374,7 @@
     text-transform: uppercase;
 }
 
-.tcDivComputerOutput {
+.zint-content-computer-output {
     background-color: lightgrey;
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.5);
     width: 95%;
@@ -386,10 +384,8 @@
     border-color: lightgrey;
 }
 
-.tcDivComputerOutput::before {
+.zint-content-computer-output::before {
     content: "CO.";
-    /*    background-color: yellow;
-    */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
@@ -400,20 +396,20 @@
     text-transform: uppercase;
 }
 
-.tcDivComputerOutput pre {
+.zint-content-computer-output pre {
     background-color: lightgrey;
     padding: 0;
 }
 
-.tcDivCitation {
+.zint-content-citation {
     color: dodgerblue;
     /*font-style: italic;*/
     /*font-size: 60%;*/
     text-align: right;
 }
 
-.tcDivCitation::before {
-    content: "tcDivCitation.";
+.zint-content-citation::before {
+    content: "Citation.";
     /*    background-color: yellow;
     */
     color: red;
@@ -426,35 +422,42 @@
     text-transform: uppercase;
 }
 
-/* *************************************
- *	indent code in div structure
- * *************************************/
+.zint-content-see{
+    /*nop*/
+}
 
-div > pre {
-    margin: 5px;
+.zint-content-syntax {
+    /*nop*/
 }
 
 /* *************************************
  *	Inline markups
  * *************************************/
 
-.tcEmp {
+.zint-content-inline-emphasis {
     color: green;
     font-style: italic;
 }
 
-.tcDefined {
+.zint-content-inline-defined {
     color: #b3b3b3;
     font-style: italic;
 }
 
-.tcCite {
+.zint-content-inline-cite {
     color: dodgerblue;
     /*font-style: italic;*/
     /*font-size: 60%;*/
     text-align: right;
 }
 
+.zint-content-inline-syntax {
+    color: dodgerblue;
+}
+
+.zint-content-inline-keyword{
+    /*nop*/
+}
 
 /* *************************************
  *	Outside links

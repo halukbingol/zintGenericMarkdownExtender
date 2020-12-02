@@ -69,21 +69,21 @@
   "Show / Hide": {
     "comment": [],
     "rule": {
-      "^#SHV$": "\n<div class='softdev4u-answer tcShowHide'>",
+      "^#SHV$": "\n<div class='zint-content-hide zint-content-show-hide'>",
       "^#SHA$": "\n</div>"
     }
   },
   "Show Answer": {
     "comment": [],
     "rule": {
-      "^#SAV$": "\n<div class='softdev4u-answer tcShowAnswer'>",
+      "^#SAV$": "\n<div class='zint-content-hide zint-content-show-answer'>",
       "^#SAA$": "\n</div>"
     }
   },
   "Show Implementation": {
     "comment": [],
     "rule": {
-      "^#SIV$": "\n<div class='softdev4u-answer tcShowImplementation'>",
+      "^#SIV$": "\n<div class='zint-content-hide zint-content-show-implementation'>",
       "^#SIA$": "\n</div>"
     }
   },
@@ -119,14 +119,14 @@
       "Use for additional information."
     ],
     "rule": {
-      "^#DYKV$": "<div class='softdev4u-answer tcDoYouKnow'>",
+      "^#DYKV$": "<div class='zint-content-hide zint-content-doyouknow'>",
       "^#DYKA$": "</div>"
     }
   },
   "Remark": {
     "comment": [],
     "rule": {
-      "^#RV$": "<div class='tcDivRemark'>",
+      "^#RV$": "<div class='zint-content-remark'>",
       "^#RA$": "</div>"
     }
   },
@@ -135,7 +135,7 @@
       "Question only"
     ],
     "rule": {
-      "^#QV$": "<div class='tcDivQuestion'>",
+      "^#QV$": "<div class='zint-content-computer-question'>",
       "^#QA$": "</div>"
     }
   },
@@ -145,85 +145,85 @@
       "Answer become visible by click"
     ],
     "rule": {
-      "^#Q&AV$": "<div class='tcDivQuestion'>",
-      "^#Q&AM$": "<div class='softdev4u-answer tcShowAnswer'>",
+      "^#Q&AV$": "<div class='zint-content-computer-question'>",
+      "^#Q&AM$": "<div class='zint-content-hide zint-content-show-answer'>",
       "^#Q&AA$": "</div></div>"
     }
   },
   "Algorithm": {
     "comment": [],
     "rule": {
-      "^#ALV$": "<div class='tcDivAlgorithm'>",
+      "^#ALV$": "<div class='zint-content-algorithm'>",
       "^#ALA$": "</div>"
     }
   },
   "Computer Output": {
     "comment": [],
     "rule": {
-      "^#COV$": "<div class='tcDivComputerOutput'><pre>",
+      "^#COV$": "<div class='zint-content-computer-output'><pre>",
       "^#COA$": "</pre></div>"
     }
   },
   "Citation": {
     "comment": [],
     "rule": {
-      "^#CIV$": "<div class='tcDivCitation'>",
+      "^#CIV$": "<div class='zint-content-citation'>",
       "^#CIA$": "</div>"
     }
   },
   "See": {
     "comment": [],
     "rule": {
-      "^#SEV$": "<div class='tcDivSee'>",
+      "^#SEV$": "<div class='zint-content-see'>",
       "^#SEA$": "</div>"
     }
   },
   "Definition": {
     "comment": [],
     "rule": {
-      "^#DV$": "<div class='tcDivDefinition'>",
+      "^#DV$": "<div class='zint-content-definition'>",
       "^#DA$": "</div>"
     }
   },
   "Syntax": {
     "comment": [],
     "rule": {
-      "^#SYV$": "<div class='tcDivSyntax'>",
+      "^#SYV$": "<div class='zint-content-syntax'>",
       "^#SYA$": "</div>"
     }
   },
   "Inline Defined": {
     "comment": [],
     "rule": {
-      "dd{": "<span class='tcDefined'>",
+      "dd{": "<span class='zint-content-inline-defined'>",
       "}dd": "</span>"
     }
   },
   "Inline Syntax": {
     "comment": [],
     "rule": {
-      "sy{": "<span class='tcSyntax'>",
+      "sy{": "<span class='zint-content-inline-syntax'>",
       "}sy": "</span>"
     }
   },
   "Inline Emphasis": {
     "comment": [],
     "rule": {
-      "ee{": "<span class='tcEmp'>",
+      "ee{": "<span class='zint-content-inline-emphasis'>",
       "}ee": "</span>"
     }
   },
   "Inline Keyword": {
     "comment": [],
     "rule": {
-      "kw{": "<span class='tcKeyw' markdown='1'>",
+      "kw{": "<span class='zint-content-inline-keyword'>",
       "}kw": "</span>"
     }
   },
   "Inline Citation": {
     "comment": [],
     "rule": {
-      "cc{": "<span class='tcCite'>",
+      "cc{": "<span class='zint-content-inline-cite'>",
       "}cc": "</span>"
     }
   },

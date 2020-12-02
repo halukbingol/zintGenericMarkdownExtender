@@ -6,29 +6,55 @@
  * version history
  * when who what
  *
- * 20150305 hb
- * init
+ * 2015-03-05 hb
+ * - init
  *
- * 20150504 hb
- * dense structures
+ * 2015-05-04 hb
+ * - dense structures
  *
- * 20171231 hb
- * major revisions in all
+ * 2017-12-31 hb
+ * - major revisions in all
  *
- * 20180106 hb
+ * 2018-01-06 hb
  * - shadow around java code only (highlight-source-java)
  * - shadow around computer output (tcDivComputerOutput pre)
  *
- * 20201103 hb
+ * 2020-11-03 hb
  * - tcTitle font size is increased
+ *
+ * 2020-11-23 hb
+ * f- ont size adjustment in lists is removed.
+ *
+ * 2020-12-01 hb
+ * - All font-size reduction are removed.
+ * - Naming convention zint-content-*.
+ * - All tc* are removed.
  *
  * *************************************/
 
-.zint-page {
 
+/*	indent code in div structure */
+/*div > pre {*/
+/*    margin: 5px;*/
+/*}*/
+
+
+.zint-page {
+    /*nop*/
 }
 
-.zint-title {
+.zint-content-separator-page {
+    font-family: verdana, sans-serif;
+    font-size: 40px;
+    color: #428bca;
+    text-align: center;
+    display: table-cell;
+    height: 90vh;
+    vertical-align: middle;
+    width: 100vw;
+}
+
+.zint-content-title {
     margin: 10px;
     padding: 20px;
     background-color: cornsilk;
@@ -37,42 +63,34 @@
     border-radius: 10px;
 }
 
-.zint-title p {
-    margin: 0px;
-    padding: 0px;
+.zint-content-title p {
+    margin: 0;
+    padding: 0;
     /*background-color: palevioletred;*/
 }
 
-.zint-title-running {
+.zint-content-title-running {
     font-size: 150%;
     text-align: right;
     color: darkgray;
 }
 
-.zint-title-slide {
+.zint-content-title-slide {
     font-size: 200%;
     text-align: left;
     color: chocolate;
 }
 
-.zint-1 {
-    border-style: dotted;
-    border-color: #2a6496;
-    border-radius: 10px;
+.zint-content-1 {
+    /*nop*/
 }
 
-
-.zint-2-left {
-    border-style: dashed;
-    border-color: #cc6666;
-    border-radius: 10px;
+.zint-content-2-left {
+    /*nop*/
 }
 
-
-.zint-2-right {
-    border-style: solid;
-    border-color: #cc6666;
-    border-radius: 10px;
+.zint-content-2-right {
+    /*nop*/
 }
 
 
@@ -94,65 +112,7 @@
 
 .highlight-source-java pre {
     border-color: #f5f5f5;
-    padding: 0px;
-}
-
-
-/* Use smaller fonts as you go in the list structures */
-ul {
-    font-size: 100%;
-}
-
-ol {
-    font-size: 100%;
-}
-
-ul ul {
-    font-size: 80%;
-}
-
-ul ol {
-    font-size: 80%;
-}
-
-ol ul {
-    font-size: 80%;
-}
-
-ol ol {
-    font-size: 80%;
-}
-
-ul ul ul {
-    font-size: 80%;
-}
-
-ul ol ul {
-    font-size: 80%;
-}
-
-ol ul ul {
-    font-size: 80%;
-}
-
-ol ol ul {
-    font-size: 80%;
-}
-
-ul ul ol {
-    font-size: 80%;
-}
-
-ul ol ol {
-    font-size: 80%;
-}
-
-ol ul ol {
-    font-size: 80%;
-}
-
-ol ol ol {
-    font-size: 80%;
+    padding: 0;
 }
 
 .dense {
@@ -167,7 +127,7 @@ ol ol ol {
 
 .tcTable {
     width: 100%;
-    padding: 10;
+    padding: 10px;
     border: 1px solid black;
 }
 
@@ -187,75 +147,75 @@ ol ol ol {
  *	Block markups
  *	- definition, remark
  * *************************************/
+.zint-content-hide {
+    /*nop*/
+}
 
-
-.tcShowHide {
+.zint-content-show-hide {
     background-color: gainsboro;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-align: left;
     color: chocolate;
 }
 
-.tcShowHide::before {
+.zint-content-show-hide::before {
     content: "SH.";
     /*    background-color: yellow;
     */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-shadow: 2px 2px darkgray;
     text-align: right;
     text-decoration: underline;
     text-transform: uppercase;
 }
 
-.tcShowImplementation {
+.zint-content-show-implementation {
     background-color: gainsboro;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 95%;
     margin: 5px;
     border-style: solid;
-
-    font-size: 70%;
+    /*font-size: 70%;*/
     text-align: left;
     color: royalblue;
 }
 
-.tcShowImplementation::before {
+.zint-content-show-implementation::before {
     /* content: "SI."; */
     /*    background-color: yellow;
     */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-shadow: 2px 2px darkgray;
     text-align: right;
     text-decoration: underline;
     text-transform: uppercase;
 }
 
-.tcShowAnswer {
+.zint-content-show-answer {
     background-color: gainsboro;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 95%;
     margin: 5px;
     border-style: solid;
-
-    font-size: 70%;
+    /*font-size: 70%;*/
     text-align: left;
     color: seagreen;
 }
 
-.tcShowAnswer::before {
+.zint-content-show-answer::before {
     /* content: "SA."; */
     /*    background-color: yellow;
     */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-shadow: 2px 2px darkgray;
     text-align: right;
     text-decoration: underline;
@@ -263,25 +223,25 @@ ol ol ol {
 }
 
 /* @HB need to be checked */
-.tcDoYouKnow {
+.zint-content-doyouknow {
     background-color: gainsboro;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 80%;
     margin: 20px;
     border-style: solid;
-    font-size: 60%;
+    /*font-size: 60%;*/
     text-align: left;
     color: chocolate;
 }
 
-.tcDoYouKnow::before {
+.zint-content-doyouknow::before {
     content: "Do you know?";
     /*    background-color: yellow;
     */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-shadow: 2px 2px darkgray;
     text-align: right;
     text-decoration: underline;
@@ -289,15 +249,15 @@ ol ol ol {
 }
 
 
-.tcDivCode {
-    background-color: white;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    width: 80%;
-    margin: 20px;
-    border-style: solid;
-}
+/*.tcDivCode {*/
+/*    background-color: white;*/
+/*    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);*/
+/*    width: 80%;*/
+/*    margin: 20px;*/
+/*    border-style: solid;*/
+/*}*/
 
-.tcDivQuestion {
+.zint-content-computer-output {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 80%;
     margin: 20px;
@@ -306,44 +266,44 @@ ol ol ol {
     color: chocolate;
 }
 
-.tcDivQuestion::before {
+.zint-content-computer-output::before {
     content: "Q.";
     /*    background-color: yellow;
     */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-shadow: 2px 2px darkgray;
     text-align: right;
     text-decoration: underline;
     text-transform: uppercase;
 }
 
-.tcDivExample {
+.zint-content-example {
     background-color: burlywood;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 80%;
     margin: 20px;
     border-style: solid;
-    font-size: 70%;
+    /*font-size: 70%;*/
 }
 
-.tcDivExample::before {
+.zint-content-example::before {
     content: "Ex.";
     /*    background-color: yellow;
     */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-shadow: 2px 2px darkgray;
     text-align: right;
     text-decoration: underline;
     text-transform: uppercase;
 }
 
-.tcDivDefinition {
+.zint-content-definition {
     background-color: #e6e6e6;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 90%;
@@ -351,35 +311,25 @@ ol ol ol {
     border-style: solid;
 }
 
-.tcDivDefinition::before {
+.zint-content-definition::before {
     content: "Def.";
     /*    background-color: yellow;
     */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-shadow: 2px 2px darkgray;
     text-align: right;
     text-decoration: underline;
     text-transform: uppercase;
 }
 
-.tcDivTheorem {
-
+.zint-content-theorem {
+    /*nop*/
 }
 
-/*
-.tcDivRemark {
-	background-color: #ffcc66;
-	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-	width: 70%;
-	margin: 30px;
-	border-style: solid;
-}
-*/
-
-.tcDivRemark {
+.zint-content-remark {
     background-color: peachpuff;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 80%;
@@ -387,44 +337,44 @@ ol ol ol {
     border-style: solid;
 }
 
-.tcDivRemark::before {
+.zint-content-remark::before {
     content: "Rem.";
     /*    background-color: yellow;
     */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-shadow: 2px 2px darkgray;
     text-align: right;
     text-decoration: underline;
     text-transform: uppercase;
 }
 
-.tcDivAlgorithm {
-    background-color: #cornflowerblue;
+.zint-content-algorithm {
+    background-color: cornflowerblue;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     width: 90%;
     margin: 10px;
     border-style: solid;
-    font-size: 80%;
+    /*font-size: 80%;*/
 }
 
-.tcDivAlgorithm::before {
+.zint-content-algorithm::before {
     content: "Alg.";
     /*    background-color: yellow;
     */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-shadow: 2px 2px darkgray;
     text-align: right;
     text-decoration: underline;
     text-transform: uppercase;
 }
 
-.tcDivComputerOutput {
+.zint-content-computer-output {
     background-color: lightgrey;
     box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.5);
     width: 95%;
@@ -434,75 +384,80 @@ ol ol ol {
     border-color: lightgrey;
 }
 
-.tcDivComputerOutput::before {
+.zint-content-computer-output::before {
     content: "CO.";
-    /*    background-color: yellow;
-    */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-shadow: 2px 2px darkgray;
     text-align: right;
     text-decoration: underline;
     text-transform: uppercase;
 }
 
-.tcDivComputerOutput pre {
+.zint-content-computer-output pre {
     background-color: lightgrey;
-    padding: 0px;
+    padding: 0;
 }
 
-.tcDivCitation {
+.zint-content-citation {
     color: dodgerblue;
     /*font-style: italic;*/
-    font-size: 60%;
+    /*font-size: 60%;*/
     text-align: right;
 }
 
-.tcDivCitation::before {
-    content: "tcDivCitation.";
+.zint-content-citation::before {
+    content: "Citation.";
     /*    background-color: yellow;
     */
     color: red;
     letter-spacing: 3px;
     font-weight: bold;
-    font-size: 80%;
+    /*font-size: 80%;*/
     text-shadow: 2px 2px darkgray;
     text-align: right;
     text-decoration: underline;
     text-transform: uppercase;
 }
 
-/* *************************************
- *	indent code in div structure
- * *************************************/
+.zint-content-see{
+    /*nop*/
+}
 
-div > pre {
-    margin: 5px;
+.zint-content-syntax {
+    /*nop*/
 }
 
 /* *************************************
  *	Inline markups
  * *************************************/
 
-.tcEmp {
+.zint-content-inline-emphasis {
     color: green;
     font-style: italic;
 }
 
-.tcDefined {
+.zint-content-inline-defined {
     color: #b3b3b3;
     font-style: italic;
 }
 
-.tcCite {
+.zint-content-inline-cite {
     color: dodgerblue;
     /*font-style: italic;*/
-    font-size: 60%;
+    /*font-size: 60%;*/
     text-align: right;
 }
 
+.zint-content-inline-syntax {
+    color: dodgerblue;
+}
+
+.zint-content-inline-keyword{
+    /*nop*/
+}
 
 /* *************************************
  *	Outside links
