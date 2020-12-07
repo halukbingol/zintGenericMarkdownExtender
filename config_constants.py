@@ -23,10 +23,13 @@ ZINT_BUNDLE = 'zintBundle'
 # *************************************
 # zint libraries
 PATH_WS = '/Users/bingol/Documents/workspace-WebStorm/'
+PATH_PC = '/Users/bingol/Documents/workspace-PyCharm/'
 PATH_MIDDLE = '/content/WebContent/zintBundle/'
+
 #
 LIB_ZINT_CONTENT = 'zintContent'
-HOME_ZINT_CONTENT = PATH_WS + LIB_ZINT_CONTENT + PATH_MIDDLE + LIB_ZINT_CONTENT
+# HOME_ZINT_CONTENT = PATH_PC + LIB_ZINT_CONTENT + PATH_MIDDLE + LIB_ZINT_CONTENT
+HOME_ZINT_CONTENT = PATH_PC + 'zintGenericMarkdownExtender/' + 'static/zintML/WebContent/zintBundle/' + LIB_ZINT_CONTENT
 #
 LIB_ZINT_NAVIGATION = 'zintNavigation'
 HOME_ZINT_NAVIGATION = PATH_WS + LIB_ZINT_NAVIGATION + PATH_MIDDLE + LIB_ZINT_NAVIGATION
