@@ -57,13 +57,13 @@
       "^#2A.*$": "\n</div>\n</div>\n"
     }
   },
-  "Two Columns code visualization": {
+  "Two Columns: Code and Visualization": {
     "comment": [
       "C&V: Code & Visualization",
       "Derived from 2-column"
     ],
     "rule": {
-      "^#C&V.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-content-2-left'>\n<h3 style='text-align:center'>code</h3>\n</div>\n<div markdown='1' class='zint-content-2-right'>\n<h3 style='text-align:center'>visualization</h3>\n</div>\n</div>"
+      "^#C&V.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-content-2-left'>\n<h3 class='zint-content-center'>code</h3>\n</div>\n<div markdown='1' class='zint-content-2-right'>\n<h3 class='zint-content-center'>visualization</h3>\n</div>\n</div>"
     }
   },
    "Three Columns": {
@@ -75,6 +75,15 @@
       "^#3M.*$": "\n</div>\n<div markdown='1' class='zint-content-3-middle'>\n",
       "^#3R.*$": "\n</div>\n<div markdown='1' class='zint-content-3-right'>\n",
       "^#3A.*$": "\n</div>\n</div>\n"
+    }
+  },
+  "Three Columns: Html and Css and Javascript": {
+    "comment": [
+      "H&C&J: Html & Css & Javascript",
+      "Derived from 3-column"
+    ],
+    "rule": {
+      "^#H&C&J.*$": "<div class=\"flex-row\"><div markdown='1' class='zint-content-3-left'><h3 class='zint-content-center'>HTML</h3></div><div markdown='1' class='zint-content-3-middle'><h3 class='zint-content-center'>CSS</h3></div><div markdown='1' class='zint-content-3-right'><h3 class='zint-content-center'>Javascript</h3></div></div>"
     }
   },
  "Show / Hide": {

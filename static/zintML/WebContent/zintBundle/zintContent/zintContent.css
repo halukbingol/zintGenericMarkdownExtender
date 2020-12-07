@@ -105,6 +105,9 @@
     /*nop*/
 }
 
+.zint-content-center{
+    text-align: center;
+}
 
 /* ************************************
  * Old below
