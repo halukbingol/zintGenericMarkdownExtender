@@ -66,7 +66,18 @@
       "^#C&V.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-content-2-left'>\n<h3 style='text-align:center'>code</h3>\n</div>\n<div markdown='1' class='zint-content-2-right'>\n<h3 style='text-align:center'>visualization</h3>\n</div>\n</div>"
     }
   },
-  "Show / Hide": {
+   "Three Columns": {
+    "comment": [
+      "3: 3-column"
+    ],
+    "rule": {
+      "^#3V.*$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-content-3-left'>",
+      "^#3M.*$": "\n</div>\n<div markdown='1' class='zint-content-3-middle'>\n",
+      "^#3R.*$": "\n</div>\n<div markdown='1' class='zint-content-3-right'>\n",
+      "^#3A.*$": "\n</div>\n</div>\n"
+    }
+  },
+ "Show / Hide": {
     "comment": [],
     "rule": {
       "^#SHV.*$": "\n<div class='zint-content-hide zint-content-show-hide'>",
