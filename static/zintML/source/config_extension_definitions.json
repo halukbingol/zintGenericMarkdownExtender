@@ -66,6 +66,15 @@
       "^#C&V.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-content-2-left'>\n<h3 class='zint-content-center'>code</h3>\n</div>\n<div markdown='1' class='zint-content-2-right'>\n<h3 class='zint-content-center'>visualization</h3>\n</div>\n</div>"
     }
   },
+  "Two Columns: HTML and Javascript": {
+    "comment": [
+      "H&J: HTML & Javascript",
+      "Derived from 2-column"
+    ],
+    "rule": {
+      "^#H&J.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-content-2-left'>\n<h3 class='zint-content-center'>HTML</h3>\n</div>\n<div markdown='1' class='zint-content-2-right'>\n<h3 class='zint-content-center'>Javascript</h3>\n</div>\n</div>"
+    }
+  },
    "Three Columns": {
     "comment": [
       "3: 3-column"
@@ -87,24 +96,30 @@
     }
   },
  "Show / Hide": {
-    "comment": [],
+    "comment": [
+      "Show/Hide"
+    ],
     "rule": {
-      "^#SHV.*$": "\n<div class='zint-content-hide zint-content-show-hide'>",
-      "^#SHA.*$": "\n</div>"
+      "^#SHV.*$": "\n<div><button onclick='zint_show_hide()'>show/hide</button><div class='zint-content-hidden zint-content-show-hide'>",
+      "^#SHA.*$": "\n</div></div>\n"
     }
   },
   "Show Answer": {
-    "comment": [],
+    "comment": [
+      "Show Answer"
+    ],
     "rule": {
-      "^#SAV.*$": "\n<div class='zint-content-hide zint-content-show-answer'>",
-      "^#SAA.*$": "\n</div>"
+      "^#SAV.*$": "\n<div><button onclick='zint_show_hide()'>show/hide</button><div class='zint-content-hidden zint-content-show-answer'>",
+      "^#SAA.*$": "\n</div></div>\n"
     }
   },
   "Show Implementation": {
-    "comment": [],
+    "comment": [
+      "Show Implementation"
+    ],
     "rule": {
-      "^#SIV.*$": "\n<div class='zint-content-hide zint-content-show-implementation'>",
-      "^#SIA.*$": "\n</div>"
+      "^#SIV.*$": "\n<div><button onclick='zint_show_hide()'>show/hide</button><div class='zint-content-hidden zint-content-show-implementation'>",
+      "^#SIA.*$": "\n</div></div>\n"
     }
   },
   "Example": {
@@ -213,7 +228,9 @@
     }
   },
   "Inline Defined": {
-    "comment": [],
+    "comment": [
+      "Use to mark the defined term"
+    ],
     "rule": {
       "dd{": "<span class='zint-content-inline-defined'>",
       "}dd": "</span>"

@@ -105,6 +105,9 @@
     /*nop*/
 }
 
+.zint-content-center {
+    text-align: center;
+}
 
 /* ************************************
  * Old below
@@ -159,8 +162,8 @@
  *	Block markups
  *	- definition, remark
  * *************************************/
-.zint-content-hide {
-    /*nop*/
+.zint-content-hidden {
+    display: none;
 }
 
 .zint-content-show-hide {
@@ -434,7 +437,7 @@
     text-transform: uppercase;
 }
 
-.zint-content-see{
+.zint-content-see {
     /*nop*/
 }
 
@@ -467,7 +470,7 @@
     color: dodgerblue;
 }
 
-.zint-content-inline-keyword{
+.zint-content-inline-keyword {
     /*nop*/
 }
 
