@@ -1,5 +1,5 @@
 const zint_show_hide = function () {
-    let elActive = event.currentTarget;
-    let nextDiv = elActive.nextElementSibling;
-    nextDiv.classList.toggle("zint-content-hidden");
+    let elActive = event.target;
+    let elNext = elActive.nextElementSibling;
+    elNext.classList.toggle("zint-content-hidden");
 }
