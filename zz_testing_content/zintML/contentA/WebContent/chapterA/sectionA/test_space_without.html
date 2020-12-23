@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zint content</title>
+    <link rel="stylesheet" href="../../zintBundle/flexbox/flexbox.css">
+
+    <link rel="stylesheet" href="../../zintBundle/prism/prism.css">
+    <script src="../../zintBundle/prism/prism.js"></script>
+
+    <script src="../../zintBundle/SnapSvg/snap.svg-min.js"></script>
+
+    <script src="../../zintBundle/MathJax/tex-svg.js"></script>
+
+    <script src="../../zintBundle/zintContent/zintContent.js"></script>
+    <link rel="stylesheet" href="../../zintBundle/zintContent/zintContent.css">
+</head>
+<body>
+<div class="zint-page">
+
+<div class='zint-content-title'>
+<div class='zint-content-title-running'>
+
+<p>chapterA/sectionA</p>
+</div>
+<div class='zint-content-title-slide'>
+
+<p>test page: chA/secA/a.md</p>
+</div>
+</div>
+
+<div class="flex-row">
+<div markdown='1' class='zint-content-1'>
+aaa
+</div>
+</div>
+
+<div class="flex-row">
+<div markdown='1' class='zint-content-2-left'>
+left LLL
+
+</div>
+<div markdown='1' class='zint-content-2-right'>
+
+<p>right RRRR</p>
+</div>
+</div>
+</div>
+</body>
+<script>
+    "use strict";
+
+    function init() {
+        Prism.highlightAll();
+    }
+
+    init();
+</script>
+</html>
