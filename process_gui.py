@@ -20,7 +20,7 @@ from process_file import update_zint_bundle, copy_file, update_directory
 
 
 def gui_process_update_lib_used(path_to_md, lib):
-    if path_to_md=='':
+    if path_to_md == '':
         print("**ERROR** Select .md file first")
         return
 

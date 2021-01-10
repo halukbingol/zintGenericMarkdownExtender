@@ -69,5 +69,5 @@ LANGUAGE = "zintML"
 # app configuration
 PATH_LANGUAGE = "static/" + LANGUAGE + '/' + SOURCE
 CONFIG_CONVERSION = PATH_LANGUAGE + "/config_extension_definitions.json"
-PATH_FIXED_F1 = PATH_LANGUAGE + "/ch/sec/template-f1.html"
-PATH_FIXED_F2 = PATH_LANGUAGE + "/ch/sec/template-f2.html"
+PATH_FIXED_F1 = PATH_LANGUAGE + "/chZ_DoNotChange/secZ_DoNotChange/template-f1.html"
+PATH_FIXED_F2 = PATH_LANGUAGE + "/chZ_DoNotChange/secZ_DoNotChange/template-f2.html"

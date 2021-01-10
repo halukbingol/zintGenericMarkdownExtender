@@ -1,0 +1,133 @@
+/*
+ * ZintNavigation.css
+ * author: Haluk Bingol
+ * since: 2020-10
+ */
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+.navigation-bar {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    background-color: #e2e2e2;
+    font-size: small;
+    box-sizing: border-box;
+
+    /*display: flex;*/
+    /*background-color: #e2e2e2;*/
+    /*position: fixed;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+
+    /* old */
+    /*background-color: antiquewhite;*/
+    /*color: white;*/
+    /*text-align: center;*/
+    /*height: 20px;*/
+
+}
+
+.navigation-bar-button {
+
+}
+
+.navigation-button {
+    opacity: 0.5;
+    border-width: thin;
+    border-color: black;
+    color: black;
+    /*padding: 15px 25px;*/
+    text-align: center;
+    /*font-size: 16px;*/
+    cursor: pointer;
+}
+
+.navigation-button.enabled{
+    cursor: pointer;
+    background-color: lightgreen;
+    color: red;
+}
+
+.navigation-button.disabled{
+    cursor: default;
+    background-color: orangered;
+    color: green;
+}
+
+.navigation-button:hover {
+    opacity: 1;
+}
+
+.navigation-path-to-content-page {
+    opacity: 0.5;
+    /*align-content: center;*/
+    /*display: flow;*/
+    /*alig;*/
+    /*alignment: center;*/
+
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-small;
+    float: right;
+    color: black;
+    cursor: text;
+    flex: 50%;
+}
+
+.navigation-path-to-content-page:hover{
+    opacity: 1;
+}
+
+.navigation-iframe {
+    border-color: red;
+    width: 100vw;
+    height: calc(100vh - 65px);
+    overflow: auto;
+}
+
+#navigation-toc {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 30%; /* Full width (cover the whole page) */
+    height: 50%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.navigation-toc-div{
+
+}
+
+.navigation-toc-button{
+
+}
+
+/*
+* *************************************
+*/
+.concept {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    /*padding: 15px 25px;*/
+    text-align: center;
+    /*font-size: 16px;*/
+    cursor: pointer;
+}
+
+.concept:hover {
+    background-color: green;
+}

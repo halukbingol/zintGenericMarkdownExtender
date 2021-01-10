@@ -95,6 +95,26 @@
       "^# ?H&C&J.*$": "<div class=\"flex-row\"><div markdown='1' class='zint-content-3-left'><h3 class='zint-content-center'>HTML</h3></div><div markdown='1' class='zint-content-3-middle'><h3 class='zint-content-center'>CSS</h3></div><div markdown='1' class='zint-content-3-right'><h3 class='zint-content-center'>Javascript</h3></div></div>"
     }
   },
+ "Step by step description": {
+    "comment": [
+      "SBS: Step by step description"
+    ],
+    "rule": {
+      "^# ?SBSV.*$": "\n<div class=\"step-by-stem-block\">\n<div class=\"flex-row\">\n<script>\n\"use strict\";\nlet indexArrSnap = 0;\nconst arrSnap_A = [];\nlet step_by_step_A;\nconst initStepByStep_A = function () {\nstep_by_step_A = new ZintContentSnapStepByStepDescription(\n\"c-description-item-A\"\n);\nstep_by_step_A.start();\n}\n</script>\n<div class=\"step-by-step-description\">\n<div class=\"c-description-item-A\">\n",
+      "^# ?SBSM.*$": "\n</div>\n<div class=\"c-description-item-A\">\n",
+      "^# ?SBSA.*$": "\n</div>\n</div><!-- step-by-step-description -->\n</div><!-- flex-row -->\n</div><!-- step-by-stem-block -->\n<script>\ninitStepByStep_A();\n</script>\n"
+    }
+  },
+ "Step by step description with board": {
+    "comment": [
+      "SBSB: Step by step description with board"
+    ],
+    "rule": {
+      "^# ?SBSBV.*$": "\n<!-- step-by-step block -->\n<div class=\"step-by-stem-block\">\n<div class=\"flex-row\">\n<script>\n\"use strict\";\n// common variables\nlet indexArrSnap;\nlet arrSnap = [];\nlet board;\nlet step_by_step;\n</script>\n<script>\nboard = {\nviewBox: viewBox,\narrSnap: arrSnap\n}\nindexArrSnap = 0;\nconst initStepByStep = function () {\nstep_by_step = new ZintContentSnapStepByStepDescription(\n\"step-by-step-description-item\",\nboard\n);\nstep_by_step.start();\n}\n</script>\n<div class=\"step-by-step-description\">\n<div class=\"step-by-step-description-item\">\n",
+      "^# ?SBSBM.*$": "\n</div>\n<div class=\"step-by-step-description-item\">\n\n",
+      "^# ?SBSBA.*$": "\n</div>\n</div><!-- step-by-step-description -->\n</div><!-- flex-row -->\n</div>\n<script>\ninitStepByStep();\n</script>\n<!-- step-by-stem-block -->\n"
+    }
+  },
  "Show / Hide": {
     "comment": [
       "Show/Hide"

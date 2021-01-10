@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>ZintIndex</title>
+    <link rel="stylesheet" href="css/zintNavigation.css">
+    <script src="js/ZintNavigationContent.js"></script>
+    <script src="js/ZintNavigation.js"></script>
+    <!--  -->
+    <script src="../../courseStructure.js"></script>
+    <script>
+        let zintNavigation;
+
+        function load() {
+            /* ******************************************************
+             * - `populateDicConcepts()`` is defined in `courseStructure.js`
+             *     which is at root of the course
+             * - navigation starts with the first added concept
+             * ****************************************************** */
+            zintNavigation = new ZintNavigation();
+            populateDicConcepts(zintNavigation);
+            zintNavigation.start();
+        } // load
+    </script>
+</head>
+
+<body onload="load()">
+
+<div>
+    <!--    <iframe id="idFrameContent" class="navigation-iframe" src="../../zintCh/zintSec/home.html"></iframe>-->
+    <iframe id="idFrameContent" class="navigation-iframe" src="zintNavigationHome.html"></iframe>
+</div>
+
+<!--test-->
+<!--<div class="row">-->
+<!--    <div class="column">-->
+<!--        aaa<br>aaa<br>aaa<br>aaa<br>aaa<br>aaa<br>aaa<br>aaa<br>aaa<br>aaa<br>aaa<br>aaa<br>aaa<br>aaa<br>aaa<br>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--        bbb-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--        ccc-->
+<!--    </div>-->
+<!--</div>-->
+
+<div id="navigation" class="navigation-bar">
+    <div class="navigation-bar-button">
+        <p>
+            &nbsp;
+            <button id="btnBackward" class="navigation-button" onclick="zintNavigation.btnBackward();">backward</button>
+            &nbsp;
+            <button id="btnReturn" class="navigation-button" onclick="zintNavigation.btnReturn();">back</button>
+
+            <button id="btnToC" class="navigation-button" onclick="zintNavigation.btnToC();">ToC</button>
+            &nbsp;
+            <button id="btnForward" class="navigation-button disabled" onclick="zintNavigation.btnForward();">forward
+            </button>
+            &nbsp;
+            <span id="idPathToContentPage" class="navigation-path-to-content-page">path comes here b js</span>
+            &nbsp;
+        </p>
+    </div>
+</div>
+
+<div id="navigation-toc"></div>
+
+</body>
+</html>
