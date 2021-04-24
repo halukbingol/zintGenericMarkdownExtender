@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SBSC</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SBS</title>
+</head>
+<body>
+
+
+<div class="step-by-stem-code">
+    <pre>
+    <code id="idInCode" hidden>...
+int a;
+a = 4;
+int b = 5;
+int c = 7;
+c = 8;
+c = a;
+c = 9;
+double d;
+d = 1.2;
+d = a;
+a = d;
+...
+	</code>
+</pre>
+
+</div>
+<div class="step-by-stem-block">
+    <div class="flex-row">
+        <script>
+            "use strict";
+            let indexArrSnap = 0;
+            const arrSnap_A = [];
+            let indexArrCodeHighligth = 0;
+            const arrCodeHighligth = [];
+            let step_by_step_A;
+            const initStepByStep_A = function () {
+                step_by_step_A = new ZintContentSnapStepByStepDescription(
+                    "step-by-step-description-item"
+                );
+                step_by_step_A.start();
+            }
+        </script>
+        <div class="step-by-step-description">
+            <div class="step-by-step-description-item">
+                <!-- -->
+                <p>aaa</p>
+                <script>
+                    "use strict";
+                    arrCodeHighligth[indexArrCodeHighligth++] = "1-2, 5";
+                </script>
+                <!-- -->
+            </div>
+            <div class="step-by-step-description-item">
+                <!-- -->
+                <p>bbb</p>
+                <script>
+                    "use strict";
+                    arrCodeHighligth[indexArrCodeHighligth++] = "3, 6";
+                </script>
+                <!-- -->
+            </div>
+        </div><!-- step-by-step-description -->
+    </div><!-- flex-row -->
+</div><!-- step-by-stem-block -->
+<script>
+    initStepByStep_A();
+</script>
+
+
+</body>
+</html>
+
+
+</body>
+</html>

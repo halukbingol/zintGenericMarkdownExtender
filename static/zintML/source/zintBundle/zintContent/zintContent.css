@@ -166,6 +166,10 @@
     display: none;
 }
 
+.zint-step-by-step-code{
+    display: none;
+}
+
 .zint-content-show-hide {
     background-color: gainsboro;
     /*font-size: 80%;*/

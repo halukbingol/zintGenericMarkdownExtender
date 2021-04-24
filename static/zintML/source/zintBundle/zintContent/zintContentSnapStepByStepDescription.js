@@ -14,8 +14,9 @@ class ZintContentSnapStepByStepDescription {
      * Create step by step description
      * @param c_description_item {String} Unique CSS class of description items
      * @param board {Object} Optional board for drawings.
+     * @param code {Object} Optional code segment.
      */
-    constructor(c_description_item, board = null) {
+    constructor(c_description_item, board = null, code = null) {
         this.snap = Snap;
         // get description steps
         this.indexCurrent = 0;
@@ -69,7 +70,8 @@ class ZintContentSnapStepByStepDescription {
         if (board !== null) {
             this.isBoard = true;
             // create svg element
-            let elSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+            let elSvg = document
+                .createElementNS("http://www.w3.org/2000/svg", "svg");
             elSvg.setAttribute("width", "100%");
             elSvg.setAttribute("height", "100%");
 
@@ -80,14 +82,40 @@ class ZintContentSnapStepByStepDescription {
             this.arrSnap = board.arrSnap;
             this.svgBackgroundColor = window.getComputedStyle(elSvg).getPropertyValue("background-color");
         }
+
+
+        // code
+        this.isCode = false;
+        if (code !== null) {
+            this.isCode = true;
+            // copy master code into flex
+            let codeMasterInvisibleDiv = document.getElementById("idZintStepByStepCodeHidden");
+            let codeMasterInvisiblePre = codeMasterInvisibleDiv.firstElementChild;
+            this.codeMasterVisiblePre = codeMasterInvisiblePre.cloneNode(true);
+
+            const codeMasterVisibleDiv = document.createElement('div');
+            codeMasterVisibleDiv.appendChild(this.codeMasterVisiblePre);
+            divFlexRow.insertBefore(codeMasterVisibleDiv, divFlexRow.childNodes[0]);
+        }
     }
 
+    /**
+     * The very first step
+     */
     start() {
         if (this.isBoard) {
             this.arrSnap[0]();
         }
+        if (this.isCode) {
+            this.codeMasterVisiblePre
+                .setAttribute("data-line", this._arrHighlight[stateNext]);
+            Prism.highlightAll();
+        }
     }
 
+    /**
+     * Forward in the step-by-step
+     */
     forward() {
         if (this.indexCurrent + 1 < this.arrDiv.length) {
             let indexPresent = this.indexCurrent;
@@ -96,6 +124,17 @@ class ZintContentSnapStepByStepDescription {
             if (this.isBoard) {
                 this.arrSnap[this.indexCurrent]();
             }
+            if (this.isCode) {
+                // ???
+                this.codeMasterVisiblePre
+                    .setAttribute("data-line", this._arrHighlight[stateNext]);
+                Prism.highlightAll();
+
+                // document
+                //     .getElementById("idViewCodePre")
+                //     .setAttribute("data-line", this._arrHighlight[stateNext]);
+                // Prism.highlightAll();
+            }
             // direction
             this.isForward = true;
         } else {
@@ -103,6 +142,9 @@ class ZintContentSnapStepByStepDescription {
         }
     }
 
+    /**
+     * Backward in the step-by-step
+     */
     backward() {
         if (this.indexCurrent > 0) {
             let indexPresent = this.indexCurrent;
@@ -119,6 +161,9 @@ class ZintContentSnapStepByStepDescription {
                     }
                 }
             }
+            if (this.isCode) {
+                // ???
+            }
             // direction
             this.isForward = true;
         } else {
@@ -126,12 +171,18 @@ class ZintContentSnapStepByStepDescription {
         }
     }
 
+    /**
+     * Clear the board
+     */
     boardClear() {
         let viewBox = this.p.attr("viewBox");
         this.p.rect(viewBox.x, viewBox.y, viewBox.width, viewBox.height)
             .attr({fill: this.svgBackgroundColor});
     }
 
+    /**
+     * Redraw the current board.
+     */
     repeat() {
         if (this.isBoard) {
             if (this.indexCurrent === 0) {
@@ -144,12 +195,24 @@ class ZintContentSnapStepByStepDescription {
         }
     }
 
+    /**
+     * Hide the present div, make visible the next div.
+     * @param indexPresent {number} index of the present div.
+     * @param indexNext {number} index of the next div.
+     */
     switchDiv(indexPresent, indexNext) {
         this.arrDiv[indexPresent].style.display = "none";
         this.arrDiv[indexNext].style.display = "block";
     }
 
-    drawAnimated(pathDefinition, attr_specific = ZintContentSnapStepByStepDescription.PEN_DEFAULT) {
+    /**
+     * Animated drawing.
+     * @param pathDefinition {SVGPathElement} Path to draw.
+     * @param attr_specific {Pen} Pen.
+     */
+    drawAnimated(pathDefinition,
+                 attr_specific = ZintContentSnapStepByStepDescription.PEN_DEFAULT
+    ) {
         let shape = this.p.path(pathDefinition);
         shape.attr(attr_specific);
         //
