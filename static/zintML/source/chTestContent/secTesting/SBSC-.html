@@ -2,84 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SBSC</title>
+    <title>zint content</title>
+    <link rel="stylesheet" href="../../zintBundle/flexbox/flexbox.css">
+
+    <link rel="stylesheet" href="../../zintBundle/prism/prism.css">
+    <script src="../../zintBundle/prism/prism.js"></script>
+
+    <script src="../../zintBundle/SnapSvg/snap.svg-min.js"></script>
+
+    <script src="../../zintBundle/MathJax/tex-svg.js"></script>
+
+    <link rel="stylesheet" href="../../zintBundle/zintContent/zintContent.css">
+    <script src="../../zintBundle/zintContent/zintContent.js"></script>
+    <script src="../../zintBundle/zintContent/zintContentSnapStepByStepDescription.js"></script>
+    <script src="../../zintBundle/zintContent/zintContentSnapUtility.js"></script>
 </head>
 <body>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>SBS</title>
-</head>
-<body>
+<div class="zint-page">
 
 
-<div class="step-by-stem-code">
+    <div id="idZintStepByStepCodeHidden" hidden>
+
     <pre>
-    <code id="idInCode" hidden>...
-int a;
+    <code class="language-javascript">...
+...
+let a;
 a = 4;
-int b = 5;
-int c = 7;
+let b = 5;
+let c = 7;
 c = 8;
 c = a;
 c = 9;
-double d;
-d = 1.2;
-d = a;
-a = d;
+const pi = 3.1415;
+c = pi;
 ...
 	</code>
 </pre>
 
+    </div>
+    <div class="step-by-stem-block">
+        <div class="flex-row">
+            <script>
+                "use strict";
+                // common variables
+                let step_by_step;
+                let board;
+                let indexArrSnap = 0;
+                let arrSnap = [];
+                let code;
+                let indexArrCodeHighligth = 0;
+                const arrCodeHighligth = [];
+            </script>
+
+            <script>
+                "use strict";
+                const initStepByStep = function () {
+                    step_by_step = new ZintContentSnapStepByStepDescription(
+                        "step-by-step-description-item",
+                        board = null,
+                        code = 'a'
+                    );
+                    step_by_step.start();
+                }
+            </script>
+            <div class="step-by-step-description">
+                <div class="step-by-step-description-item">
+                    <!-- -->
+                    <p>aaa</p>
+                    <script>
+                        "use strict";
+                        arrCodeHighligth[indexArrCodeHighligth++] = "1-2, 5";
+                    </script>
+                    <!-- -->
+                </div>
+                <div class="step-by-step-description-item">
+                    <!-- -->
+                    <p>bbb</p>
+                    <script>
+                        "use strict";
+                        arrCodeHighligth[indexArrCodeHighligth++] = "3, 6";
+                    </script>
+                    <!-- -->
+                </div>
+            </div><!-- step-by-step-description -->
+        </div><!-- flex-row -->
+    </div><!-- step-by-stem-block -->
+    <script>
+        initStepByStep();
+    </script>
+
 </div>
-<div class="step-by-stem-block">
-    <div class="flex-row">
-        <script>
-            "use strict";
-            let indexArrSnap = 0;
-            const arrSnap_A = [];
-            let indexArrCodeHighligth = 0;
-            const arrCodeHighligth = [];
-            let step_by_step_A;
-            const initStepByStep_A = function () {
-                step_by_step_A = new ZintContentSnapStepByStepDescription(
-                    "step-by-step-description-item"
-                );
-                step_by_step_A.start();
-            }
-        </script>
-        <div class="step-by-step-description">
-            <div class="step-by-step-description-item">
-                <!-- -->
-                <p>aaa</p>
-                <script>
-                    "use strict";
-                    arrCodeHighligth[indexArrCodeHighligth++] = "1-2, 5";
-                </script>
-                <!-- -->
-            </div>
-            <div class="step-by-step-description-item">
-                <!-- -->
-                <p>bbb</p>
-                <script>
-                    "use strict";
-                    arrCodeHighligth[indexArrCodeHighligth++] = "3, 6";
-                </script>
-                <!-- -->
-            </div>
-        </div><!-- step-by-step-description -->
-    </div><!-- flex-row -->
-</div><!-- step-by-stem-block -->
-<script>
-    initStepByStep_A();
-</script>
-
-
-</body>
-</html>
-
-
 </body>
 </html>
