@@ -1,29 +1,56 @@
 # config_constants.py
 
+# TODO simplify constants
+
+
+
 # *************************************
-# general
-DESTINATION = "WebContent"
-SOURCE = "source"
-FILE_TMP = 'tmp/_tmp.html'
+# machine specific paths
 # path of pandoc
 PANDOC = "/usr/local/bin/pandoc"
+PATH_WS = '/Users/bingol/Documents/workspace-WebStorm/'
+PATH_PC = '/Users/bingol/Documents/workspace-PyCharm/'
+# *************************************
+# TODO move to save status(?) file
+PATH_INIT_FOLDER = '/Users/bingol/Documents/workspace-WebStorm/course-swe596'
+
+# *************************************
+# general
+DESTINATION = "rootHtml"
+SOURCE = "rootMd"
+ZINT_BUNDLE = 'zintBundle'
+FILE_TMP = 'tmp/_tmp.html'
+
+# *************************************
 # processing path_to_sec
 DIRECTORIES_TO_COPY = ['images']
 FILES_TO_SKIP = ['.DS_Store', ',gitignore']
 
 # *************************************
+# select extended markup language ExML language related
+LANGUAGE = "zintML"
+# TODO support multiple ExML
+# LANGUAGE = "MyML"
+
+# *************************************
+# app configuration
+PATH_LANGUAGE = "static/" + LANGUAGE + '/' + SOURCE
+CONFIG_CONVERSION = PATH_LANGUAGE + "/config_extension_definitions.json"
+PATH_FIXED_F1 = PATH_LANGUAGE + "/chZ_DoNotChange/secZ_DoNotChange/template-f1.html"
+PATH_FIXED_F2 = PATH_LANGUAGE + "/chZ_DoNotChange/secZ_DoNotChange/template-f2.html"
+
+
+
+# *************************************
 # zintBundle
 PATH_ZINT_HOME = '/Users/bingol/Documents/workspace-WebStorm/01pi-ZintLib/ZintLib-snap'
 PATH_ZINT_BUNDLE = PATH_ZINT_HOME + '/zintBundle'
-PATH_TO_ZINT_NAVIGATION = PATH_ZINT_BUNDLE + '/zintNavigation'
+# PATH_TO_ZINT_NAVIGATION = PATH_ZINT_BUNDLE + '/zintNavigation'
 PATH_TO_INDEX_HTML = PATH_ZINT_BUNDLE + '/zintNavigation/index.html'
 # TODO remove zintBundle from gui
-ZINT_BUNDLE = 'zintBundle'
 
 # *************************************
 # zint libraries
-PATH_WS = '/Users/bingol/Documents/workspace-WebStorm/'
-PATH_PC = '/Users/bingol/Documents/workspace-PyCharm/'
 PATH_MIDDLE = '/content/WebContent/zintBundle/'
 
 #
@@ -54,20 +81,3 @@ HOME_PRISM = HOME_LIB_USED + '/' + LIB_PRISM
 LIB_SNAP_SVG = 'SnapSvg'
 HOME_SNAP_SVG = HOME_LIB_USED + '/' + LIB_SNAP_SVG
 
-# *************************************
-# TODO move to save status(?) file
-# PATH_INIT_FOLDER = "/Users/bingol/Documents/"
-# PATH_INIT_FOLDER = '/Users/bingol/Documents/tmp/course-zintML/source/chA/secA'
-# PATH_INIT_FOLDER = '/Users/bingol/Documents/workspace-WebStorm/course-swe596/source'
-PATH_INIT_FOLDER = '/Users/bingol/Documents/workspace-WebStorm/course-swe596'
-# *************************************
-# ExML language related
-# TODO support multiple ExML
-# LANGUAGE = "MyML"
-LANGUAGE = "zintML"
-#
-# app configuration
-PATH_LANGUAGE = "static/" + LANGUAGE + '/' + SOURCE
-CONFIG_CONVERSION = PATH_LANGUAGE + "/config_extension_definitions.json"
-PATH_FIXED_F1 = PATH_LANGUAGE + "/chZ_DoNotChange/secZ_DoNotChange/template-f1.html"
-PATH_FIXED_F2 = PATH_LANGUAGE + "/chZ_DoNotChange/secZ_DoNotChange/template-f2.html"

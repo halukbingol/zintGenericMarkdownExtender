@@ -8,15 +8,18 @@ import subprocess
 from os.path import dirname, join, abspath
 #
 from config_constants import CONFIG_CONVERSION, PANDOC, PATH_FIXED_F1, PATH_FIXED_F2, FILE_TMP
-from process_file import write_text_file
+from zint_os_functions import zint_file_write, zint_file_read
 
 
 def convert(path_to_md, path_to_html):
+    """
+    Order the processes.
+    """
 
-    content = read_text_file(path_to_md)
+    content = zint_file_read(path_to_md)
 
     # apply tc => md on `content`
-    content = process_tc_to_md(content)
+    content = process_xm_to_md(content)
 
     # apply md => html by pandoc
     content = process_md_to_html(content)
@@ -28,18 +31,19 @@ def convert(path_to_md, path_to_html):
     content = process_html_to_page(content)
 
     # write
-    write_text_file(path_to_html, content)
+    zint_file_write(path_to_html, content)
 
     return
 
 
-def process_tc_to_md(text):
+def process_xm_to_md(text):
     """
-    Read text, return text
+    Convert extended markup to md and html.
 
+    Read text, return text
     - Read 'config_extension_definitions.json'
     - for each line in text
-    -   for each tc tag
+    -   for each em tag
     -     apply each rule
 
     Note that only 'Open Project' needs special processing.
@@ -128,15 +132,9 @@ def process_html_prism_html(text):
 
 
 def process_html_to_page(content):
-    f1 = read_text_file(PATH_FIXED_F1)
-    f2 = read_text_file(PATH_FIXED_F2)
+    f1 = zint_file_read(PATH_FIXED_F1)
+    f2 = zint_file_read(PATH_FIXED_F2)
     content = f1 + content + f2
     return content
 
 
-def read_text_file(path_to_file):
-    # read into content
-    f = open(path_to_file, "r", encoding="utf-8")
-    content = f.read()
-    f.close()
-    return content

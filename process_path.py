@@ -4,7 +4,10 @@
 
 from pathlib import Path
 #
-from config_constants import DESTINATION, SOURCE
+# from config_constants import DESTINATION, SOURCE
+
+DESTINATION = "rootHtml"
+SOURCE = "rootMd"
 
 """
 Naming conventions
@@ -40,8 +43,11 @@ path_to_course|        |- path_ch_to_md
 
 def get_corresponding_path_in_destination(path_via_source_to_file):
     """
-    Return absolute posix path to the corresponding file in destination.
-    :param path_via_source_to_file:
+    Return absolute posix path to the corresponding file in `DESTINATION`.
+
+    It works not only for `.md` files but also for resources such as image files.
+
+    :param path_via_source_to_file Path to source file in `SOURCE`.
     :return: str_path_via_destination_to_file
     """
     # replace source with destination
@@ -53,12 +59,16 @@ def get_corresponding_path_in_destination(path_via_source_to_file):
 def get_corresponding_path_in_destination_to_html(path_via_source_to_md):
     """
     Return absolute posix path to the corresponding file in destination.
+
     If the extension of the file is `.md`, change it to `.html`;
     otherwise do not change the extension.
+
     Example
-    '.../courseTest/source/chA/secA/a.md' becomes
-    '.../courseTest/destination/chA/secA/a.html'
+    `.../courseTest/source/chA/secA/a.md`
+    becomes
+    `.../courseTest/destination/chA/secA/a.html`
     Note that `.md` becomes `.html`.
+
     :param path_via_source_to_md: absolute path to md file in the source
     :return: p_path_via_destination_to_html: absolute posix path to the corresponding file in the destination.
     """
@@ -71,16 +81,19 @@ def get_corresponding_path_in_destination_to_html(path_via_source_to_md):
 
     return p_path_tmp
 
-    # p_path_via_destination_to_md = get_corresponding_path_in_destination(path_via_source_to_md)
-    # # change `.md` to `.html`
-    # p_path_via_destination_to_sec = p_path_via_destination_to_md.parent
-    # file_stem = p_path_via_destination_to_md.stem
-    # p_path_via_destination_to_html = p_path_via_destination_to_sec.joinpath(file_stem + '.html')
-    # return p_path_via_destination_to_html
-
 
 def get_path_to_source(path_via_source_to_md):
+    """
+    Return the full path to source.
+
+    Extract that path from full path to `.md` file.
+
+    Example:
+        `/somePath/source/ch/sec/a.md`
+        returns
+        `/somePath/source`
+    """
     p_path_tmp = Path(path_via_source_to_md)
-    # source/ch/sec/a.md
+    # /somePath/source/ch/sec/a.md
     p_path_tmp = p_path_tmp.parent.parent.parent
     return p_path_tmp
