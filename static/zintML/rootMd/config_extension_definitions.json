@@ -15,7 +15,7 @@
       "L: add javascript libraries"
     ],
     "rule": {
-      "^# ?LV.*$": "\n<script>ZintGenericMarkdownExtender.zintGetFilesCssJs([",
+      "^# ?LV.*$": "\n<script>ZintMarkdownExtender.zintGetFilesCssJs([",
       "^# ?LA.*$": "])</script>\n"
     }
   },
@@ -24,7 +24,7 @@
       "T: Title of the slide"
     ],
     "rule": {
-      "^# ?TV.*$": "\n<script>ZintGenericMarkdownExtender.setTitle(",
+      "^# ?TV.*$": "\n<script>ZintMarkdownExtender.setTitle(",
       "^# ?TM.*$": ",",
       "^# ?TA.*$": ")</script>\n"
     }
