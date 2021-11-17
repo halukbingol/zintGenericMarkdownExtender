@@ -4,19 +4,28 @@
       "Defines zintML extension of markdown",
       "author: haluk bingol",
       "email: bingol@boun.edu.tr",
-      "v2021-10-26"
+      "v2021-11-12"
     ],
     "rule": {
       "^nop$": "nop"
     }
   },
-  "Add javascript libraries": {
+  "Load zintBundle libraries": {
     "comment": [
-      "L: add javascript libraries"
+      "L: load zintBundle libraries"
     ],
     "rule": {
-      "^# ?LV.*$": "\n<script>ZintMarkdownExtender.zintGetFilesCssJs([",
-      "^# ?LA.*$": "])</script>\n"
+      "^# ?LZV.*$": "\n<script>ZintMarkdownExtender.getCssJsZintBundle([",
+      "^# ?LZA.*$": "]);</script>\n"
+    }
+  },
+  "Load local libraries": {
+    "comment": [
+      "L: load local libraries"
+    ],
+    "rule": {
+      "^# ?LLV.*$": "\n<script>ZintMarkdownExtender.getCssJsLocal([",
+      "^# ?LLA.*$": "]);</script>\n"
     }
   },
   "Title Slide": {
@@ -26,7 +35,7 @@
     "rule": {
       "^# ?TV.*$": "\n<script>ZintMarkdownExtender.setTitle(",
       "^# ?TM.*$": ",",
-      "^# ?TA.*$": ")</script>\n"
+      "^# ?TA.*$": ");</script>\n"
     }
   },
   "EditorSeparator": {
@@ -84,7 +93,7 @@
       "^# ?H&J.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-content-2-left'>\n<h3 class='zint-content-center'>HTML</h3>\n</div>\n<div markdown='1' class='zint-content-2-right'>\n<h3 class='zint-content-center'>Javascript</h3>\n</div>\n</div>"
     }
   },
-   "Three Columns": {
+  "Three Columns": {
     "comment": [
       "3: 3-column"
     ],
@@ -104,27 +113,17 @@
       "^# ?H&C&J.*$": "<div class=\"flex-row\"><div markdown='1' class='zint-content-3-left'><h3 class='zint-content-center'>HTML</h3></div><div markdown='1' class='zint-content-3-middle'><h3 class='zint-content-center'>CSS</h3></div><div markdown='1' class='zint-content-3-right'><h3 class='zint-content-center'>Javascript</h3></div></div>"
     }
   },
- "Step by step description": {
+  "Step-by-step": {
     "comment": [
-      "SBS: Step by step description"
+      "Step-by-step"
     ],
     "rule": {
-      "^# ?SBSV.*$": "\n<div class=\"step-by-stem-block\">\n<div class=\"flex-row\">\n<script>\n\"use strict\";\nlet indexArrSnap = 0;\nconst arrSnap_A = [];\nlet step_by_step_A;\nconst initStepByStep_A = function () {\nstep_by_step_A = new ZintContentSnapStepByStepDescription(\n\"c-description-item-A\"\n);\nstep_by_step_A.start();\n}\n</script>\n<div class=\"step-by-step-description\">\n<div class=\"c-description-item-A\">\n",
-      "^# ?SBSM.*$": "\n</div>\n<div class=\"c-description-item-A\">\n",
-      "^# ?SBSA.*$": "\n</div>\n</div><!-- step-by-step-description -->\n</div><!-- flex-row -->\n</div><!-- step-by-stem-block -->\n<script>\ninitStepByStep_A();\n</script>\n"
+      "^# ?SBSV.*$": "<div id=idInDescr hidden>\n<div class=hbDescriptionStep>",
+      "^# ?SBSM.*$": "</div>\n<div class=hbDescriptionStep>",
+      "^# ?SBSA.*$": "</div>\n</div>\n"
     }
   },
- "Step by step description with board": {
-    "comment": [
-      "SBSB: Step by step description with board"
-    ],
-    "rule": {
-      "^# ?SBSBV.*$": "\n<!-- step-by-step block -->\n<div class=\"step-by-stem-block\">\n<div class=\"flex-row\">\n<script>\n\"use strict\";\n// common variables\nlet indexArrSnap;\nlet arrSnap = [];\nlet board;\nlet step_by_step;\n</script>\n<script>\nboard = {\nviewBox: viewBox,\narrSnap: arrSnap\n}\nindexArrSnap = 0;\nconst initStepByStep = function () {\nstep_by_step = new ZintContentSnapStepByStepDescription(\n\"step-by-step-description-item\",\nboard\n);\nstep_by_step.start();\n}\n</script>\n<div class=\"step-by-step-description\">\n<div class=\"step-by-step-description-item\">\n",
-      "^# ?SBSBM.*$": "\n</div>\n<div class=\"step-by-step-description-item\">\n\n",
-      "^# ?SBSBA.*$": "\n</div>\n</div><!-- step-by-step-description -->\n</div><!-- flex-row -->\n</div>\n<script>\ninitStepByStep();\n</script>\n<!-- step-by-stem-block -->\n"
-    }
-  },
- "Show / Hide": {
+  "Show / Hide": {
     "comment": [
       "Show/Hide"
     ],
@@ -165,19 +164,6 @@
       "^# ?SPA.*$": "</div>"
     }
   },
-  "Open Project": {
-    "comment": [],
-    "enable-groups": true,
-    "rule": {
-      "^# ?OPV$": "<div class='softdev4u-openExampleDiv'",
-      "^# ?OP-language=([\\w\\d]+)$": "data-softdev4u-language='\\1'",
-      "^# ?OP-project=([\\w\\d-]+)$": "data-softdev4u-exampleName='\\1'",
-      "^# ?OP-filePath=([\\w\\d_/]+.[a-z]+)$": "data-softdev4u-filePath='\\1'",
-      "^# ?OP-lineNumber=([\\d]+)$": "data-softdev4u-lineNumber=\\1",
-      "^# ?OP-linkTitle=([\\w\\d\\s()-]+)$": "data-softdev4u-linkTitle='\\1'>",
-      "^# ?OPA$": "</div>"
-    }
-  },
   "Do You Know": {
     "comment": [
       "Use for additional information."
@@ -188,7 +174,9 @@
     }
   },
   "Remark": {
-    "comment": [],
+    "comment": [
+      "Remark"
+    ],
     "rule": {
       "^# ?RV.*$": "<div class='zint-content-remark'>",
       "^# ?RA.*$": "</div>"
@@ -256,6 +244,41 @@
       "^# ?SYA.*$": "</div>"
     }
   },
+  "include board": {
+    "comment": [],
+    "rule": {
+      "^# ?IBV.*$": "\n<script>",
+      "^# ?IBA.*$": "</script>"
+    }
+  },
+  "include code": {
+    "comment": [],
+    "rule": {
+      "^# ?ICV.*$": "\n<pre class='zint-hidden'>\n<code id='idInCode'>",
+      "^# ?ICA.*$": "</code>\n</pre>\n"
+    }
+  },
+  "include description": {
+    "comment": [],
+    "rule": {
+      "^# ?IDV.*$": "<div id='idInDescr'  class='zint-hidden'>",
+      "^# ?IDA.*$": "</div>"
+    }
+  },
+  "include highlight": {
+    "comment": [],
+    "rule": {
+      "^# ?IHV.*$": "\n<pre id='idInHighlight'  class='zint-hidden'>",
+      "^# ?IHA.*$": "</pre>\n"
+    }
+  },
+  "include trace": {
+    "comment": [],
+    "rule": {
+      "^# ?ITV.*$": "\n<pre id='idInTrace'  class='zint-hidden'>",
+      "^# ?ITA.*$": "</pre>\n"
+    }
+  },
   "Inline Defined": {
     "comment": [
       "Use to mark the defined term"
@@ -315,6 +338,19 @@
       "<pre class=\"java\"><code>": "<pre><code class=\"language-java line-numbers\">",
       "<pre class=\"latex\"><code>": "<pre><code class=\"language-latex line-numbers\">",
       "<pre class=\"markdown\"><code>": "<pre><code class=\"language-markdown line-numbers\">"
+    }
+  },
+  "Open Project": {
+    "comment": [],
+    "enable-groups": true,
+    "rule": {
+      "^# ?OPV$": "<div class='softdev4u-openExampleDiv'",
+      "^# ?OP-language=([\\w\\d]+)$": "data-softdev4u-language='\\1'",
+      "^# ?OP-project=([\\w\\d-]+)$": "data-softdev4u-exampleName='\\1'",
+      "^# ?OP-filePath=([\\w\\d_/]+.[a-z]+)$": "data-softdev4u-filePath='\\1'",
+      "^# ?OP-lineNumber=([\\d]+)$": "data-softdev4u-lineNumber=\\1",
+      "^# ?OP-linkTitle=([\\w\\d\\s()-]+)$": "data-softdev4u-linkTitle='\\1'>",
+      "^# ?OPA$": "</div>"
     }
   }
 }

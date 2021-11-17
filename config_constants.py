@@ -1,83 +1,30 @@
 # config_constants.py
 
-# TODO simplify constants
 
-
-
-# *************************************
+# ************************************* V paths
 # machine specific paths
-# path of pandoc
 PANDOC = "/usr/local/bin/pandoc"
 PATH_WS = '/Users/bingol/Documents/workspace-WebStorm/'
 PATH_PC = '/Users/bingol/Documents/workspace-PyCharm/'
-# *************************************
-# TODO move to save status(?) file
-PATH_INIT_FOLDER = '/Users/bingol/Documents/workspace-WebStorm/course-swe596'
+# ************************************* A
 
-# *************************************
+
+# ************************************* V general
 # general
 DESTINATION = "rootHtml"
 SOURCE = "rootMd"
 ZINT_BUNDLE = 'zintBundle'
 FILE_TMP = 'tmp/_tmp.html'
+CONFIG_EXTENSION_DEFINITIONS = "config_extension_definitions.json"
+CH_SEC_TEMPLATE_F1 = "chZ_DoNotChange/secZ_DoNotChange/template-f1.html"
+CH_SEC_TEMPLATE_F2 = "chZ_DoNotChange/secZ_DoNotChange/template-f2.html"
+GENERIC_MARKDOWN_EXTENDER = "/Users/bingol/Documents/workspace-PyCharm/zintGenericMarkdownExtender"
+# ************************************* A
 
-# *************************************
-# processing path_to_sec
-DIRECTORIES_TO_COPY = ['images']
-FILES_TO_SKIP = ['.DS_Store', ',gitignore']
 
-# *************************************
+# ************************************* V language
 # select extended markup language ExML language related
 LANGUAGE = "zintML"
 # TODO support multiple ExML
-# LANGUAGE = "MyML"
-
-# *************************************
-# app configuration
-PATH_LANGUAGE = "static/" + LANGUAGE + '/' + SOURCE
-CONFIG_CONVERSION = PATH_LANGUAGE + "/config_extension_definitions.json"
-PATH_FIXED_F1 = PATH_LANGUAGE + "/chZ_DoNotChange/secZ_DoNotChange/template-f1.html"
-PATH_FIXED_F2 = PATH_LANGUAGE + "/chZ_DoNotChange/secZ_DoNotChange/template-f2.html"
-
-
-
-# *************************************
-# zintBundle
-PATH_ZINT_HOME = '/Users/bingol/Documents/workspace-WebStorm/01pi-ZintLib/ZintLib-snap'
-PATH_ZINT_BUNDLE = PATH_ZINT_HOME + '/zintBundle'
-# PATH_TO_ZINT_NAVIGATION = PATH_ZINT_BUNDLE + '/zintNavigation'
-PATH_TO_INDEX_HTML = PATH_ZINT_BUNDLE + '/zintNavigation/index.html'
-# TODO remove zintBundle from gui
-
-# *************************************
-# zint libraries
-PATH_MIDDLE = '/content/WebContent/zintBundle/'
-
-#
-LIB_ZINT_CONTENT = 'zintContent'
-# HOME_ZINT_CONTENT = PATH_PC + LIB_ZINT_CONTENT + PATH_MIDDLE + LIB_ZINT_CONTENT
-HOME_ZINT_CONTENT = PATH_PC + 'zintGenericMarkdownExtender/' + 'static/zintML/WebContent/zintBundle/' + LIB_ZINT_CONTENT
-#
-LIB_ZINT_NAVIGATION = 'zintNavigation'
-HOME_ZINT_NAVIGATION = PATH_WS + LIB_ZINT_NAVIGATION + PATH_MIDDLE + LIB_ZINT_NAVIGATION
-HOME_ZINT_NAVIGATION_INDEX_HTML = HOME_ZINT_NAVIGATION + '/index.html'
-#
-LIB_ZINT_LIB = 'zintLib'
-HOME_ZINT_LIB = PATH_WS + LIB_ZINT_LIB + PATH_MIDDLE + LIB_ZINT_LIB
-
-# *************************************
-# used libraries
-HOME_LIB_USED = '/Users/bingol/Documents/workspace-WebStorm/zintZzLibUsed/zintBundle'
-#
-LIB_FLEXBOX = 'flexbox'
-HOME_FLEXBOX = HOME_LIB_USED + '/' + LIB_FLEXBOX
-#
-LIB_MATH_JAX = 'MathJax'
-HOME_MATH_JAX = HOME_LIB_USED + '/' + LIB_MATH_JAX
-#
-LIB_PRISM = 'prism'
-HOME_PRISM = HOME_LIB_USED + '/' + LIB_PRISM
-#
-LIB_SNAP_SVG = 'SnapSvg'
-HOME_SNAP_SVG = HOME_LIB_USED + '/' + LIB_SNAP_SVG
-
+# LANGUAGE = "myML"
+# ************************************* A

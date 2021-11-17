@@ -36,3 +36,6 @@ origin: /Users/bingol/Documents/workspace-WebStorm/zintContent/content/WebConten
   - `chZ_DoNotChange` directory has only required items.
   - `zintBundle` has `zintContent` directory only.
   - `__test` directory is added for testing.
+
+- 2021-11-09 hb
+  - Source is changed to `zintGenericMarkDownExtender`.

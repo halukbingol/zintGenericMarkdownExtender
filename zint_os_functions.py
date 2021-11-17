@@ -1,6 +1,6 @@
 #  zint_os_functions.py
 
-from pathlib import Path
+import os
 import subprocess
 from pathlib import Path
 
@@ -67,18 +67,27 @@ def zint_file_copy_create_directory(path_source_to_file, path_destination_direct
     If destination directory does not exist, create one.
     """
     zint_directory_create(path_destination_directory)
-
-    subprocess.run(["mkdir", "-p", path_destination_directory], capture_output=True)
+    # subprocess.run(["mkdir", "-p", path_destination_directory], capture_output=True)
     subprocess.run(["cp", path_source_to_file, path_destination_directory], capture_output=True)
     return
 
 
 def zint_file_read(path_to_file):
     # read into content
-    f = open(path_to_file, "r", encoding="utf-8")
-    content = f.read()
-    f.close()
-    return content
+    text = ""
+    try:
+        cwd = os.getcwd()
+        f = open(path_to_file, "r", encoding="utf-8")
+        text = f.read()
+        f.close()
+    except FileNotFoundError:
+        print("**ERROR** zint_file_read: File is not found: " + str(path_to_file))
+        exit(1)
+    except:
+        print("**ERROR** zint_file_read: Unknown error")
+        exit(1)
+    #
+    return text
 
 
 def zint_file_write(path_to_file, text):
@@ -87,11 +96,14 @@ def zint_file_write(path_to_file, text):
     """
     p_path_to_file = Path(path_to_file)
     p_parent = p_path_to_file.parent
-    p_parent.mkdir(parents=True, exist_ok=True)
-    #
-    f = open(p_path_to_file, "w", encoding="utf-8")
-    f.write(text)
-    f.close()
+    try:
+        p_parent.mkdir(parents=True, exist_ok=True)
+        #
+        f = open(p_path_to_file, "w", encoding="utf-8")
+        f.write(text)
+        f.close()
+    except:
+        print("**ERROR** zint_file_write: Unknown error")
 
 
 def zint_file_time_stamp(path_directory_destination):

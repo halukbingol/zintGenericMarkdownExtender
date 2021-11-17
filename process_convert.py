@@ -6,9 +6,22 @@ import re
 import json
 import subprocess
 from os.path import dirname, join, abspath
+from pathlib import Path
 #
-from config_constants import CONFIG_CONVERSION, PANDOC, PATH_FIXED_F1, PATH_FIXED_F2, FILE_TMP
+from config_constants import \
+    GENERIC_MARKDOWN_EXTENDER, \
+    PANDOC, FILE_TMP, \
+    LANGUAGE, SOURCE, \
+    CONFIG_EXTENSION_DEFINITIONS, \
+    CH_SEC_TEMPLATE_F1, CH_SEC_TEMPLATE_F2
 from zint_os_functions import zint_file_write, zint_file_read
+
+# set variables
+PATH_LANGUAGE = GENERIC_MARKDOWN_EXTENDER \
+                + "/static/" + LANGUAGE + '/' + SOURCE
+CONFIG_CONVERSION = PATH_LANGUAGE + "/" + CONFIG_EXTENSION_DEFINITIONS
+PATH_FIXED_F1 = PATH_LANGUAGE + "/" + CH_SEC_TEMPLATE_F1
+PATH_FIXED_F2 = PATH_LANGUAGE + "/" + CH_SEC_TEMPLATE_F2
 
 
 def convert(path_to_md, path_to_html):
@@ -16,24 +29,54 @@ def convert(path_to_md, path_to_html):
     Order the processes.
     """
 
-    content = zint_file_read(path_to_md)
+    # read in `.md` file
+    text = zint_file_read(path_to_md)
+
+    # process include files
+    text = process_includes(text, path_to_md)
 
     # apply tc => md on `content`
-    content = process_xm_to_md(content)
+    text = process_xm_to_md(text)
 
     # apply md => html by pandoc
-    content = process_md_to_html(content)
+    text = process_md_to_html(text)
 
     # process for prism
-    content = process_html_prism_html(content)
+    text = process_html_prism_html(text)
 
     # process to html page
-    content = process_html_to_page(content)
+    text = process_html_to_page(text)
 
     # write
-    zint_file_write(path_to_html, content)
+    zint_file_write(path_to_html, text)
 
     return
+
+
+def process_includes(text, path_to_md):
+    """
+    replaces `# include fileA` with content of `fileA`
+    """
+    re_include = "(^# ?include )([\w\./-]+)"
+    p_path_to_md = Path(path_to_md)
+    p_directory = p_path_to_md.parent
+
+    #
+    text_out: str = ""
+    lines = text.splitlines()
+    for i in range(len(lines)):
+        # process each line
+        line = lines[i]
+        patter = re.compile(re_include)
+        match = patter.match(line)
+        if match:
+            file_to_include = match.group(2)
+            p_file_to_include = p_directory.joinpath(file_to_include)
+            text_included = zint_file_read(p_file_to_include)
+            text_out += text_included
+        else:
+            text_out += lines[i] + "\n"
+    return text_out
 
 
 def process_xm_to_md(text):
@@ -76,6 +119,8 @@ def process_xm_to_md(text):
                             n = int(found_group.group(1))
                             line = p.sub(match.group(n), line)
                         lines[i] = exp.sub(value, line)
+                    # elif "include" in pattern:
+                    #
                     else:
                         lines[i] = exp.sub(value, line)
 
@@ -136,5 +181,3 @@ def process_html_to_page(content):
     f2 = zint_file_read(PATH_FIXED_F2)
     content = f1 + content + f2
     return content
-
-

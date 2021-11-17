@@ -1,47 +1,67 @@
 class ZintMarkdownExtender {
 
-    static zintGetFilesCssJs(arr) {
+    static getCssJsLocal(arr) {
+        let elHead = document.querySelector('head');
+        for (let i = 0; i < arr.length; i++) {
+            let file = arr[i];
+            let extension = file.split('.').pop();
+            if (extension === "js") {
+                ZintMarkdownExtender.getJs(elHead, file);
+            } else if (extension === "css") {
+                ZintMarkdownExtender.getCs(elHead, file);
+            } else {
+                console.log("ZintMarkdownExtender.zintGetFilesCssJsLocal: "
+                    + "Unknown file extension: " + extension
+                );
+            }
+        }
+    }
+
+    static getCssJsZintBundle(arr) {
         let elHead = document.querySelector('head');
 
         // external libraries
         if (arr.includes("mathjax")) {
-            getJs("../../zintBundle/MathJax/tex-svg.js");
+            ZintMarkdownExtender.getJs(elHead, "../../zintBundle/MathJax/tex-svg.js");
         }
-        // if (arr.includes("markdown")) {
-        //     getCs("../../zintBundle/markdown/markdown.css");
-        //     // getJs("../../zintBundle/js/markdown.js");
-        // }
+        if (arr.includes("markdown")) {
+            ZintMarkdownExtender.getCs(elHead, "../../zintBundle/markdown/markdown.css");
+            // ZintMarkdownExtender.getJs(elHead,"../../zintBundle/js/markdown.js");
+        }
         if (arr.includes("prism")) {
-            getCs("../../zintBundle/prism/prism.css");
-            getJs("../../zintBundle/prism/prism.js");
+            ZintMarkdownExtender.getCs(elHead, "../../zintBundle/prism/prism.css");
+            ZintMarkdownExtender.getJs(elHead, "../../zintBundle/prism/prism.js");
         }
         if (arr.includes("snapsvg")) {
-            getJs("../../zintBundle/SnapSvg/snap.svg-min.js");
+            ZintMarkdownExtender.getJs(elHead, "../../zintBundle/SnapSvg/snap.svg-min.js");
         }
-
-        // zint stuff
         if (arr.includes("zintContent")) {
-            console.log("zintContent");
-            getCs("../../zintBundle/zintContent/zintContent.css");
-            getJs("../../zintBundle/zintContent/zintContent.js");
-            getJs("../../zintBundle/zintContent/zintContentSnapStepByStepDescription.js");
-            getJs("../../zintBundle/zintContent/zintContentSnapUtility.js");
+            // zint stuff
+            // console.log("zintContent");
+            ZintMarkdownExtender.getCs(elHead, "../../zintBundle/zintContent/zintContent.css");
+            ZintMarkdownExtender.getJs(elHead, "../../zintBundle/zintContent/zintContent.js");
+            ZintMarkdownExtender.getJs(elHead, "../../zintBundle/zintContent/zintContentSnapStepByStepDescription.js");
+            ZintMarkdownExtender.getJs(elHead, "../../zintBundle/zintContent/zintContentSnapUtility.js");
         }
-
-
-        function getJs(path) {
-            let elScript = document.createElement("script");
-            elScript.src = path;
-            elHead.appendChild(elScript);
+        if (arr.includes("zintLib")) {
+            // zint stuff
+            console.log("zintLib");
+            ZintMarkdownExtender.getJs(elHead, "../../zintBundle/zintLib/zintLib.js");
         }
+    }
+
+    static getJs(el, path) {
+        let elScript = document.createElement("script");
+        elScript.src = path;
+        el.appendChild(elScript);
+    }
 
 
-        function getCs(path) {
-            let elStyle = document.createElement("link");
-            elStyle.rel = "stylesheet";
-            elStyle.href = path;
-            elHead.appendChild(elStyle);
-        }
+    static getCs(el, path) {
+        let elStyle = document.createElement("link");
+        elStyle.rel = "stylesheet";
+        elStyle.href = path;
+        el.appendChild(elStyle);
     }
 
 
@@ -50,7 +70,13 @@ class ZintMarkdownExtender {
             .innerHTML = titleRunning;
         document.getElementById("idTitleSlide")
             .innerHTML = titleSlide;
-        document.title = "titleNew";
+        document.title = titleSlide + " | " + titleRunning + " | 01pi.com";
+    }
+
+    static zint_show_hide(el) {
+        let elActive = event.target;
+        let elNext = elActive.nextElementSibling;
+        elNext.classList.toggle("zint-content-hidden");
     }
 }
 
