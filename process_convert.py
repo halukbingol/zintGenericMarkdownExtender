@@ -32,6 +32,11 @@ def convert(path_to_md, path_to_html):
     # read in `.md` file
     text = zint_file_read(path_to_md)
 
+    # process head
+    text = process_head_zint(text)
+    text = process_head_locals_js(text)
+    text = process_head_locals_css(text)
+
     # process include files
     text = process_includes(text, path_to_md)
 
@@ -53,6 +58,89 @@ def convert(path_to_md, path_to_html):
     return
 
 
+def process_head_locals_js(text):
+    return process_head_locals(text, "headLocalJs")
+
+
+def process_head_locals_css(text):
+    return process_head_locals(text, "headLocalCss")
+
+
+def process_head_locals(text, opcode):
+    """
+    replaces `# headLocalX fileA` with `<link>` or `<script>` in `head`
+    """
+    re_include = "(^# ?" + opcode + " )([\w\./ -]+)"
+    #
+    text_out: str = ""
+    lines = text.splitlines()
+    for i in range(len(lines)):
+        # process each line
+        line = lines[i]
+        patter = re.compile(re_include)
+        match = patter.match(line)
+        if match:
+            file_to_include = match.group(2)
+            if opcode == "headLocalJs":
+                text_out += "<script src=\"" + file_to_include + "\"></script>"
+            else:
+                text_out += "<link rel=\"stylesheet\" href=\"" + file_to_include + "\">"
+        else:
+            text_out += lines[i] + "\n"
+    return text_out
+
+
+def process_head_zint(text):
+    """
+    replaces `# headLocalX fileA` with `<link>` or `<script>` in `head`
+    """
+    re_include = "(^# ?headZintBundle )([\w\./-]+)"
+    #
+    text_out: str = ""
+    lines = text.splitlines()
+    for i in range(len(lines)):
+        # process each line
+        line = lines[i]
+        patter = re.compile(re_include)
+        match = patter.match(line)
+        if match:
+            file_to_include = match.group(2)
+
+            # zintLab libraries
+            if file_to_include == "zintContent":
+                text_out += "<link rel=\"stylesheet\" href=\"../../zintBundle/zintContent/zintContent.css\">"
+                text_out += "<script src=\"../../zintBundle/zintContent/zintContent.js\"></script>"
+                text_out += "<script src=\"../../zintBundle/zintContent/zintContentSnapStepByStepDescription.js\"></script>"
+                text_out += "<script src=\"../../zintBundle/zintContent/zintContentSnapUtility.js\"></script>"
+
+            # external libs
+            if file_to_include == "mathjax":
+                text_out += "<script src=\"../../zintBundle/MathJax/tex-svg.js\"></script>"
+
+            if file_to_include == "prism":
+                text_out += "<link rel=\"stylesheet\" href=\"../../zintBundle/prism/prism.css\">"
+                text_out += "<script src=\"../../zintBundle/prism/prism.js\"></script>"
+
+            if file_to_include == "snapsvg":
+                text_out += "<script src=\"../../zintBundle/SnapSvg/snap.svg-min.js\"></script>"
+
+            # # dummy
+            # if file_to_include == "aa":
+            #     text_out += "<link rel=\"stylesheet\" href=\"../../zintBundle/aa/bb.css\">"
+            #     text_out += "<script src=\"../../zintBundle/aa/bb.js\"></script>"
+            # if file_to_include == "aa":
+            #     text_out += "<link rel=\"stylesheet\" href=\"../../zintBundle/aa/bb.css\">"
+            #     text_out += "<script src=\"../../zintBundle/aa/bb.js\"></script>"
+
+
+        else:
+            text_out += lines[i] + "\n"
+    return text_out
+
+    # <link rel=\"stylesheet\" href=\"../../zintBundle/aa/bb.css\">
+    # <script src=\"../../zintBundle/aa/bb.js\"></script>
+
+
 def process_includes(text, path_to_md):
     """
     replaces `# include fileA` with content of `fileA`
@@ -60,7 +148,6 @@ def process_includes(text, path_to_md):
     re_include = "(^# ?include )([\w\./-]+)"
     p_path_to_md = Path(path_to_md)
     p_directory = p_path_to_md.parent
-
     #
     text_out: str = ""
     lines = text.splitlines()
@@ -176,8 +263,9 @@ def process_html_prism_html(text):
     return "\n".join(lines)
 
 
-def process_html_to_page(content):
-    f1 = zint_file_read(PATH_FIXED_F1)
+def process_html_to_page(text):
+    # f1 = zint_file_read(PATH_FIXED_F1)
     f2 = zint_file_read(PATH_FIXED_F2)
-    content = f1 + content + f2
-    return content
+    # content = f1 + content + f2
+    text = text + f2
+    return text

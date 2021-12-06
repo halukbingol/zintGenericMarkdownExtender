@@ -67,7 +67,7 @@ layout = [
 # see: https://stackoverflow.com/questions/62037000/how-to-keep-the-last-selected-file-from-sg-filebrowser-in-default-text-from-sg-i
 # path_initial_folder = PATH_INIT_FOLDER + '/source'
 
-window = sg.Window("zintContentEditor", layout)
+window = sg.Window("zintGenericMarkdownExtender", layout)
 
 # Run the Event Loop
 while True:

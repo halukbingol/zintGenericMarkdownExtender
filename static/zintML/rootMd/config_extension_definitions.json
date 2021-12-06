@@ -10,22 +10,15 @@
       "^nop$": "nop"
     }
   },
-  "Load zintBundle libraries": {
+  "Head processing": {
     "comment": [
-      "L: load zintBundle libraries"
+      "H: head",
+      "HV: template-1-doctype-head-zintMarkdownExtender.html",
+      "HA: template-2-headEnd-body-title.html"
     ],
     "rule": {
-      "^# ?LZV.*$": "\n<script>ZintMarkdownExtender.getCssJsZintBundle([",
-      "^# ?LZA.*$": "]);</script>\n"
-    }
-  },
-  "Load local libraries": {
-    "comment": [
-      "L: load local libraries"
-    ],
-    "rule": {
-      "^# ?LLV.*$": "\n<script>ZintMarkdownExtender.getCssJsLocal([",
-      "^# ?LLA.*$": "]);</script>\n"
+      "^# ?HV.*$": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=yes\"/>\n<title>01pi.com</title>\n<link rel=\"shortcut icon\" href=\"../../zintBundle/zintLib/svg/01pi.svg\">\n<link rel=\"stylesheet\" href=\"../../zintBundle/zintMarkdownExtender/zintMarkdown.css\">\n<link rel=\"stylesheet\" href=\"../../zintBundle/zintMarkdownExtender/zintMarkdownExtender.css\">\n<script src=\"../../zintBundle/zintMarkdownExtender/ZintMarkdownExtender.js\"></script>\n<link rel=\"stylesheet\" href=\"../../zintBundle/zintLib/zintLib.css\">\n<script src=\"../../zintBundle/zintLib/zintLib.js\"></script>",
+      "^# ?HA.*$": "</head>\n<body>\n<div class=\"zint-page\">\n<div id=\"idZintContentTitle\" class=\"zint-content-title\">\n<h1 class=\"zint-content-title-running\" id=\"idTitleRunning\"></h1>\n<h1 class=\"zint-content-title-slide\" id=\"idTitleSlide\"></h1>\n</div>\n"
     }
   },
   "Title Slide": {
@@ -118,8 +111,8 @@
       "Step-by-step"
     ],
     "rule": {
-      "^# ?SBSV.*$": "<div id=idInDescr hidden>\n<div class=hbDescriptionStep>",
-      "^# ?SBSM.*$": "</div>\n<div class=hbDescriptionStep>",
+      "^# ?SBSV.*$": "<div id=idInDescription hidden>\n<div class=zint-sbs-description-step>",
+      "^# ?SBSM.*$": "</div>\n<div class=zint-sbs-description-step>",
       "^# ?SBSA.*$": "</div>\n</div>\n"
     }
   },
@@ -244,10 +237,26 @@
       "^# ?SYA.*$": "</div>"
     }
   },
-  "include board": {
+  "include script": {
     "comment": [],
     "rule": {
-      "^# ?IBV.*$": "\n<script>",
+      "^# ?ISV.*$": "\n<script>",
+      "^# ?ISA.*$": "</script>"
+    }
+  },
+  "include description": {
+    "comment": [],
+    "rule": {
+      "^# ?IDV.*$": "<div id='idInDescription'  class='zint-hidden'>",
+      "^# ?IDA.*$": "</div>"
+    }
+  },
+  "include board": {
+    "comment": [
+      "same as `ISV`"
+    ],
+    "rule": {
+      "^# ?IBV.*$": "\n<script class='zint-board-js'>",
       "^# ?IBA.*$": "</script>"
     }
   },
@@ -256,13 +265,6 @@
     "rule": {
       "^# ?ICV.*$": "\n<pre class='zint-hidden'>\n<code id='idInCode'>",
       "^# ?ICA.*$": "</code>\n</pre>\n"
-    }
-  },
-  "include description": {
-    "comment": [],
-    "rule": {
-      "^# ?IDV.*$": "<div id='idInDescr'  class='zint-hidden'>",
-      "^# ?IDA.*$": "</div>"
     }
   },
   "include highlight": {

@@ -1,6 +1,12 @@
+let arrGetCssJsZintBundle;
+let arrGetCssJsLocal;
+
 class ZintMarkdownExtender {
 
     static getCssJsLocal(arr) {
+        if (arr.length === 0) {
+            return;
+        }
         let elHead = document.querySelector('head');
         for (let i = 0; i < arr.length; i++) {
             let file = arr[i];
@@ -18,15 +24,18 @@ class ZintMarkdownExtender {
     }
 
     static getCssJsZintBundle(arr) {
+        if (arr.length === 0) {
+            return;
+        }
         let elHead = document.querySelector('head');
 
         // external libraries
-        if (arr.includes("mathjax")) {
-            ZintMarkdownExtender.getJs(elHead, "../../zintBundle/MathJax/tex-svg.js");
-        }
         if (arr.includes("markdown")) {
             ZintMarkdownExtender.getCs(elHead, "../../zintBundle/markdown/markdown.css");
             // ZintMarkdownExtender.getJs(elHead,"../../zintBundle/js/markdown.js");
+        }
+        if (arr.includes("mathjax")) {
+            ZintMarkdownExtender.getJs(elHead, "../../zintBundle/MathJax/tex-svg.js");
         }
         if (arr.includes("prism")) {
             ZintMarkdownExtender.getCs(elHead, "../../zintBundle/prism/prism.css");
@@ -45,7 +54,7 @@ class ZintMarkdownExtender {
         }
         if (arr.includes("zintLib")) {
             // zint stuff
-            console.log("zintLib");
+            // console.log("zintLib");
             ZintMarkdownExtender.getJs(elHead, "../../zintBundle/zintLib/zintLib.js");
         }
     }
@@ -78,5 +87,11 @@ class ZintMarkdownExtender {
         let elNext = elActive.nextElementSibling;
         elNext.classList.toggle("zint-content-hidden");
     }
+
+    static init() {
+        ZintMarkdownExtender.getCssJsZintBundle(arrGetCssJsZintBundle);
+        ZintMarkdownExtender.getCssJsLocal(arrGetCssJsLocal);
+    }
+
 }
 
