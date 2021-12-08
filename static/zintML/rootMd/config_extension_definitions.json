@@ -237,11 +237,18 @@
       "^# ?SYA.*$": "</div>"
     }
   },
-  "include script": {
+  "include javascript file": {
     "comment": [],
     "rule": {
-      "^# ?ISV.*$": "\n<script>",
-      "^# ?ISA.*$": "</script>"
+      "^# ?IJSV.*$": "\n<script>",
+      "^# ?IJSA.*$": "</script>"
+    }
+  },
+  "include css file": {
+    "comment": [],
+    "rule": {
+      "^# ?ICSSV.*$": "\n<style>",
+      "^# ?ICSSA.*$": "</style>"
     }
   },
   "include description": {
@@ -253,7 +260,7 @@
   },
   "include board": {
     "comment": [
-      "same as `ISV`"
+      "similar to `IJSV`"
     ],
     "rule": {
       "^# ?IBV.*$": "\n<script class='zint-board-js'>",
