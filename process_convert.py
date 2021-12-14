@@ -13,7 +13,7 @@ from config_constants import \
     PANDOC, FILE_TMP, \
     LANGUAGE, SOURCE, \
     CONFIG_EXTENSION_DEFINITIONS, \
-    CH_SEC_TEMPLATE_F1, CH_SEC_TEMPLATE_F2
+    CH_SEC_TEMPLATE_F1, CH_SEC_TEMPLATE_F2, CH_SEC_TEMPLATE_SBS
 from zint_os_functions import zint_file_write, zint_file_read
 
 # set variables
@@ -22,6 +22,7 @@ PATH_LANGUAGE = GENERIC_MARKDOWN_EXTENDER \
 CONFIG_CONVERSION = PATH_LANGUAGE + "/" + CONFIG_EXTENSION_DEFINITIONS
 PATH_FIXED_F1 = PATH_LANGUAGE + "/" + CH_SEC_TEMPLATE_F1
 PATH_FIXED_F2 = PATH_LANGUAGE + "/" + CH_SEC_TEMPLATE_F2
+PATH_FIXED_SBS = PATH_LANGUAGE + "/" + CH_SEC_TEMPLATE_SBS
 
 
 def convert(path_to_md, path_to_html):
@@ -36,6 +37,9 @@ def convert(path_to_md, path_to_html):
     text = process_head_zint(text)
     text = process_head_locals_js(text)
     text = process_head_locals_css(text)
+
+    # process templates
+    text = process_template(text)
 
     # process include files
     text = process_includes(text, path_to_md)
@@ -132,7 +136,6 @@ def process_head_zint(text):
             #     text_out += "<link rel=\"stylesheet\" href=\"../../zintBundle/aa/bb.css\">"
             #     text_out += "<script src=\"../../zintBundle/aa/bb.js\"></script>"
 
-
         else:
             text_out += lines[i] + "\n"
     return text_out
@@ -210,7 +213,7 @@ def process_xm_to_md(text):
                     #
                     else:
                         lines[i] = exp.sub(value, line)
-
+    #
     return "\n".join(lines)
 
 
@@ -261,6 +264,32 @@ def process_html_prism_html(text):
                 lines[i] = exp.sub(value, line)
 
     return "\n".join(lines)
+
+
+
+def process_template(text):
+    """
+    replaces `# includeTemplate template-xx` content of `template-xx.html`
+    """
+    re_include = "(^# ?includeTemplate )([\w\./-]+)"
+    #
+    text_out: str = ""
+    lines = text.splitlines()
+    for i in range(len(lines)):
+        # process each line
+        line = lines[i]
+        patter = re.compile(re_include)
+        match = patter.match(line)
+        if not match:
+            text_out += lines[i] + "\n"
+        else:
+            file_to_include = match.group(2)
+            if file_to_include == "template-sbs":
+                template = zint_file_read(PATH_FIXED_SBS)
+                text_out = text_out + template
+            # if file_to_include == "template-xxx":
+            #     # dummy
+    return text_out
 
 
 def process_html_to_page(text):
