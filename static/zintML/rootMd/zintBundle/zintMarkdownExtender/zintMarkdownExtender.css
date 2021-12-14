@@ -39,8 +39,79 @@
 /*}*/
 
 
+/* *************************************
+ *	Flex
+ * *************************************/
+
+.zint-flex-container {
+    display: flex;
+}
+
+.zint-flex-left {
+    order: 1;
+}
+
+.zint-flex-middle {
+    order: 2;
+}
+
+.zint-flex-right {
+    order: 3;
+}
+
+.zint-flex-item-1 {
+    flex: 1;
+}
+
+.zint-flex-item-2 {
+    flex: 2;
+}
+
+
+/* *************************************
+ *	SBS
+ * *************************************/
+
+.zint-sbs-visible {
+}
+
+.zint-sbs-title {
+    color: #999999;
+    text-align: center;
+    opacity: 50%;
+}
+
+.zint-sbs-code {
+    padding: 5px;
+}
+
+.zint-sbs-board {
+    padding: 5px;
+}
+
+.zint-sbs-trace {
+    padding: 5px;
+}
+
+.zint-sbs-description {
+    padding: 5px;
+}
+
+.zint-sbs–scroll {
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* *************************************
+ *	content
+ * *************************************/
+
+.zint-hidden {
+    display: none;
+}
+
 .zint-page {
-    /*nop*/
 }
 
 .zint-content-separator-page {
@@ -78,7 +149,7 @@
 .zint-content-title-slide {
     font-size: 200%;
     text-align: left;
-    color: 	#ffd700;
+    color: #ffd700;
     /*color: chocolate;*/
 }
 
@@ -423,10 +494,6 @@
 
 .zint-content-inline-keyword {
     /*nop*/
-}
-
-.zint-hidden {
-    display: none;
 }
 
 
