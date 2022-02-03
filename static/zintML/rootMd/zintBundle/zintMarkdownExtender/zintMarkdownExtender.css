@@ -72,8 +72,8 @@
  *	SBS
  * *************************************/
 
-.zint-sbs-visible {
-}
+/*.zint-sbs-visible {*/
+/*}*/
 
 .zint-sbs-title {
     color: #999999;
@@ -82,18 +82,25 @@
 }
 
 .zint-sbs-code {
+    color: #f8f8f2;
     padding: 5px;
 }
 
 .zint-sbs-board {
+    /*color: #a7730c;*/
+    color: #f8f8f2;
     padding: 5px;
 }
 
 .zint-sbs-trace {
+    /*color: whitesmoke;*/
+    color: #f8f8f2;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     padding: 5px;
 }
 
 .zint-sbs-description {
+    color: white;
     padding: 5px;
 }
 
@@ -149,7 +156,7 @@
 .zint-content-title-slide {
     font-size: 200%;
     text-align: left;
-    color: #ffd700;
+    color: #ffbd33;
     /*color: chocolate;*/
 }
 
