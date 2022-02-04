@@ -33,9 +33,9 @@ def gui_process_update_course_structure_js(path_to_md):
 
 
 def gui_process_md(path_to_md):
+    print('...processing file: %s' % str(path_to_md))
     path_to_html = get_corresponding_path_in_destination_to_html(path_to_md)
     convert(path_to_md, path_to_html)
-    print('...processing file: %s' % str(path_to_md))
 
 
 def gui_process_sec(path_source_sec):
