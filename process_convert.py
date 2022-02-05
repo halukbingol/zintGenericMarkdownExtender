@@ -212,8 +212,11 @@ def process_xm_to_md(text):
                     # elif "include" in pattern:
                     #
                     else:
-                        lines[i] = exp.sub(value, line)
-    #
+                        # lines[i] = exp.sub(value, line)
+                        after = exp.sub(value, line)
+                        line = after
+        lines[i] = line
+
     return "\n".join(lines)
 
 
@@ -264,7 +267,6 @@ def process_html_prism_html(text):
                 lines[i] = exp.sub(value, line)
 
     return "\n".join(lines)
-
 
 
 def process_template(text):

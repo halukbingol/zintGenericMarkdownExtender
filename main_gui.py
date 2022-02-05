@@ -112,7 +112,7 @@ while True:
     if event == 'process_course':
         path_to_md = values['path_to_md']
         p_source_md = Path(path_to_md)
-        p_source_course = p_source_md.parent.patent.parent
+        p_source_course = p_source_md.parent.parent.parent
         gui_process_course(p_source_course)
         continue
 

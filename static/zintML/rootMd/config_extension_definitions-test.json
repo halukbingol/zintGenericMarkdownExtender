@@ -1,0 +1,11 @@
+{
+  "Inline Defined": {
+    "comment": [
+      "Use to mark the defined term"
+    ],
+    "rule": {
+      "dd{": "<span class='zint-content-inline-defined'>",
+      "}dd": "</span>"
+    }
+  }
+}
