@@ -121,7 +121,7 @@
       "Show/Hide"
     ],
     "rule": {
-      "^# ?SHV.*$": "\n<div><button onclick='zint_show_hide()'>show/hide</button><div class='zint-content-hidden zint-content-show-hide'>",
+      "^# ?SHV.*$": "\n<div><button onclick='ZintUtilUI.showHide()'>show/hide</button><div class='Hidden zint-cic zint-cic-show-hide'>",
       "^# ?SHA.*$": "\n</div></div>\n"
     }
   },
@@ -130,7 +130,7 @@
       "Show Answer"
     ],
     "rule": {
-      "^# ?SAV.*$": "\n<div><button onclick='zint_show_hide()'>show/hide</button><div class='zint-content-hidden zint-content-show-answer'>",
+      "^# ?SAV.*$": "\n<div><button onclick='ZintUtilUI.showHide()'>show/hide</button><div class='zint-content-hidden zint-content-show-answer'>",
       "^# ?SAA.*$": "\n</div></div>\n"
     }
   },

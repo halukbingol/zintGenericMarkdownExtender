@@ -1,3 +1,15 @@
+.Hidden {
+    position: absolute !important;
+    *clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+
 /* *************************************
  *	zintGenericMarkdownExtender.css
  * *************************************/
@@ -38,6 +50,15 @@
 /*    margin: 5px;*/
 /*}*/
 
+:root {
+    --content-inwindow-bgc: 44484 a;
+    --content-inwindow-border-style: solid;
+    --content-inwindow-border-radius: 10px;
+    --content-inwindow-border-color: #393939;
+    --content-inwindow-margin: 10px;
+    --content-inwindow-padding: 5px;
+    --content-inwindow-width: 80%;
+}
 
 /* *************************************
  *	Flex
@@ -114,11 +135,59 @@
  *	content
  * *************************************/
 
-.zint-hidden {
-    display: none;
+/*.zint-hidden {*/
+/*    display: none;*/
+/*}*/
+
+.zint-content-algorithm {
+    background-color: cornflowerblue;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    margin: 10px;
+    border-style: solid;
+    /*font-size: 80%;*/
 }
 
-.zint-page {
+.zint-content-algorithm::before {
+    content: "Alg.";
+    /*    background-color: yellow;
+    */
+    color: red;
+    letter-spacing: 3px;
+    font-weight: bold;
+    /*font-size: 80%;*/
+    text-shadow: 2px 2px darkgray;
+    text-align: right;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+
+.zint-content-before-frame {
+    /*fill: #333333;*/
+}
+
+.zint-content-before-text {
+    /*text-anchor : middle;*/
+    /*font-size : small;*/
+    /*fill : #ffbd33*/
+}
+
+
+.zint-content-center {
+    text-align: center;
+}
+
+
+.zint-content-citation {
+    color: dodgerblue;
+    /*font-style: italic;*/
+    /*font-size: 60%;*/
+    text-align: right;
+}
+
+.zint-content-citation::before {
+    content: url("svg/zintBeforeRemark.svg");
 }
 
 .zint-content-separator-page {
@@ -160,34 +229,6 @@
     /*color: chocolate;*/
 }
 
-.zint-content-1 {
-    /*nop*/
-}
-
-.zint-content-2-left {
-    /*nop*/
-}
-
-.zint-content-2-right {
-    /*nop*/
-}
-
-.zint-content-3-left {
-    /*nop*/
-}
-
-.zint-content-3-middle {
-    /*nop*/
-}
-
-.zint-content-3-right {
-    /*nop*/
-}
-
-.zint-content-center {
-    text-align: center;
-}
-
 /* ************************************
  * Old below
  * ************************************ */
@@ -196,22 +237,22 @@
  *	Block markups
  *	- definition, remark
  * *************************************/
-.zint-content-hidden {
-    display: none;
-}
+/*.zint-content-hidden {*/
+/*    display: none;*/
+/*}*/
 
 /*.zint-step-by-step-code {*/
 /*    display: none;*/
 /*}*/
 
-.zint-content-show-hide {
-    background-color: gainsboro;
-    /*font-size: 80%;*/
-    text-align: left;
-    color: chocolate;
-}
+/*.zint-content-show-hide {*/
+/*    background-color: gainsboro;*/
+/*    !*font-size: 80%;*!*/
+/*    text-align: left;*/
+/*    color: chocolate;*/
+/*}*/
 
-.zint-content-show-hide::before {
+.zint-cic-show-hide::before {
     content: "SH.";
     /*    background-color: yellow;
     */
@@ -250,18 +291,9 @@
     text-transform: uppercase;
 }
 
-.zint-content-show-answer {
-    background-color: gainsboro;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    width: 95%;
-    margin: 5px;
-    border-style: solid;
-    /*font-size: 70%;*/
-    text-align: left;
-    color: seagreen;
-}
 
-.zint-content-show-answer::before {
+/*.zint-content-show-answer*/
+.zint-content-inwindow-show-answer::before {
     /* content: "SA."; */
     /*    background-color: yellow;
     */
@@ -334,17 +366,7 @@
 }
 
 .zint-content-example::before {
-    content: "Ex.";
-    /*    background-color: yellow;
-    */
-    color: red;
-    letter-spacing: 3px;
-    font-weight: bold;
-    /*font-size: 80%;*/
-    text-shadow: 2px 2px darkgray;
-    text-align: right;
-    text-decoration: underline;
-    text-transform: uppercase;
+    content: url("svg/zintBeforeExample.svg");
 }
 
 .zint-content-definition {
@@ -373,49 +395,21 @@
     /*nop*/
 }
 
-.zint-content-remark {
-    background-color: peachpuff;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    width: 80%;
-    margin: 20px;
-    border-style: solid;
+.zint-cic,
+.zint-content-in-content,
+.zint-content-inwindow-remark,
+.zint-content-inwindow-show-answer {
+    background-color: var(--content-inwindow-bgc);
+    border-style: var(--content-inwindow-border-style);
+    border-radius: var(--content-inwindow-border-radius);
+    border-color: var(--content-inwindow-border-color);
+    margin: var(--content-inwindow-margin);
+    padding: var(--content-inwindow-padding);
+    width: var(--content-inwindow-width);
 }
 
 .zint-content-remark::before {
-    content: "Rem.";
-    /*    background-color: yellow;
-    */
-    color: red;
-    letter-spacing: 3px;
-    font-weight: bold;
-    /*font-size: 80%;*/
-    text-shadow: 2px 2px darkgray;
-    text-align: right;
-    text-decoration: underline;
-    text-transform: uppercase;
-}
-
-.zint-content-algorithm {
-    background-color: cornflowerblue;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    width: 90%;
-    margin: 10px;
-    border-style: solid;
-    /*font-size: 80%;*/
-}
-
-.zint-content-algorithm::before {
-    content: "Alg.";
-    /*    background-color: yellow;
-    */
-    color: red;
-    letter-spacing: 3px;
-    font-weight: bold;
-    /*font-size: 80%;*/
-    text-shadow: 2px 2px darkgray;
-    text-align: right;
-    text-decoration: underline;
-    text-transform: uppercase;
+    content: url("svg/zintBeforeRemark.svg");
 }
 
 .zint-content-computer-output {
@@ -445,27 +439,6 @@
     padding: 0;
 }
 
-.zint-content-citation {
-    color: dodgerblue;
-    /*font-style: italic;*/
-    /*font-size: 60%;*/
-    text-align: right;
-}
-
-.zint-content-citation::before {
-    content: "Citation.";
-    /*    background-color: yellow;
-    */
-    color: red;
-    letter-spacing: 3px;
-    font-weight: bold;
-    /*font-size: 80%;*/
-    text-shadow: 2px 2px darkgray;
-    text-align: right;
-    text-decoration: underline;
-    text-transform: uppercase;
-}
-
 .zint-content-see {
     /*nop*/
 }
@@ -479,12 +452,12 @@
  * *************************************/
 
 .zint-content-inline-emphasis {
-    color: green;
+    color: #d28339;
     font-style: italic;
 }
 
 .zint-content-inline-defined {
-    color: #b3b3b3;
+    color: #b1c627;
     font-style: italic;
 }
 
@@ -496,7 +469,7 @@
 }
 
 .zint-content-inline-syntax {
-    color: dodgerblue;
+    color: #759264;
 }
 
 .zint-content-inline-keyword {
