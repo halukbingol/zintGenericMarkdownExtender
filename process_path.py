@@ -3,11 +3,15 @@
 #  https://docs.python.org/3/library/pathlib.html
 
 from pathlib import Path
+from config_constants import \
+    DESTINATION, SOURCE
+
+
 #
 # from config_constants import DESTINATION, SOURCE
 
-DESTINATION = "rootHtml"
-SOURCE = "rootMd"
+# DESTINATION = "rootHtml"
+# SOURCE = "rootMd"
 
 """
 Naming conventions
