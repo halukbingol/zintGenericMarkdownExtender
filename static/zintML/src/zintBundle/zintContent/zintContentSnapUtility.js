@@ -5,11 +5,13 @@
 // 2020-12-21 HB init
 
 
-
 /**
  * Utility functions for snap
  */
 class zintContentSnapUtility {
+
+    // TODO clean This uses `snapJs`
+
 
     /**
      * Make a 20x20 grid of size
@@ -18,7 +20,7 @@ class zintContentSnapUtility {
      * @param width {number}
      * @param height {number}
      */
-    static makeAGrid20(s, width = 300, height=200) {
+    static makeAGrid20(s, width = 300, height = 200) {
         let gridArrCol = [];
         let gridArrRow = [];
         for (let i = 0; i < width; i += 20) {

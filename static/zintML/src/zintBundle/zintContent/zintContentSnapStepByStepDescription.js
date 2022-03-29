@@ -10,6 +10,8 @@
  */
 class ZintContentSnapStepByStepDescription {
 
+    // TODO clean This uses `snapJs`
+
     /**
      * Create step by step description
      * @param c_description_item {String} Unique CSS class of description items

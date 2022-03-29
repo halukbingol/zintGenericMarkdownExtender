@@ -13,23 +13,13 @@
   "Head processing": {
     "comment": [
       "H: head",
-      "HV: copy of `template-1-doctype-head-zintMarkdownExtender.html`",
-      "HA: copy of `template-2-headEnd-body-title.html`"
+      "copy the content of `template-1-doctype-head-zintMarkdownExtender.html`",
+      "HV: template-1-doctype-head-zintMarkdownExtender.html",
+      "HA: template-2-headEnd-body-title.html"
     ],
     "rule": {
-      "^# ?HV.*$": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=yes\"/>\n<title>01pi.com</title>\n<link rel=\"shortcut icon\" href=\"../../../zintBundle/zintLib/svg/01pi.svg\">\n",
+      "^# ?HV.*$": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=yes\"/>\n<title>01pi.com</title>\n<link rel=\"shortcut icon\" href=\"../../zintBundle/zintLib/svg/01pi.svg\">\n<link rel=\"stylesheet\" href=\"../../zintBundle/zintMarkdownExtender/zintMarkdown.css\">\n<link rel=\"stylesheet\" href=\"../../zintBundle/zintMarkdownExtender/zintMarkdownExtender.css\">\n<script src=\"../../zintBundle/zintMarkdownExtender/ZintMarkdownExtender.js\"></script>\n<link rel=\"stylesheet\" href=\"../../zintBundle/zintLib/zintLib.css\">\n<script src=\"../../zintBundle/zintLib/zintLib.js\"></script>",
       "^# ?HA.*$": "</head>\n<body>\n<div class=\"zint-page\">\n<div id=\"idZintContentTitle\" class=\"zint-content-title\">\n<h1 class=\"zint-content-title-running\" id=\"idTitleRunning\"></h1>\n<h1 class=\"zint-content-title-slide\" id=\"idTitleSlide\"></h1>\n</div>\n"
-    }
-  },
-  "Head processing for development": {
-    "comment": [
-      "HD: head",
-      "HDV: copy of `template-1-doctype-head-zintMarkdownExtender.html`",
-      "HDA: copy of `template-2-headEnd-body-title.html`"
-    ],
-    "rule": {
-      "^# ?HDV.*$": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=yes\"/>\n<title>01pi.com</title>\n<link rel=\"shortcut icon\" href=\"../../../zintBundle/zintLib/svg/01pi.svg\">\n",
-      "^# ?HDA.*$": "</head>\n<body>\n<div class=\"zint-page\">\n<div id=\"idZintContentTitle\" class=\"zint-content-title\">\n<h1 class=\"zint-content-title-running\" id=\"idTitleRunning\"></h1>\n<h1 class=\"zint-content-title-slide\" id=\"idTitleSlide\"></h1>\n</div>\n"
     }
   },
   "Title Slide": {
@@ -124,9 +114,7 @@
     "rule": {
       "^# ?SBSV.*$": "<div id=idInDescription class='Hidden'>\n<div class='zint-sbs-description-step'>",
       "^# ?SBSM.*$": "</div>\n<div class='zint-sbs-description-step'>",
-      "^# ?SBSA.*$": "</div>\n</div>\n",
-      "^step{": "<p class='zint-sbs-step'>",
-      "}step": "</p>"
+      "^# ?SBSA.*$": "</div>\n</div>\n"
     }
   },
   "Show / Hide": {
@@ -134,7 +122,7 @@
       "Show/Hide"
     ],
     "rule": {
-      "^# ?SHV.*$": "\n<div><button class='zint-cic-button' onclick='ZintUI.showHide()'>show</button><div class='Hidden zint-cic zint-cic-show-hide'>",
+      "^# ?SHV.*$": "\n<div><button onclick='ZintUtilUI.showHide()'>show/hide</button><div class='Hidden zint-cic zint-cic-show-hide'>",
       "^# ?SHA.*$": "\n</div></div>\n"
     }
   },
@@ -170,41 +158,22 @@
       "^# ?SPA.*$": "</div>"
     }
   },
-  "Info-Box": {
-    "comment": [
-      "***************************************************************",
-      "*                    Info box opcodes                         *",
-      "***************************************************************"
-    ],
-    "rule": {
-      "^# ?infoBox-XXXXXXXXXXXXXXXX-V.*$": "***************************************************************"
-    }
-  },
   "Do You Know": {
     "comment": [
-      "IDYK: Do You Know"
+      "Use for additional information."
     ],
     "rule": {
-      "^# ?IDYKV.*$": "<div class=\"zint-content-info zint-cic\">\n<h4 class=\"zint-content-info-dyk\">\n<img src=\"../../../zintBundle/zintLib/markdownExtender/svg/zintMdeBeforeDYK.svg\">\nDo You Know\n</h4>\n<div>\n",
-      "^# ?IDYKA.*$": "</div>\n</div>\n"
+      "^# ?DYKV.*$": "<div class='zint-content-hide zint-content-do-you-know'>",
+      "^# ?DYKA.*$": "</div>"
     }
   },
   "Remark": {
     "comment": [
-      "IRK: Remark"
+      "Remark"
     ],
     "rule": {
-      "^# ?IRKV.*$": "<div class=\"zint-content-info zint-cic\">\n<h4 class=\"zint-content-info-remark\">\n<img src=\"../../../zintBundle/zintLib/markdownExtender/svg/zintMdeBeforeRemark.svg\">\nRemark\n</h4>\n<div>\n",
-      "^# ?IRKA.*$": "</div>\n</div>\n"
-    }
-  },
-  "Reminder": {
-    "comment": [
-      "IRD: Reminder"
-    ],
-    "rule": {
-      "^# ?IRDV.*$": "<div class=\"zint-content-info zint-cic\">\n<h4 class=\"zint-content-info-reminder\">\n<img src=\"../../../zintBundle/zintLib/markdownExtender/svg/zintMdeBeforeReminder.svg\">\nReminder\n</h4>\n<div>\n",
-      "^# ?IRDA.*$": "</div>\n</div>\n"
+      "^# ?RV.*$": "<div class='zint-content-remark'>",
+      "^# ?RA.*$": "</div>"
     }
   },
   "Question": {
@@ -320,64 +289,20 @@
       "^# ?ITA.*$": "</pre>\n"
     }
   },
-  "h: Inline formats": {
-    "comment": [
-      "***************************************************************",
-      "*                    inline formats                           *",
-      "***************************************************************"
-    ],
-    "rule": {
-      "^# ?Inline-XXXXXXXXXXXXXXXX-V.*$": "***************************************************************"
-    }
-  },
   "Inline Defined": {
     "comment": [
       "Use to mark the defined term"
     ],
     "rule": {
-      "def{": "<span class='zint-content-inline-defined'>",
-      "}def": "</span>"
-    }
-  },
-   "Inline Emphasis": {
-    "comment": [],
-    "rule": {
-      "ee{": "<span class='zint-content-inline-emphasis'>",
-      "}ee": "</span>"
-    }
-  },
- "Inline Code Location": {
-    "comment": [
-      "code-location"
-    ],
-    "rule": {
-      "loc{": "<span class='zint-content-inline-code-location'>",
-      "}loc": "</span>"
+      "dd{": "<span class='zint-content-inline-defined'>",
+      "}dd": "</span>"
     }
   },
   "Inline Syntax": {
     "comment": [],
     "rule": {
-      "syx{": "<span class='zint-content-inline-syntax'>",
-      "}syx": "</span>"
-    }
-  },
-  "Inline Code Value": {
-    "comment": [
-      "code-value"
-    ],
-    "rule": {
-      "val{": "<span class='zint-content-inline-code-value'>",
-      "}val": "</span>"
-    }
-  },
-  "Inline Code Variable": {
-    "comment": [
-      "code-variable"
-    ],
-    "rule": {
-      "var{": "<span class='zint-content-inline-code-variable'>",
-      "}var": "</span>"
+      "sy{": "<span class='zint-content-inline-syntax'>",
+      "}sy": "</span>"
     }
   },
   "Inline Link": {
@@ -386,6 +311,13 @@
       "llv{": "<a href='",
       "lm{": "'  rel='nofollow' target='_blank'>",
       "}la": "</a>"
+    }
+  },
+  "Inline Emphasis": {
+    "comment": [],
+    "rule": {
+      "ee{": "<span class='zint-content-inline-emphasis'>",
+      "}ee": "</span>"
     }
   },
   "Inline Keyword": {
@@ -404,9 +336,6 @@
   },
   "prism": {
     "comment": [
-      "***************************************************************",
-      "*                    PrismJS  converter                       *",
-      "***************************************************************",
       "keep this",
       "Library `pandoc` transfers md to html but it is not compatible with syntax highlighting library `prism`.",
       "This makes the correction."
@@ -415,21 +344,10 @@
       "<pre class=\"bash\"><code>": "<pre><code class=\"language-bash line-numbers\">",
       "<pre class=\"css\"><code>": "<pre><code class=\"language-css line-numbers\">",
       "<pre class=\"html\"><code>": "<pre><code class=\"language-html line-numbers\">",
-      "<pre class=\"java\"><code>": "<pre><code class=\"language-java line-numbers\">",
       "<pre class=\"javascript\"><code>": "<pre><code class=\"language-javascript line-numbers\">",
-      "<pre class=\"js\"><code>": "<pre><code class=\"language-javascript line-numbers\">",
+      "<pre class=\"java\"><code>": "<pre><code class=\"language-java line-numbers\">",
       "<pre class=\"latex\"><code>": "<pre><code class=\"language-latex line-numbers\">",
       "<pre class=\"markdown\"><code>": "<pre><code class=\"language-markdown line-numbers\">"
-    }
-  },
-  "h: Unused": {
-    "comment": [
-      "***************************************************************",
-      "*                    unused                                   *",
-      "***************************************************************"
-    ],
-    "rule": {
-      "^# ?unused-XXXXXXXXXXXXXXXX-V.*$": "***************************************************************"
     }
   },
   "Open Project": {

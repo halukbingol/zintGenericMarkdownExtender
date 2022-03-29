@@ -23,11 +23,11 @@ str_path: path as str
 
 path_to_course|        |- path_ch_to_md
               v        v
-/.../courseTest/source/chA/secA/a.md
+/.../courseTest/src/chA/secA/a.md
                               ^
        path_via_source_to_sec-|                                   
                               v
-/.../courseTest/source/chA/secA/images/a.jpg
+/.../courseTest/src/chA/secA/images/a.jpg
                        ^
                        |- path_ch_to_file
 """

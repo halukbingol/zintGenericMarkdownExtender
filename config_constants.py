@@ -1,17 +1,21 @@
 # config_constants.py
 
+from config_machine_specific import \
+    PANDOC, \
+    PATH_WS, \
+    PATH_PC
 
-# ************************************* V paths
-# machine specific paths
-PANDOC = "/usr/local/bin/pandoc"
-PATH_WS = '/Users/bingol/Documents/workspace-WebStorm/'
-PATH_PC = '/Users/bingol/Documents/workspace-PyCharm/'
-# ************************************* A
+# # ************************************* V paths
+# # machine specific paths
+# PANDOC = "/usr/local/bin/pandoc"
+# PATH_WS = '/Users/bingol/Documents/workspace-WebStorm/'
+# PATH_PC = '/Users/bingol/Documents/workspace-PyCharm/'
+# # ************************************* A
 
 
 # ************************************* V general
 # general
-DESTINATION = "build"
+DESTINATION = "bld"
 SOURCE = "src"
 ZINT_BUNDLE = 'zintBundle'
 FILE_TMP = 'tmp/_tmp.html'

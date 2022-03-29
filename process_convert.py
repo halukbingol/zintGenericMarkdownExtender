@@ -112,21 +112,23 @@ def process_head_zint(text):
 
             # zintLab libraries
             if file_to_include == "zintContent":
-                text_out += "<link rel=\"stylesheet\" href=\"../../zintBundle/zintContent/zintContent.css\">"
-                text_out += "<script src=\"../../zintBundle/zintContent/zintContent.js\"></script>"
-                text_out += "<script src=\"../../zintBundle/zintContent/zintContentSnapStepByStepDescription.js\"></script>"
-                text_out += "<script src=\"../../zintBundle/zintContent/zintContentSnapUtility.js\"></script>"
+                print("no `zintContent` processing is done")
+                # text_out += "<link rel=\"stylesheet\" href=\"../../zintBundle/zintContent/zintContent.css\">"
+                # text_out += "<script src=\"../../zintBundle/zintContent/zintContent.js\"></script>"
+                # text_out += "<script src=\"../../zintBundle/zintContent/zintContentSnapStepByStepDescription.js\"></script>"
+                # text_out += "<script src=\"../../zintBundle/zintContent/zintContentSnapUtility.js\"></script>"
 
             # external libs
-            if file_to_include == "mathjax":
-                text_out += "<script src=\"../../zintBundle/MathJax/tex-svg.js\"></script>"
-
             if file_to_include == "prism":
-                text_out += "<link rel=\"stylesheet\" href=\"../../zintBundle/prism/prism.css\">"
-                text_out += "<script src=\"../../zintBundle/prism/prism.js\"></script>"
+                text_out += "<link rel=\"stylesheet\" href=\"../../../zintExternal/prism/prism.css\">"
+                text_out += "<script src=\"../../../zintExternal/prism/prism.js\"></script>"
+
+            if file_to_include == "mathjax":
+                text_out += "<script src=\"../../../zintExternal/MathJax/tex-svg.js\"></script>"
 
             if file_to_include == "snapsvg":
-                text_out += "<script src=\"../../zintBundle/SnapSvg/snap.svg-min.js\"></script>"
+                print("no `snapsvg` processing is done")
+                # text_out += "<script src=\"../../zintBundle/SnapSvg/snap.svg-min.js\"></script>"
 
             # # dummy
             # if file_to_include == "aa":
@@ -231,9 +233,11 @@ def process_md_to_html(content):
     f = open(file_tmp, "w+", encoding="utf-8")
     f.write(content)
     f.close()
+    # TODO add pandoc extensions: table processing
     bytes_tmp = subprocess.check_output(
         [
-            PANDOC, "-f", "commonmark", "--no-highlight", "-t", "html",
+            # PANDOC, "-f", "commonmark", "--no-highlight", "-t", "html",
+            PANDOC, "-f", "commonmark+pipe_tables", "--no-highlight", "-t", "html",
             file_tmp
         ],
         shell=False
