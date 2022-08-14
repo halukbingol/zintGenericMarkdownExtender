@@ -1,5 +1,8 @@
 # zintMarkdownExtender/.gitignore
 
+# config file
+/config_machine_specific.py
+
 # all tmp  files
 _*
 tmp/*
@@ -27,3 +30,6 @@ zz_testing_content/zintML/contentA/WebContent/zintBundle/*
 # IDE
 .idea/
 /venv/
+
+
+# IDE added
