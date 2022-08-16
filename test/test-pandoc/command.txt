@@ -1,0 +1,7 @@
+pandoc -s --mathjax -f commonmark+tex_math_single_backslash -t html5 --no-highlight  in.md -o outA.html
+
+pandoc -s --mathjax -f markdown+tex_math_single_backslash -t html5 --no-highlight  in.md -o outA.html
+
+pandoc --toc --from=markdown --standalone --to=html5 --mathjax in.md -o outA.html
+
+pandoc --toc --standalone --mathjax -f markdown -t html in.md -o outA.html

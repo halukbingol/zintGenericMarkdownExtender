@@ -1,0 +1,448 @@
+{
+  "zintML Definition": {
+    "comment": [
+      "Defines zintML extension of markdown",
+      "author: haluk bingol",
+      "email: bingol@boun.edu.tr",
+      "v2021-11-12"
+    ],
+    "rule": {
+      "^nop$": "nop"
+    }
+  },
+  "Head processing": {
+    "comment": [
+      "H: head",
+      "HV: copy of `template-1-doctype-head-zintMarkdownExtender.html`",
+      "HA: copy of `template-2-headEnd-body-title.html`"
+    ],
+    "rule": {
+      "^# ?HV.*$": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=yes\"/>\n<title>01pi.com</title>\n<link rel=\"shortcut icon\" href=\"../../../zintBundle/zintLib/svg/01pi.svg\">\n",
+      "^# ?HA.*$": "</head>\n<body>\n<div class=\"zint-page\">\n<div id=\"idZintContentTitle\" class=\"zint-content-title\">\n<h1 class=\"zint-content-title-running\" id=\"idTitleRunning\"></h1>\n<h1 class=\"zint-content-title-slide\" id=\"idTitleSlide\"></h1>\n</div>\n"
+    }
+  },
+  "Head processing for development": {
+    "comment": [
+      "HD: head",
+      "HDV: copy of `template-1-doctype-head-zintMarkdownExtender.html`",
+      "HDA: copy of `template-2-headEnd-body-title.html`"
+    ],
+    "rule": {
+      "^# ?HDV.*$": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=yes\"/>\n<title>01pi.com</title>\n<link rel=\"shortcut icon\" href=\"../../../zintBundle/zintLib/svg/01pi.svg\">\n",
+      "^# ?HDA.*$": "</head>\n<body>\n<div class=\"zint-page\">\n<div id=\"idZintContentTitle\" class=\"zint-content-title\">\n<h1 class=\"zint-content-title-running\" id=\"idTitleRunning\"></h1>\n<h1 class=\"zint-content-title-slide\" id=\"idTitleSlide\"></h1>\n</div>\n"
+    }
+  },
+  "Title Slide": {
+    "comment": [
+      "T: Title of the slide"
+    ],
+    "rule": {
+      "^# ?TV.*$": "\n<script>ZintMarkdownExtender.setTitle(",
+      "^# ?TM.*$": ",",
+      "^# ?TA.*$": ");</script>\n"
+    }
+  },
+  "EditorSeparator": {
+    "comment": [
+      "ES: Editor Separator.",
+      "Separator for content developer. It has no effect."
+    ],
+    "rule": {
+      "^# ?ES.*$": ""
+    }
+  },
+  "Comment": {
+    "comment": [
+      "//: Comment",
+      "Comment for content developer. It has no effect."
+    ],
+    "rule": {
+      "^# ?//.*$": ""
+    }
+  },
+  "One Column": {
+    "comment": [
+      "1: 1-column"
+    ],
+    "rule": {
+      "^# ?1V.*$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-content-1'>",
+      "^# ?1A.*$": "</div>\n</div>\n"
+    }
+  },
+  "Two Columns": {
+    "comment": [
+      "2: 2-column"
+    ],
+    "rule": {
+      "^# ?2V.*$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-content-2-left'>",
+      "^# ?2M.*$": "\n</div>\n<div markdown='1' class='zint-content-2-right'>\n",
+      "^# ?2A.*$": "\n</div>\n</div>\n"
+    }
+  },
+  "Two Columns: Code and Visualization": {
+    "comment": [
+      "C&V: Code & Visualization",
+      "Derived from 2-column"
+    ],
+    "rule": {
+      "^# ?C&V.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-content-2-left'>\n<h3 class='zint-content-center'>code</h3>\n</div>\n<div markdown='1' class='zint-content-2-right'>\n<h3 class='zint-content-center'>visualization</h3>\n</div>\n</div>"
+    }
+  },
+  "Two Columns: HTML and Javascript": {
+    "comment": [
+      "H&J: HTML & Javascript",
+      "Derived from 2-column"
+    ],
+    "rule": {
+      "^# ?H&J.*$": "<div class='flex-row'>\n<div markdown='1' class='zint-content-2-left'>\n<h3 class='zint-content-center'>HTML</h3>\n</div>\n<div markdown='1' class='zint-content-2-right'>\n<h3 class='zint-content-center'>Javascript</h3>\n</div>\n</div>"
+    }
+  },
+  "Three Columns": {
+    "comment": [
+      "3: 3-column"
+    ],
+    "rule": {
+      "^# ?3V.*$": "\n\n<div class=\"flex-row\">\n<div markdown='1' class='zint-content-3-left'>",
+      "^# ?3M.*$": "\n</div>\n<div markdown='1' class='zint-content-3-middle'>\n",
+      "^# ?3R.*$": "\n</div>\n<div markdown='1' class='zint-content-3-right'>\n",
+      "^# ?3A.*$": "\n</div>\n</div>\n"
+    }
+  },
+  "Three Columns: Html and Css and Javascript": {
+    "comment": [
+      "H&C&J: Html & Css & Javascript",
+      "Derived from 3-column"
+    ],
+    "rule": {
+      "^# ?H&C&J.*$": "<div class=\"flex-row\"><div markdown='1' class='zint-content-3-left'><h3 class='zint-content-center'>HTML</h3></div><div markdown='1' class='zint-content-3-middle'><h3 class='zint-content-center'>CSS</h3></div><div markdown='1' class='zint-content-3-right'><h3 class='zint-content-center'>Javascript</h3></div></div>"
+    }
+  },
+  "Step-by-step": {
+    "comment": [
+      "Step-by-step"
+    ],
+    "rule": {
+      "^# ?SBSV.*$": "<div id=idInDescription class='Hidden'>\n<div class='zint-sbs-description-step'>",
+      "^# ?SBSM.*$": "</div>\n<div class='zint-sbs-description-step'>",
+      "^# ?SBSA.*$": "</div>\n</div>\n",
+      "^step{": "<p class='zint-sbs-step'>",
+      "}step": "</p>"
+    }
+  },
+  "Show / Hide": {
+    "comment": [
+      "Show/Hide"
+    ],
+    "rule": {
+      "^# ?SHV.*$": "\n<div><button class='zint-cic-button' onclick='ZintUI.showHide()'>show</button><div class='Hidden zint-cic zint-cic-show-hide'>",
+      "^# ?SHA.*$": "\n</div></div>\n"
+    }
+  },
+  "Show Answer": {
+    "comment": [
+      "Show Answer"
+    ],
+    "rule": {
+      "^# ?SAV.*$": "\n<div><button onclick='ZintUtilUI.showHide()'>show/hide</button><div class='zint-content-hidden zint-content-show-answer'>",
+      "^# ?SAA.*$": "\n</div></div>\n"
+    }
+  },
+  "Show Implementation": {
+    "comment": [
+      "Show Implementation"
+    ],
+    "rule": {
+      "^# ?SIV.*$": "\n<div><button onclick='zint_show_hide()'>show/hide</button><div class='zint-content-hidden zint-content-show-implementation'>",
+      "^# ?SIA.*$": "\n</div></div>\n"
+    }
+  },
+  "Example": {
+    "comment": [],
+    "rule": {
+      "^# ?EXV.*$": "<div class='zint-content-example'>",
+      "^# ?EXA.*$": "</div>"
+    }
+  },
+  "Separator Page": {
+    "comment": [],
+    "rule": {
+      "^# ?SPV.*$": "<div class='zint-content-separator-page'>",
+      "^# ?SPA.*$": "</div>"
+    }
+  },
+  "Info-Box": {
+    "comment": [
+      "***************************************************************",
+      "*                    Info box opcodes                         *",
+      "***************************************************************"
+    ],
+    "rule": {
+      "^# ?infoBox-XXXXXXXXXXXXXXXX-V.*$": "***************************************************************"
+    }
+  },
+  "Do You Know": {
+    "comment": [
+      "IDYK: Do You Know"
+    ],
+    "rule": {
+      "^# ?IDYKV.*$": "<div class=\"zint-content-info zint-cic\">\n<h4 class=\"zint-content-info-dyk\">\n<img src=\"../../../zintBundle/zintLib/markdownExtender/svg/zintMdeBeforeDYK.svg\">\nDo You Know\n</h4>\n<div>\n",
+      "^# ?IDYKA.*$": "</div>\n</div>\n"
+    }
+  },
+  "Remark": {
+    "comment": [
+      "IRK: Remark"
+    ],
+    "rule": {
+      "^# ?IRKV.*$": "<div class=\"zint-content-info zint-cic\">\n<h4 class=\"zint-content-info-remark\">\n<img src=\"../../../zintBundle/zintLib/markdownExtender/svg/zintMdeBeforeRemark.svg\">\nRemark\n</h4>\n<div>\n",
+      "^# ?IRKA.*$": "</div>\n</div>\n"
+    }
+  },
+  "Reminder": {
+    "comment": [
+      "IRD: Reminder"
+    ],
+    "rule": {
+      "^# ?IRDV.*$": "<div class=\"zint-content-info zint-cic\">\n<h4 class=\"zint-content-info-reminder\">\n<img src=\"../../../zintBundle/zintLib/markdownExtender/svg/zintMdeBeforeReminder.svg\">\nReminder\n</h4>\n<div>\n",
+      "^# ?IRDA.*$": "</div>\n</div>\n"
+    }
+  },
+  "Question": {
+    "comment": [
+      "Question only"
+    ],
+    "rule": {
+      "^# ?QV.*$": "<div class='zint-content-computer-question'>",
+      "^# ?QA.*$": "</div>"
+    }
+  },
+  "Question and Answer": {
+    "comment": [
+      "Question with hidden Answer",
+      "Answer become visible by click"
+    ],
+    "rule": {
+      "^# ?Q&AV.*$": "<div class='zint-content-computer-question'>",
+      "^# ?Q&AM.*$": "<div class='zint-content-hide zint-content-show-answer'>",
+      "^# ?Q&AA.*$": "</div></div>"
+    }
+  },
+  "Algorithm": {
+    "comment": [],
+    "rule": {
+      "^# ?ALV.*$": "<div class='zint-content-algorithm'>",
+      "^# ?ALA.*$": "</div>"
+    }
+  },
+  "Computer Output": {
+    "comment": [],
+    "rule": {
+      "^# ?COV.*$": "<div class='zint-content-computer-output'><pre>",
+      "^# ?COA.*$": "</pre></div>"
+    }
+  },
+  "Citation": {
+    "comment": [],
+    "rule": {
+      "^# ?CIV.*$": "<div class='zint-content-citation'>",
+      "^# ?CIA.*$": "</div>"
+    }
+  },
+  "See": {
+    "comment": [],
+    "rule": {
+      "^# ?SEV.*$": "<div class='zint-content-see'>",
+      "^# ?SEA.*$": "</div>"
+    }
+  },
+  "Definition": {
+    "comment": [],
+    "rule": {
+      "^# ?DV.*$": "<div class='zint-content-definition'>",
+      "^# ?DA.*$": "</div>"
+    }
+  },
+  "Syntax": {
+    "comment": [],
+    "rule": {
+      "^# ?SYV.*$": "<div class='zint-content-syntax'>",
+      "^# ?SYA.*$": "</div>"
+    }
+  },
+  "include javascript file": {
+    "comment": [],
+    "rule": {
+      "^# ?IJSV.*$": "\n<script>",
+      "^# ?IJSA.*$": "</script>"
+    }
+  },
+  "include css file": {
+    "comment": [],
+    "rule": {
+      "^# ?ICSSV.*$": "\n<style>",
+      "^# ?ICSSA.*$": "</style>"
+    }
+  },
+  "include description": {
+    "comment": [],
+    "rule": {
+      "^# ?IDV.*$": "<div id='idInDescription'  class='Hidden'>",
+      "^# ?IDA.*$": "</div>"
+    }
+  },
+  "include board": {
+    "comment": [
+      "similar to `IJSV`"
+    ],
+    "rule": {
+      "^# ?IBV.*$": "\n<script class='zint-board-js'>",
+      "^# ?IBA.*$": "</script>"
+    }
+  },
+  "include code": {
+    "comment": [],
+    "rule": {
+      "^# ?ICV.*$": "\n<div id='idInCode' class='Hidden'>\n",
+      "^# ?ICA.*$": "</div>\n"
+    }
+  },
+  "include highlight": {
+    "comment": [],
+    "rule": {
+      "^# ?IHV.*$": "\n<pre id='idInHighlight'  class='Hidden'>",
+      "^# ?IHA.*$": "</pre>\n"
+    }
+  },
+  "include trace": {
+    "comment": [],
+    "rule": {
+      "^# ?ITV.*$": "\n<pre id='idInTrace'  class='Hidden'>",
+      "^# ?ITA.*$": "</pre>\n"
+    }
+  },
+  "h: Inline formats": {
+    "comment": [
+      "***************************************************************",
+      "*                    inline formats                           *",
+      "***************************************************************"
+    ],
+    "rule": {
+      "^# ?Inline-XXXXXXXXXXXXXXXX-V.*$": "***************************************************************"
+    }
+  },
+  "Inline Defined": {
+    "comment": [
+      "Use to mark the defined term"
+    ],
+    "rule": {
+      "def{": "<span class='zint-content-inline-defined'>",
+      "}def": "</span>"
+    }
+  },
+   "Inline Emphasis": {
+    "comment": [],
+    "rule": {
+      "ee{": "<span class='zint-content-inline-emphasis'>",
+      "}ee": "</span>"
+    }
+  },
+ "Inline Code Location": {
+    "comment": [
+      "code-location"
+    ],
+    "rule": {
+      "loc{": "<span class='zint-content-inline-code-location'>",
+      "}loc": "</span>"
+    }
+  },
+  "Inline Syntax": {
+    "comment": [],
+    "rule": {
+      "syx{": "<span class='zint-content-inline-syntax'>",
+      "}syx": "</span>"
+    }
+  },
+  "Inline Code Value": {
+    "comment": [
+      "code-value"
+    ],
+    "rule": {
+      "val{": "<span class='zint-content-inline-code-value'>",
+      "}val": "</span>"
+    }
+  },
+  "Inline Code Variable": {
+    "comment": [
+      "code-variable"
+    ],
+    "rule": {
+      "var{": "<span class='zint-content-inline-code-variable'>",
+      "}var": "</span>"
+    }
+  },
+  "Inline Link": {
+    "comment": [],
+    "rule": {
+      "llv{": "<a href='",
+      "lm{": "'  rel='nofollow' target='_blank'>",
+      "}la": "</a>"
+    }
+  },
+  "Inline Keyword": {
+    "comment": [],
+    "rule": {
+      "kw{": "<span class='zint-content-inline-keyword'>",
+      "}kw": "</span>"
+    }
+  },
+  "Inline Citation": {
+    "comment": [],
+    "rule": {
+      "cc{": "<span class='zint-content-inline-cite'>",
+      "}cc": "</span>"
+    }
+  },
+  "prism": {
+    "comment": [
+      "***************************************************************",
+      "*                    PrismJS  converter                       *",
+      "***************************************************************",
+      "keep this",
+      "Library `pandoc` transfers md to html but it is not compatible with syntax highlighting library `prism`.",
+      "This makes the correction."
+    ],
+    "rule": {
+      "<pre class=\"bash\"><code>": "<pre><code class=\"language-bash line-numbers\">",
+      "<pre class=\"css\"><code>": "<pre><code class=\"language-css line-numbers\">",
+      "<pre class=\"html\"><code>": "<pre><code class=\"language-html line-numbers\">",
+      "<pre class=\"java\"><code>": "<pre><code class=\"language-java line-numbers\">",
+      "<pre class=\"javascript\"><code>": "<pre><code class=\"language-javascript line-numbers\">",
+      "<pre class=\"js\"><code>": "<pre><code class=\"language-javascript line-numbers\">",
+      "<pre class=\"latex\"><code>": "<pre><code class=\"language-latex line-numbers\">",
+      "<pre class=\"markdown\"><code>": "<pre><code class=\"language-markdown line-numbers\">"
+    }
+  },
+  "h: Unused": {
+    "comment": [
+      "***************************************************************",
+      "*                    unused                                   *",
+      "***************************************************************"
+    ],
+    "rule": {
+      "^# ?unused-XXXXXXXXXXXXXXXX-V.*$": "***************************************************************"
+    }
+  },
+  "Open Project": {
+    "comment": [],
+    "enable-groups": true,
+    "rule": {
+      "^# ?OPV$": "<div class='softdev4u-openExampleDiv'",
+      "^# ?OP-language=([\\w\\d]+)$": "data-softdev4u-language='\\1'",
+      "^# ?OP-project=([\\w\\d-]+)$": "data-softdev4u-exampleName='\\1'",
+      "^# ?OP-filePath=([\\w\\d_/]+.[a-z]+)$": "data-softdev4u-filePath='\\1'",
+      "^# ?OP-lineNumber=([\\d]+)$": "data-softdev4u-lineNumber=\\1",
+      "^# ?OP-linkTitle=([\\w\\d\\s()-]+)$": "data-softdev4u-linkTitle='\\1'>",
+      "^# ?OPA$": "</div>"
+    }
+  }
+}
